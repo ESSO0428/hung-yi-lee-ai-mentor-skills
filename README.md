@@ -30,7 +30,7 @@ Find the installed collection path and set it up once:
 
 ```bash
 # If you selected global scope during installation, add --global after `list`.
-COLLECTION_ROOT="$(npx skills list --json | node -e '
+SKILL_ROOT="$(npx skills list --json | node -e '
 let input = "";
 process.stdin.on("data", chunk => input += chunk);
 process.stdin.on("end", () => {
@@ -41,7 +41,7 @@ process.stdin.on("end", () => {
   process.stdout.write(skill.path);
 });
 ')"
-uv sync --project "$COLLECTION_ROOT" --extra analysis
+uv sync --project "$SKILL_ROOT" --extra analysis
 ```
 
 `uv sync` creates or updates `.venv` in the discovered collection directory.
@@ -51,25 +51,21 @@ activation is required.
 Verify the source-grounded knowledge layer after installation:
 
 ```bash
-uv run --project "$COLLECTION_ROOT" python \
-  "$COLLECTION_ROOT/skills/hung-yi-ml-research-advisor/bootstrap.py" \
-  --skill-root "$COLLECTION_ROOT/skills/hung-yi-ml-research-advisor" \
-  --knowledge "$COLLECTION_ROOT/knowledge/normalized_principles.json" \
+uv run --project "$SKILL_ROOT" python \
+  "$SKILL_ROOT/skills/hung-yi-ml-research-advisor/bootstrap.py" \
+  --skill-root "$SKILL_ROOT/skills/hung-yi-ml-research-advisor" \
+  --knowledge "$SKILL_ROOT/knowledge/normalized_principles.json" \
   --require-knowledge --json
 ```
 
 Use `--extra torch` only for model/gradient/activation diagnostics, or
 `--extra all` for a deliberate full-surface smoke/CI run.
 
-## Keep advisor tools in their own environment
+Add this one-line rule to both `AGENTS.md` and `CLAUDE.md`:
 
-To make an agent invoke bundled tools reliably, add this short rule to both
-`AGENTS.md` and `CLAUDE.md` in the consumer project:
-
-> When using a `hung-yi-ml-research-advisor` tool, first locate the installed
-> `hung-yi-lee-ai-mentor-skills` collection root. Invoke the tool through
-> `uv run --project <collection-root> ...` so it uses the skill collection's
-> environment.
+```text
+When using a hung-yi-ml-research-advisor tool, invoke it through the installed hung-yi-lee-ai-mentor-skills collection root with uv run --project "<skill path>" ...
+```
 
 ## Quick start
 
