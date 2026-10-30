@@ -44,6 +44,22 @@ process.stdin.on("end", () => {
 uv sync --project "$SKILL_ROOT" --extra analysis
 ```
 
+Windows PowerShell:
+
+```powershell
+# If you selected global scope during installation, add --global after `list`.
+$skillsJson = npx skills list --json | Out-String
+$skills = $skillsJson | ConvertFrom-Json
+$skill = @(
+  $skills | Where-Object { $_.name -eq "hung-yi-lee-ai-mentor-skills" }
+) | Select-Object -First 1
+$SKILL_ROOT = $skill.path
+if (-not $SKILL_ROOT) {
+  throw "The hung-yi-lee-ai-mentor-skills collection was not found."
+}
+uv sync --project $SKILL_ROOT --extra analysis
+```
+
 `uv sync` creates or updates `.venv` in the discovered collection directory.
 Normal commands should keep targeting that project explicitly; no shell
 activation is required.
