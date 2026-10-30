@@ -1,0 +1,37 @@
+{
+  "schema_version": "hung-yi-channel-p3-archive.v1",
+  "status": "ARCHIVE_ONLY_NOT_MENTOR_KNOWLEDGE",
+  "scope": "P3 course/homework logistics coverage retained without candidate or formal mentor rules.",
+  "selector_ledger": "knowledge/channel-source-selection.v1.json",
+  "sources": [
+    {
+      "concept_id": "p3_archive_peripheral_lessons",
+      "video_id": "88WzdTuQMyM",
+      "title": "【生成式人工智慧與機器學習導論2025】作業一",
+      "url": "https://www.youtube.com/watch?v=88WzdTuQMyM",
+      "source_role": "PRIMARY",
+      "evidence_packet": "EVP-CHANNEL-88WzdTuQMyM-p3_archive_peripheral_lessons-V1",
+      "source_chunks": [
+        "88WzdTuQMyM:0-25",
+        "88WzdTuQMyM:74-99",
+        "88WzdTuQMyM:215-245",
+        "88WzdTuQMyM:542-560"
+      ],
+      "dossier": "distillation/channel_p3_archive_peripheral_lessons/knowledge/research/merged/summary.md"
+    },
+    {
+      "concept_id": "p3_archive_peripheral_lessons",
+      "video_id": "VuQUF1VVX40",
+      "title": "【生成式人工智慧與機器學習導論2025】第０講：開場與課程簡介",
+      "url": "https://www.youtube.com/watch?v=VuQUF1VVX40",
+      "source_role": "CORROBORATING",
+      "evidence_packet": "EVP-CHANNEL-VuQUF1VVX40-p3_archive_peripheral_lessons-V1",
+      "source_chunks": [
+        "VuQUF1VVX40:122-152",
+        "VuQUF1VVX40:153-193",
+        "VuQUF1VVX40:379-417"
+      ],
+      "dossier": "distillation/channel_p3_archive_peripheral_lessons/knowledge/research/merged/summary.md"
+    }
+  ]
+}

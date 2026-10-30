@@ -1,0 +1,385 @@
+{
+  "schema_version": "hung-yi-channel-candidates.v1",
+  "status": "CANDIDATE_REVIEW_REQUIRED",
+  "scope": "Channel selector P2 cross-source candidates; not formal mentor knowledge.",
+  "selector_ledger": "knowledge/channel-source-selection.v1.json",
+  "evidence_packets": [
+    "data/processing/channel_evidence_packets_v1/AihBniegMKg--speech_multimodal.md",
+    "data/processing/channel_evidence_packets_v1/CbIPjrOj2Tc--speech_multimodal.md",
+    "data/processing/channel_evidence_packets_v1/CgQ3lUOpXgc--speech_multimodal.md",
+    "data/processing/channel_evidence_packets_v1/DMA4MrNieWo--generative_models.md",
+    "data/processing/channel_evidence_packets_v1/DQNNMiAP5lw--generative_models.md",
+    "data/processing/channel_evidence_packets_v1/JbfcAaBT66U--generative_models.md",
+    "data/processing/channel_evidence_packets_v1/M2Yg1kwPpts--llm_agent.md",
+    "data/processing/channel_evidence_packets_v1/MpsVE60iRLM--speech_multimodal.md",
+    "data/processing/channel_evidence_packets_v1/OYN_GvAqv-A--generative_models.md",
+    "data/processing/channel_evidence_packets_v1/VqB8zMujdjM--llm_agent.md",
+    "data/processing/channel_evidence_packets_v1/bJZTJ7MjYqg--llm_agent.md",
+    "data/processing/channel_evidence_packets_v1/j82QLgfhFiY--reinforcement_learning.md",
+    "data/processing/channel_evidence_packets_v1/tnPVcec22cg--reinforcement_learning.md",
+    "data/processing/channel_evidence_packets_v1/urwDLyNa9FU--llm_agent.md",
+    "data/processing/channel_evidence_packets_v1/z95ZYgPgXOY--reinforcement_learning.md"
+  ],
+  "principles": [
+    {
+      "id": "HYL-P2-GEN-001",
+      "domain": "generative-modeling",
+      "principle": "生成模型 recipe 的比較必須把目標條件、生成品質、可控性、推論成本與訓練穩定性拆開；GAN、VAE、flow 與 diffusion 不能只用單一視覺示例決策。",
+      "decision_rule": "先定義資料模態與 conditional requirement，再建立可重現基線；同時報告生成品質、diversity／failure cases、成本和人為挑選規則，並對照相同資料與 evaluation protocol。",
+      "evidence_level": "CROSS_SOURCE_INFERENCE",
+      "uncertainty": "來源提供方法與機制導覽；沒有建立跨資料集的單一品質排名，也不足以取代專案特定 safety、copyright 或 deployment evaluation。",
+      "review_status": "CANDIDATE_REVIEW_REQUIRED",
+      "formal_knowledge_update": "NOT_YET",
+      "sources": [
+        {
+          "video_id": "OYN_GvAqv-A",
+          "title": "【生成式AI導論 2024】第18講：有關影像的生成式AI (下) — 快速導讀經典影像生成方法 (VAE, Flow, Diffusion, GAN) 以及與生成的影片互動",
+          "url": "https://www.youtube.com/watch?v=OYN_GvAqv-A",
+          "timestamp_start": 0.0,
+          "timestamp_end": 89.08,
+          "transcript_type": "official",
+          "source_chunk": "OYN_GvAqv-A:0-26",
+          "evidence_packet": "EVP-CHANNEL-OYN_GvAqv-A-generative_models-V1"
+        },
+        {
+          "video_id": "DQNNMiAP5lw",
+          "title": "GAN Lecture 1 (2018): Introduction",
+          "url": "https://www.youtube.com/watch?v=DQNNMiAP5lw",
+          "timestamp_start": 0.24,
+          "timestamp_end": 27.86,
+          "transcript_type": "official",
+          "source_chunk": "DQNNMiAP5lw:0-4",
+          "evidence_packet": "EVP-CHANNEL-DQNNMiAP5lw-generative_models-V1"
+        },
+        {
+          "video_id": "DMA4MrNieWo",
+          "title": "GAN Lecture 4 (2018): Basic Theory",
+          "url": "https://www.youtube.com/watch?v=DMA4MrNieWo",
+          "timestamp_start": 0.0,
+          "timestamp_end": 39.44,
+          "transcript_type": "official",
+          "source_chunk": "DMA4MrNieWo:0-7",
+          "evidence_packet": "EVP-CHANNEL-DMA4MrNieWo-generative_models-V1"
+        },
+        {
+          "video_id": "JbfcAaBT66U",
+          "title": "【生成式AI】Stable Diffusion、DALL-E、Imagen 背後共同的套路",
+          "url": "https://www.youtube.com/watch?v=JbfcAaBT66U",
+          "timestamp_start": 0.0,
+          "timestamp_end": 89.5,
+          "transcript_type": "official",
+          "source_chunk": "JbfcAaBT66U:0-24",
+          "evidence_packet": "EVP-CHANNEL-JbfcAaBT66U-generative_models-V1"
+        }
+      ],
+      "provenance": [
+        {
+          "video_id": "OYN_GvAqv-A",
+          "title": "【生成式AI導論 2024】第18講：有關影像的生成式AI (下) — 快速導讀經典影像生成方法 (VAE, Flow, Diffusion, GAN) 以及與生成的影片互動",
+          "url": "https://www.youtube.com/watch?v=OYN_GvAqv-A",
+          "timestamp_start": 0.0,
+          "timestamp_end": 89.08,
+          "transcript_type": "official",
+          "source_chunk": "OYN_GvAqv-A:0-26",
+          "evidence_packet": "EVP-CHANNEL-OYN_GvAqv-A-generative_models-V1"
+        },
+        {
+          "video_id": "DQNNMiAP5lw",
+          "title": "GAN Lecture 1 (2018): Introduction",
+          "url": "https://www.youtube.com/watch?v=DQNNMiAP5lw",
+          "timestamp_start": 0.24,
+          "timestamp_end": 27.86,
+          "transcript_type": "official",
+          "source_chunk": "DQNNMiAP5lw:0-4",
+          "evidence_packet": "EVP-CHANNEL-DQNNMiAP5lw-generative_models-V1"
+        },
+        {
+          "video_id": "DMA4MrNieWo",
+          "title": "GAN Lecture 4 (2018): Basic Theory",
+          "url": "https://www.youtube.com/watch?v=DMA4MrNieWo",
+          "timestamp_start": 0.0,
+          "timestamp_end": 39.44,
+          "transcript_type": "official",
+          "source_chunk": "DMA4MrNieWo:0-7",
+          "evidence_packet": "EVP-CHANNEL-DMA4MrNieWo-generative_models-V1"
+        },
+        {
+          "video_id": "JbfcAaBT66U",
+          "title": "【生成式AI】Stable Diffusion、DALL-E、Imagen 背後共同的套路",
+          "url": "https://www.youtube.com/watch?v=JbfcAaBT66U",
+          "timestamp_start": 0.0,
+          "timestamp_end": 89.5,
+          "transcript_type": "official",
+          "source_chunk": "JbfcAaBT66U:0-24",
+          "evidence_packet": "EVP-CHANNEL-JbfcAaBT66U-generative_models-V1"
+        }
+      ],
+      "dossier": "distillation/channel_generative_models/knowledge/research/merged/summary.md"
+    },
+    {
+      "id": "HYL-P2-RL-001",
+      "domain": "reinforcement-learning",
+      "principle": "RL 演算法選擇必須先固定 state、action、reward、horizon 與資料收集條件，再比較 policy-gradient、actor-critic、PPO 或 value/Q-learning 變體的穩定性與樣本效率。",
+      "decision_rule": "在相同 environment seed 與 interaction budget 下，記錄 return distribution、constraint violations、exploration behavior 和 variance；將每次 algorithm change 對應到 action-space 或 credit-assignment 假設。",
+      "evidence_level": "CROSS_SOURCE_INFERENCE",
+      "uncertainty": "課程片段涵蓋多個 RL 方法與關係，並未提供所有 environment 的 best algorithm 或安全部署保證。",
+      "review_status": "CANDIDATE_REVIEW_REQUIRED",
+      "formal_knowledge_update": "NOT_YET",
+      "sources": [
+        {
+          "video_id": "tnPVcec22cg",
+          "title": "DRL Lecture 5: Q-learning (Continuous Action)",
+          "url": "https://www.youtube.com/watch?v=tnPVcec22cg",
+          "timestamp_start": 0.0,
+          "timestamp_end": 11.08,
+          "transcript_type": "official",
+          "source_chunk": "tnPVcec22cg:0-2",
+          "evidence_packet": "EVP-CHANNEL-tnPVcec22cg-reinforcement_learning-V1"
+        },
+        {
+          "video_id": "z95ZYgPgXOY",
+          "title": "DRL Lecture 1: Policy Gradient (Review)",
+          "url": "https://www.youtube.com/watch?v=z95ZYgPgXOY",
+          "timestamp_start": 36.04,
+          "timestamp_end": 122.62,
+          "transcript_type": "official",
+          "source_chunk": "z95ZYgPgXOY:2-16",
+          "evidence_packet": "EVP-CHANNEL-z95ZYgPgXOY-reinforcement_learning-V1"
+        },
+        {
+          "video_id": "j82QLgfhFiY",
+          "title": "DRL Lecture 6: Actor-Critic",
+          "url": "https://www.youtube.com/watch?v=j82QLgfhFiY",
+          "timestamp_start": 0.0,
+          "timestamp_end": 86.46000000000001,
+          "transcript_type": "official",
+          "source_chunk": "j82QLgfhFiY:0-26",
+          "evidence_packet": "EVP-CHANNEL-j82QLgfhFiY-reinforcement_learning-V1"
+        }
+      ],
+      "provenance": [
+        {
+          "video_id": "tnPVcec22cg",
+          "title": "DRL Lecture 5: Q-learning (Continuous Action)",
+          "url": "https://www.youtube.com/watch?v=tnPVcec22cg",
+          "timestamp_start": 0.0,
+          "timestamp_end": 11.08,
+          "transcript_type": "official",
+          "source_chunk": "tnPVcec22cg:0-2",
+          "evidence_packet": "EVP-CHANNEL-tnPVcec22cg-reinforcement_learning-V1"
+        },
+        {
+          "video_id": "z95ZYgPgXOY",
+          "title": "DRL Lecture 1: Policy Gradient (Review)",
+          "url": "https://www.youtube.com/watch?v=z95ZYgPgXOY",
+          "timestamp_start": 36.04,
+          "timestamp_end": 122.62,
+          "transcript_type": "official",
+          "source_chunk": "z95ZYgPgXOY:2-16",
+          "evidence_packet": "EVP-CHANNEL-z95ZYgPgXOY-reinforcement_learning-V1"
+        },
+        {
+          "video_id": "j82QLgfhFiY",
+          "title": "DRL Lecture 6: Actor-Critic",
+          "url": "https://www.youtube.com/watch?v=j82QLgfhFiY",
+          "timestamp_start": 0.0,
+          "timestamp_end": 86.46000000000001,
+          "transcript_type": "official",
+          "source_chunk": "j82QLgfhFiY:0-26",
+          "evidence_packet": "EVP-CHANNEL-j82QLgfhFiY-reinforcement_learning-V1"
+        }
+      ],
+      "dossier": "distillation/channel_reinforcement_learning/knowledge/research/merged/summary.md"
+    },
+    {
+      "id": "HYL-P2-AGENT-001",
+      "domain": "llm-agent-systems",
+      "principle": "LLM agent 是有 state、context、tools、planning 與 evaluation 的系統；問題應先被拆成可觀察的 failure mode，而非只調 prompt 或加入更多工具。",
+      "decision_rule": "先定義任務成功、tool-call correctness、state/context retention、cost/latency 與 safety 指標；建立不使用工具或縮短 context 的對照，針對最小可重現失敗設計一個辨別性實驗。",
+      "evidence_level": "CROSS_SOURCE_INFERENCE",
+      "uncertainty": "來源支持 agent component 與 workflow 的研究式分析；並未證明任何框架、tool policy 或 context-engineering recipe 在所有工作流皆最佳。",
+      "review_status": "CANDIDATE_REVIEW_REQUIRED",
+      "formal_knowledge_update": "NOT_YET",
+      "sources": [
+        {
+          "video_id": "M2Yg1kwPpts",
+          "title": "【生成式AI時代下的機器學習(2025)】第二講：一堂課搞懂 AI Agent 的原理 (AI如何透過經驗調整行為、使用工具和做計劃)",
+          "url": "https://www.youtube.com/watch?v=M2Yg1kwPpts",
+          "timestamp_start": 1.3,
+          "timestamp_end": 89.98,
+          "transcript_type": "official",
+          "source_chunk": "M2Yg1kwPpts:0-11",
+          "evidence_packet": "EVP-CHANNEL-M2Yg1kwPpts-llm_agent-V1"
+        },
+        {
+          "video_id": "VqB8zMujdjM",
+          "title": "AI Agent (3/3): AI Agent 對於工作帶來的衝擊 - 以學術研究為例",
+          "url": "https://www.youtube.com/watch?v=VqB8zMujdjM",
+          "timestamp_start": 0.0,
+          "timestamp_end": 89.355,
+          "transcript_type": "official",
+          "source_chunk": "VqB8zMujdjM:0-49",
+          "evidence_packet": "EVP-CHANNEL-VqB8zMujdjM-llm_agent-V1"
+        },
+        {
+          "video_id": "bJZTJ7MjYqg",
+          "title": "【生成式AI導論 2024】第9講：以大型語言模型打造的AI Agent (14:50 教你怎麼打造芙莉蓮一級魔法使考試中出現的泥人哥列姆)",
+          "url": "https://www.youtube.com/watch?v=bJZTJ7MjYqg",
+          "timestamp_start": 0.0,
+          "timestamp_end": 87.8,
+          "transcript_type": "official",
+          "source_chunk": "bJZTJ7MjYqg:0-25",
+          "evidence_packet": "EVP-CHANNEL-bJZTJ7MjYqg-llm_agent-V1"
+        },
+        {
+          "video_id": "urwDLyNa9FU",
+          "title": "AI Agent (1/3)：核心技術 Context Engineering 基本概念解說",
+          "url": "https://www.youtube.com/watch?v=urwDLyNa9FU",
+          "timestamp_start": 0.133,
+          "timestamp_end": 90.09,
+          "transcript_type": "official",
+          "source_chunk": "urwDLyNa9FU:0-39",
+          "evidence_packet": "EVP-CHANNEL-urwDLyNa9FU-llm_agent-V1"
+        }
+      ],
+      "provenance": [
+        {
+          "video_id": "M2Yg1kwPpts",
+          "title": "【生成式AI時代下的機器學習(2025)】第二講：一堂課搞懂 AI Agent 的原理 (AI如何透過經驗調整行為、使用工具和做計劃)",
+          "url": "https://www.youtube.com/watch?v=M2Yg1kwPpts",
+          "timestamp_start": 1.3,
+          "timestamp_end": 89.98,
+          "transcript_type": "official",
+          "source_chunk": "M2Yg1kwPpts:0-11",
+          "evidence_packet": "EVP-CHANNEL-M2Yg1kwPpts-llm_agent-V1"
+        },
+        {
+          "video_id": "VqB8zMujdjM",
+          "title": "AI Agent (3/3): AI Agent 對於工作帶來的衝擊 - 以學術研究為例",
+          "url": "https://www.youtube.com/watch?v=VqB8zMujdjM",
+          "timestamp_start": 0.0,
+          "timestamp_end": 89.355,
+          "transcript_type": "official",
+          "source_chunk": "VqB8zMujdjM:0-49",
+          "evidence_packet": "EVP-CHANNEL-VqB8zMujdjM-llm_agent-V1"
+        },
+        {
+          "video_id": "bJZTJ7MjYqg",
+          "title": "【生成式AI導論 2024】第9講：以大型語言模型打造的AI Agent (14:50 教你怎麼打造芙莉蓮一級魔法使考試中出現的泥人哥列姆)",
+          "url": "https://www.youtube.com/watch?v=bJZTJ7MjYqg",
+          "timestamp_start": 0.0,
+          "timestamp_end": 87.8,
+          "transcript_type": "official",
+          "source_chunk": "bJZTJ7MjYqg:0-25",
+          "evidence_packet": "EVP-CHANNEL-bJZTJ7MjYqg-llm_agent-V1"
+        },
+        {
+          "video_id": "urwDLyNa9FU",
+          "title": "AI Agent (1/3)：核心技術 Context Engineering 基本概念解說",
+          "url": "https://www.youtube.com/watch?v=urwDLyNa9FU",
+          "timestamp_start": 0.133,
+          "timestamp_end": 90.09,
+          "transcript_type": "official",
+          "source_chunk": "urwDLyNa9FU:0-39",
+          "evidence_packet": "EVP-CHANNEL-urwDLyNa9FU-llm_agent-V1"
+        }
+      ],
+      "dossier": "distillation/channel_llm_agent/knowledge/research/merged/summary.md"
+    },
+    {
+      "id": "HYL-P2-SPEECH-001",
+      "domain": "speech-and-multimodal-systems",
+      "principle": "語音／多模態系統要先釐清每個 modality 的資訊路徑與 cascade boundary，再比較 ASR→LLM→TTS、speech-to-speech 或 representation-transfer recipe 的錯誤傳播與成本。",
+      "decision_rule": "對每個 modality 分別記錄 input quality、transcription/recognition error、semantic task score、prosody/voice quality 和 latency；用 matched examples 比較 cascade 與 end-to-end 設計，並切分出聲音、文字與跨模態失敗。",
+      "evidence_level": "CROSS_SOURCE_INFERENCE",
+      "uncertainty": "來源包含 speech self-supervision、speech-language systems 與生成應用；不構成對端到端或 cascade 的普遍性能結論。",
+      "review_status": "CANDIDATE_REVIEW_REQUIRED",
+      "formal_knowledge_update": "NOT_YET",
+      "sources": [
+        {
+          "video_id": "CbIPjrOj2Tc",
+          "title": "【生成式人工智慧與機器學習導論2025】第 10 講：語音語言模型發展史 (本課程前段內容為歷史回顧，2025 年的技術從 1:42:00 開始)",
+          "url": "https://www.youtube.com/watch?v=CbIPjrOj2Tc",
+          "timestamp_start": 266.432,
+          "timestamp_end": 354.954,
+          "transcript_type": "official",
+          "source_chunk": "CbIPjrOj2Tc:125-171",
+          "evidence_packet": "EVP-CHANNEL-CbIPjrOj2Tc-speech_multimodal-V1"
+        },
+        {
+          "video_id": "AihBniegMKg",
+          "title": "【生成式AI】生成式學習的兩種策略：要各個擊破，還是要一次到位",
+          "url": "https://www.youtube.com/watch?v=AihBniegMKg",
+          "timestamp_start": 90.88,
+          "timestamp_end": 175.872,
+          "transcript_type": "official",
+          "source_chunk": "AihBniegMKg:22-45",
+          "evidence_packet": "EVP-CHANNEL-AihBniegMKg-speech_multimodal-V1"
+        },
+        {
+          "video_id": "MpsVE60iRLM",
+          "title": "SUPERB: 語音上的自督導式學習模型居然十項全能？",
+          "url": "https://www.youtube.com/watch?v=MpsVE60iRLM",
+          "timestamp_start": 268.9,
+          "timestamp_end": 356.01,
+          "transcript_type": "official",
+          "source_chunk": "MpsVE60iRLM:100-135",
+          "evidence_packet": "EVP-CHANNEL-MpsVE60iRLM-speech_multimodal-V1"
+        },
+        {
+          "video_id": "CgQ3lUOpXgc",
+          "title": "GPT-4o 背後可能的語音技術猜測",
+          "url": "https://www.youtube.com/watch?v=CgQ3lUOpXgc",
+          "timestamp_start": 259.12,
+          "timestamp_end": 345.72,
+          "transcript_type": "official",
+          "source_chunk": "CgQ3lUOpXgc:86-106",
+          "evidence_packet": "EVP-CHANNEL-CgQ3lUOpXgc-speech_multimodal-V1"
+        }
+      ],
+      "provenance": [
+        {
+          "video_id": "CbIPjrOj2Tc",
+          "title": "【生成式人工智慧與機器學習導論2025】第 10 講：語音語言模型發展史 (本課程前段內容為歷史回顧，2025 年的技術從 1:42:00 開始)",
+          "url": "https://www.youtube.com/watch?v=CbIPjrOj2Tc",
+          "timestamp_start": 266.432,
+          "timestamp_end": 354.954,
+          "transcript_type": "official",
+          "source_chunk": "CbIPjrOj2Tc:125-171",
+          "evidence_packet": "EVP-CHANNEL-CbIPjrOj2Tc-speech_multimodal-V1"
+        },
+        {
+          "video_id": "AihBniegMKg",
+          "title": "【生成式AI】生成式學習的兩種策略：要各個擊破，還是要一次到位",
+          "url": "https://www.youtube.com/watch?v=AihBniegMKg",
+          "timestamp_start": 90.88,
+          "timestamp_end": 175.872,
+          "transcript_type": "official",
+          "source_chunk": "AihBniegMKg:22-45",
+          "evidence_packet": "EVP-CHANNEL-AihBniegMKg-speech_multimodal-V1"
+        },
+        {
+          "video_id": "MpsVE60iRLM",
+          "title": "SUPERB: 語音上的自督導式學習模型居然十項全能？",
+          "url": "https://www.youtube.com/watch?v=MpsVE60iRLM",
+          "timestamp_start": 268.9,
+          "timestamp_end": 356.01,
+          "transcript_type": "official",
+          "source_chunk": "MpsVE60iRLM:100-135",
+          "evidence_packet": "EVP-CHANNEL-MpsVE60iRLM-speech_multimodal-V1"
+        },
+        {
+          "video_id": "CgQ3lUOpXgc",
+          "title": "GPT-4o 背後可能的語音技術猜測",
+          "url": "https://www.youtube.com/watch?v=CgQ3lUOpXgc",
+          "timestamp_start": 259.12,
+          "timestamp_end": 345.72,
+          "transcript_type": "official",
+          "source_chunk": "CgQ3lUOpXgc:86-106",
+          "evidence_packet": "EVP-CHANNEL-CgQ3lUOpXgc-speech_multimodal-V1"
+        }
+      ],
+      "dossier": "distillation/channel_speech_multimodal/knowledge/research/merged/summary.md"
+    }
+  ]
+}

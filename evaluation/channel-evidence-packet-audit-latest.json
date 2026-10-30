@@ -1,0 +1,582 @@
+{
+  "generated_at": "2026-10-29T19:12:10.658919+00:00",
+  "validator": "evidence packet provenance and shape audit",
+  "scope": "all Markdown evidence packets; no semantic correctness claim",
+  "packets": [
+    {
+      "path": "data\\processing\\channel_evidence_packets_v1\\1UqCjFQiiy0--optimization_training.md",
+      "video_id": "1UqCjFQiiy0",
+      "status": "PASS",
+      "packet_sha256": "5d15c0ae90e2cba741722f24ad0eda4c3717acb91859c4c989b954afe4994af9",
+      "embedded_packet_hash": null,
+      "provenance_check": "PASS",
+      "issues": [],
+      "source_chunks": [
+        "1UqCjFQiiy0:0-6",
+        "1UqCjFQiiy0:102-106",
+        "1UqCjFQiiy0:59-65",
+        "1UqCjFQiiy0:7-30"
+      ],
+      "transcript_type": "official",
+      "selective_scope_explicit": true,
+      "formal_knowledge_update": "NOT_YET"
+    },
+    {
+      "path": "data\\processing\\channel_evidence_packets_v1\\3oHlf8-J3Nc--representation_pretraining.md",
+      "video_id": "3oHlf8-J3Nc",
+      "status": "PASS",
+      "packet_sha256": "48094cced633fc349d5e5a94c1c92d5270b2326fab9f7383b88e338035de0e31",
+      "embedded_packet_hash": null,
+      "provenance_check": "PASS",
+      "issues": [],
+      "source_chunks": [
+        "3oHlf8-J3Nc:0-34",
+        "3oHlf8-J3Nc:35-70",
+        "3oHlf8-J3Nc:433-467"
+      ],
+      "transcript_type": "official",
+      "selective_scope_explicit": true,
+      "formal_knowledge_update": "NOT_YET"
+    },
+    {
+      "path": "data\\processing\\channel_evidence_packets_v1\\88WzdTuQMyM--p3_archive_peripheral_lessons.md",
+      "video_id": "88WzdTuQMyM",
+      "status": "PASS",
+      "packet_sha256": "43ed2030f425c6cb8b613775229f3504d395f1298d48ec4aa7778dffa99b5c28",
+      "embedded_packet_hash": null,
+      "provenance_check": "PASS",
+      "issues": [],
+      "source_chunks": [
+        "88WzdTuQMyM:0-25",
+        "88WzdTuQMyM:215-245",
+        "88WzdTuQMyM:542-560",
+        "88WzdTuQMyM:74-99"
+      ],
+      "transcript_type": "official",
+      "selective_scope_explicit": true,
+      "formal_knowledge_update": "NOT_YET"
+    },
+    {
+      "path": "data\\processing\\channel_evidence_packets_v1\\AihBniegMKg--speech_multimodal.md",
+      "video_id": "AihBniegMKg",
+      "status": "PASS",
+      "packet_sha256": "34717513c003cf1e6c8cdd0a9693d253997014895168b5e3d5073773b3e39a34",
+      "embedded_packet_hash": null,
+      "provenance_check": "PASS",
+      "issues": [],
+      "source_chunks": [
+        "AihBniegMKg:22-45",
+        "AihBniegMKg:46-68",
+        "AihBniegMKg:69-92"
+      ],
+      "transcript_type": "official",
+      "selective_scope_explicit": true,
+      "formal_knowledge_update": "NOT_YET"
+    },
+    {
+      "path": "data\\processing\\channel_evidence_packets_v1\\BABPWOkSbLE--optimization_training.md",
+      "video_id": "BABPWOkSbLE",
+      "status": "PASS",
+      "packet_sha256": "2dea63f19470ec5045c362a83e874554b454c4e7461addcf2a3f4a3234fa57d6",
+      "embedded_packet_hash": null,
+      "provenance_check": "PASS",
+      "issues": [],
+      "source_chunks": [
+        "BABPWOkSbLE:0-33",
+        "BABPWOkSbLE:176-213"
+      ],
+      "transcript_type": "official",
+      "selective_scope_explicit": true,
+      "formal_knowledge_update": "NOT_YET"
+    },
+    {
+      "path": "data\\processing\\channel_evidence_packets_v1\\bJZTJ7MjYqg--llm_agent.md",
+      "video_id": "bJZTJ7MjYqg",
+      "status": "PASS",
+      "packet_sha256": "20eed637ea1f063ca7246adb31fe19bc8a392ae1fe1291f92697e5b470ed88a4",
+      "embedded_packet_hash": null,
+      "provenance_check": "PASS",
+      "issues": [],
+      "source_chunks": [
+        "bJZTJ7MjYqg:0-25",
+        "bJZTJ7MjYqg:26-53",
+        "bJZTJ7MjYqg:287-316",
+        "bJZTJ7MjYqg:507-538"
+      ],
+      "transcript_type": "official",
+      "selective_scope_explicit": true,
+      "formal_knowledge_update": "NOT_YET"
+    },
+    {
+      "path": "data\\processing\\channel_evidence_packets_v1\\CbIPjrOj2Tc--speech_multimodal.md",
+      "video_id": "CbIPjrOj2Tc",
+      "status": "PASS",
+      "packet_sha256": "b3e1184e3c32943e99564e88178f298726ae0ac92cc0fa957f12321175e1111c",
+      "embedded_packet_hash": null,
+      "provenance_check": "PASS",
+      "issues": [],
+      "source_chunks": [
+        "CbIPjrOj2Tc:125-171",
+        "CbIPjrOj2Tc:172-217",
+        "CbIPjrOj2Tc:218-254"
+      ],
+      "transcript_type": "official",
+      "selective_scope_explicit": true,
+      "formal_knowledge_update": "NOT_YET"
+    },
+    {
+      "path": "data\\processing\\channel_evidence_packets_v1\\CgQ3lUOpXgc--speech_multimodal.md",
+      "video_id": "CgQ3lUOpXgc",
+      "status": "PASS",
+      "packet_sha256": "3e283b70d2f994b863348172c25d53f7c3d2943ad008b40048c9c2ccca969ca2",
+      "embedded_packet_hash": null,
+      "provenance_check": "PASS",
+      "issues": [],
+      "source_chunks": [
+        "CgQ3lUOpXgc:107-131",
+        "CgQ3lUOpXgc:86-106"
+      ],
+      "transcript_type": "official",
+      "selective_scope_explicit": true,
+      "formal_knowledge_update": "NOT_YET"
+    },
+    {
+      "path": "data\\processing\\channel_evidence_packets_v1\\DMA4MrNieWo--generative_models.md",
+      "video_id": "DMA4MrNieWo",
+      "status": "PASS",
+      "packet_sha256": "07a6850994d356fc450b8b6f0954b7d039bbcd6329541d232a1bd2a27053a395",
+      "embedded_packet_hash": null,
+      "provenance_check": "PASS",
+      "issues": [],
+      "source_chunks": [
+        "DMA4MrNieWo:0-7",
+        "DMA4MrNieWo:1098-1115",
+        "DMA4MrNieWo:36-57",
+        "DMA4MrNieWo:8-14"
+      ],
+      "transcript_type": "official",
+      "selective_scope_explicit": true,
+      "formal_knowledge_update": "NOT_YET"
+    },
+    {
+      "path": "data\\processing\\channel_evidence_packets_v1\\DQNNMiAP5lw--generative_models.md",
+      "video_id": "DQNNMiAP5lw",
+      "status": "PASS",
+      "packet_sha256": "631b54c8ce8942643640a2565b457029ce06f1c847d12494e50760f12a22a865",
+      "embedded_packet_hash": null,
+      "provenance_check": "PASS",
+      "issues": [],
+      "source_chunks": [
+        "DQNNMiAP5lw:0-4",
+        "DQNNMiAP5lw:1361-1369",
+        "DQNNMiAP5lw:30-52",
+        "DQNNMiAP5lw:7-29"
+      ],
+      "transcript_type": "official",
+      "selective_scope_explicit": true,
+      "formal_knowledge_update": "NOT_YET"
+    },
+    {
+      "path": "data\\processing\\channel_evidence_packets_v1\\e03YKGHXnL8--optimization_training.md",
+      "video_id": "e03YKGHXnL8",
+      "status": "PASS",
+      "packet_sha256": "c158a5311ac9e0f15a1842f2f25acf56f5ac64fd406618636223aefc68e8951d",
+      "embedded_packet_hash": null,
+      "provenance_check": "PASS",
+      "issues": [],
+      "source_chunks": [
+        "e03YKGHXnL8:1-23",
+        "e03YKGHXnL8:24-41",
+        "e03YKGHXnL8:42-60"
+      ],
+      "transcript_type": "official",
+      "selective_scope_explicit": true,
+      "formal_knowledge_update": "NOT_YET"
+    },
+    {
+      "path": "data\\processing\\channel_evidence_packets_v1\\e422eloJ0W4--representation_pretraining.md",
+      "video_id": "e422eloJ0W4",
+      "status": "PASS",
+      "packet_sha256": "a95b1212d74a11aa78f842948e6b675a605fb6ad0ba40d36a39e6fb8d650b093",
+      "embedded_packet_hash": null,
+      "provenance_check": "PASS",
+      "issues": [],
+      "source_chunks": [
+        "e422eloJ0W4:0-34",
+        "e422eloJ0W4:35-69"
+      ],
+      "transcript_type": "official",
+      "selective_scope_explicit": true,
+      "formal_knowledge_update": "NOT_YET"
+    },
+    {
+      "path": "data\\processing\\channel_evidence_packets_v1\\gjsdVi90yQo--cnn_rnn_inductive_bias.md",
+      "video_id": "gjsdVi90yQo",
+      "status": "PASS",
+      "packet_sha256": "e2ca99cfbe769d9d24530e9f6bf1522b9936233a3314bc07ab8a12b090558730",
+      "embedded_packet_hash": null,
+      "provenance_check": "PASS",
+      "issues": [],
+      "source_chunks": [
+        "gjsdVi90yQo:32-66",
+        "gjsdVi90yQo:67-109"
+      ],
+      "transcript_type": "official",
+      "selective_scope_explicit": true,
+      "formal_knowledge_update": "NOT_YET"
+    },
+    {
+      "path": "data\\processing\\channel_evidence_packets_v1\\gmsMY5kc-zw--sequence_attention_transformer.md",
+      "video_id": "gmsMY5kc-zw",
+      "status": "PASS",
+      "packet_sha256": "a6093de45c1f0dcbca3f9d17ed9876ce49dd748fb9c64d18d74fc2e7e12ca64f",
+      "embedded_packet_hash": null,
+      "provenance_check": "PASS",
+      "issues": [],
+      "source_chunks": [
+        "gmsMY5kc-zw:104-142",
+        "gmsMY5kc-zw:70-103"
+      ],
+      "transcript_type": "official",
+      "selective_scope_explicit": true,
+      "formal_knowledge_update": "NOT_YET"
+    },
+    {
+      "path": "data\\processing\\channel_evidence_packets_v1\\j82QLgfhFiY--reinforcement_learning.md",
+      "video_id": "j82QLgfhFiY",
+      "status": "PASS",
+      "packet_sha256": "d6ebc1760fb4675f80e1893b57a878ed09ddb21dbdd93e6238aaf4fea5d7dec7",
+      "embedded_packet_hash": null,
+      "provenance_check": "PASS",
+      "issues": [],
+      "source_chunks": [
+        "j82QLgfhFiY:0-26",
+        "j82QLgfhFiY:329-360",
+        "j82QLgfhFiY:689-700"
+      ],
+      "transcript_type": "official",
+      "selective_scope_explicit": true,
+      "formal_knowledge_update": "NOT_YET"
+    },
+    {
+      "path": "data\\processing\\channel_evidence_packets_v1\\JbfcAaBT66U--generative_models.md",
+      "video_id": "JbfcAaBT66U",
+      "status": "PASS",
+      "packet_sha256": "cd4c9f57d662b2a42e52c18466907196e7bfc89fe410bdd768bd28e66af2d7d2",
+      "embedded_packet_hash": null,
+      "provenance_check": "PASS",
+      "issues": [],
+      "source_chunks": [
+        "JbfcAaBT66U:0-24",
+        "JbfcAaBT66U:25-53",
+        "JbfcAaBT66U:449-461",
+        "JbfcAaBT66U:54-86"
+      ],
+      "transcript_type": "official",
+      "selective_scope_explicit": true,
+      "formal_knowledge_update": "NOT_YET"
+    },
+    {
+      "path": "data\\processing\\channel_evidence_packets_v1\\JZvEzb5PV3U--representation_pretraining.md",
+      "video_id": "JZvEzb5PV3U",
+      "status": "PASS",
+      "packet_sha256": "810ed8b507650a7cf0dfd64583afbdb2ed05f500999dc2b67ea5d6c4480bf627",
+      "embedded_packet_hash": null,
+      "provenance_check": "PASS",
+      "issues": [],
+      "source_chunks": [
+        "JZvEzb5PV3U:240-282",
+        "JZvEzb5PV3U:37-76"
+      ],
+      "transcript_type": "official",
+      "selective_scope_explicit": true,
+      "formal_knowledge_update": "NOT_YET"
+    },
+    {
+      "path": "data\\processing\\channel_evidence_packets_v1\\Ll-wk8x3G_g--sequence_attention_transformer.md",
+      "video_id": "Ll-wk8x3G_g",
+      "status": "PASS",
+      "packet_sha256": "e277a78ca222e1cd1c6a840c1d0d11c53b90aa0488bcbaeffcbb637cd51d259e",
+      "embedded_packet_hash": null,
+      "provenance_check": "PASS",
+      "issues": [],
+      "source_chunks": [
+        "Ll-wk8x3G_g:0-30",
+        "Ll-wk8x3G_g:112-158",
+        "Ll-wk8x3G_g:31-75",
+        "Ll-wk8x3G_g:76-111"
+      ],
+      "transcript_type": "official",
+      "selective_scope_explicit": true,
+      "formal_knowledge_update": "NOT_YET"
+    },
+    {
+      "path": "data\\processing\\channel_evidence_packets_v1\\lluMBz5AoOg--cnn_rnn_inductive_bias.md",
+      "video_id": "lluMBz5AoOg",
+      "status": "PASS",
+      "packet_sha256": "0a4c55f08accbb06d05304ac48ba11d219105ad3db2ae663d03b81c4d1c38305",
+      "embedded_packet_hash": null,
+      "provenance_check": "PASS",
+      "issues": [],
+      "source_chunks": [
+        "lluMBz5AoOg:1-18",
+        "lluMBz5AoOg:19-24",
+        "lluMBz5AoOg:25-41",
+        "lluMBz5AoOg:42-63"
+      ],
+      "transcript_type": "official",
+      "selective_scope_explicit": true,
+      "formal_knowledge_update": "NOT_YET"
+    },
+    {
+      "path": "data\\processing\\channel_evidence_packets_v1\\M2Yg1kwPpts--llm_agent.md",
+      "video_id": "M2Yg1kwPpts",
+      "status": "PASS",
+      "packet_sha256": "e2bc7c4e866592589e675acc8a316106150f82630be588c03481ad713cd63832",
+      "embedded_packet_hash": null,
+      "provenance_check": "PASS",
+      "issues": [],
+      "source_chunks": [
+        "M2Yg1kwPpts:0-11",
+        "M2Yg1kwPpts:1322-1348",
+        "M2Yg1kwPpts:46-85",
+        "M2Yg1kwPpts:86-125"
+      ],
+      "transcript_type": "official",
+      "selective_scope_explicit": true,
+      "formal_knowledge_update": "NOT_YET"
+    },
+    {
+      "path": "data\\processing\\channel_evidence_packets_v1\\MpsVE60iRLM--representation_pretraining.md",
+      "video_id": "MpsVE60iRLM",
+      "status": "PASS",
+      "packet_sha256": "4396891e417ac0779bb2724090e58419e1dd9d935e5764a0d306669b16980aa7",
+      "embedded_packet_hash": null,
+      "provenance_check": "PASS",
+      "issues": [],
+      "source_chunks": [
+        "MpsVE60iRLM:0-29",
+        "MpsVE60iRLM:66-99"
+      ],
+      "transcript_type": "official",
+      "selective_scope_explicit": true,
+      "formal_knowledge_update": "NOT_YET"
+    },
+    {
+      "path": "data\\processing\\channel_evidence_packets_v1\\MpsVE60iRLM--speech_multimodal.md",
+      "video_id": "MpsVE60iRLM",
+      "status": "PASS",
+      "packet_sha256": "f064cf80b0aa4b18bd8959b294cff90b6858335dbedc198019801202df65675e",
+      "embedded_packet_hash": null,
+      "provenance_check": "PASS",
+      "issues": [],
+      "source_chunks": [
+        "MpsVE60iRLM:100-135",
+        "MpsVE60iRLM:136-164",
+        "MpsVE60iRLM:165-200"
+      ],
+      "transcript_type": "official",
+      "selective_scope_explicit": true,
+      "formal_knowledge_update": "NOT_YET"
+    },
+    {
+      "path": "data\\processing\\channel_evidence_packets_v1\\N6aRv06iv2g--sequence_attention_transformer.md",
+      "video_id": "N6aRv06iv2g",
+      "status": "PASS",
+      "packet_sha256": "ff3aaec7f3f231d2d81225d4238d93004025144e3a433a7577f88529df3682c6",
+      "embedded_packet_hash": null,
+      "provenance_check": "PASS",
+      "issues": [],
+      "source_chunks": [
+        "N6aRv06iv2g:251-295",
+        "N6aRv06iv2g:296-335"
+      ],
+      "transcript_type": "official",
+      "selective_scope_explicit": true,
+      "formal_knowledge_update": "NOT_YET"
+    },
+    {
+      "path": "data\\processing\\channel_evidence_packets_v1\\OP5HcXJg2Aw--cnn_rnn_inductive_bias.md",
+      "video_id": "OP5HcXJg2Aw",
+      "status": "PASS",
+      "packet_sha256": "cd420a783dadb2b44957f7a7a80ca7dc0ea262a36cfa9289bc0ca7a10e4df9b1",
+      "embedded_packet_hash": null,
+      "provenance_check": "PASS",
+      "issues": [],
+      "source_chunks": [
+        "OP5HcXJg2Aw:0-28",
+        "OP5HcXJg2Aw:1372-1399",
+        "OP5HcXJg2Aw:674-712"
+      ],
+      "transcript_type": "official",
+      "selective_scope_explicit": true,
+      "formal_knowledge_update": "NOT_YET"
+    },
+    {
+      "path": "data\\processing\\channel_evidence_packets_v1\\OYN_GvAqv-A--generative_models.md",
+      "video_id": "OYN_GvAqv-A",
+      "status": "PASS",
+      "packet_sha256": "63ed7e0b9f1e608154acf042e5747806d1354be8eb5c084d42867414cba5aaca",
+      "embedded_packet_hash": null,
+      "provenance_check": "PASS",
+      "issues": [],
+      "source_chunks": [
+        "OYN_GvAqv-A:0-26",
+        "OYN_GvAqv-A:437-461",
+        "OYN_GvAqv-A:64-99",
+        "OYN_GvAqv-A:852-858"
+      ],
+      "transcript_type": "official",
+      "selective_scope_explicit": true,
+      "formal_knowledge_update": "NOT_YET"
+    },
+    {
+      "path": "data\\processing\\channel_evidence_packets_v1\\tnPVcec22cg--reinforcement_learning.md",
+      "video_id": "tnPVcec22cg",
+      "status": "PASS",
+      "packet_sha256": "151e427ebc942ee141551c9ec18e0ada44767443e2ca7d08d8d7e8d2ae8607c9",
+      "embedded_packet_hash": null,
+      "provenance_check": "PASS",
+      "issues": [],
+      "source_chunks": [
+        "tnPVcec22cg:0-2",
+        "tnPVcec22cg:203-209",
+        "tnPVcec22cg:3-28"
+      ],
+      "transcript_type": "official",
+      "selective_scope_explicit": true,
+      "formal_knowledge_update": "NOT_YET"
+    },
+    {
+      "path": "data\\processing\\channel_evidence_packets_v1\\urwDLyNa9FU--llm_agent.md",
+      "video_id": "urwDLyNa9FU",
+      "status": "PASS",
+      "packet_sha256": "7fda0a6f6091ee56d1232106d8e747d6672a0279e68661b02a0244b807d3ac75",
+      "embedded_packet_hash": null,
+      "provenance_check": "PASS",
+      "issues": [],
+      "source_chunks": [
+        "urwDLyNa9FU:0-39",
+        "urwDLyNa9FU:125-162",
+        "urwDLyNa9FU:1524-1569",
+        "urwDLyNa9FU:85-124"
+      ],
+      "transcript_type": "official",
+      "selective_scope_explicit": true,
+      "formal_knowledge_update": "NOT_YET"
+    },
+    {
+      "path": "data\\processing\\channel_evidence_packets_v1\\VqB8zMujdjM--llm_agent.md",
+      "video_id": "VqB8zMujdjM",
+      "status": "PASS",
+      "packet_sha256": "83e67a8be1a1f2ac4e55435fe62a56956225552707c1b56bdd924264313f292e",
+      "embedded_packet_hash": null,
+      "provenance_check": "PASS",
+      "issues": [],
+      "source_chunks": [
+        "VqB8zMujdjM:0-49",
+        "VqB8zMujdjM:390-436",
+        "VqB8zMujdjM:50-96",
+        "VqB8zMujdjM:97-141"
+      ],
+      "transcript_type": "official",
+      "selective_scope_explicit": true,
+      "formal_knowledge_update": "NOT_YET"
+    },
+    {
+      "path": "data\\processing\\channel_evidence_packets_v1\\VuQUF1VVX40--p3_archive_peripheral_lessons.md",
+      "video_id": "VuQUF1VVX40",
+      "status": "PASS",
+      "packet_sha256": "50a6d73641baee6b99015124b6b0189590421023c8b18761bc2d49d18ac8c6f6",
+      "embedded_packet_hash": null,
+      "provenance_check": "PASS",
+      "issues": [],
+      "source_chunks": [
+        "VuQUF1VVX40:122-152",
+        "VuQUF1VVX40:153-193",
+        "VuQUF1VVX40:379-417"
+      ],
+      "transcript_type": "official",
+      "selective_scope_explicit": true,
+      "formal_knowledge_update": "NOT_YET"
+    },
+    {
+      "path": "data\\processing\\channel_evidence_packets_v1\\vXb2QYOUzl4--sequence_attention_transformer.md",
+      "video_id": "vXb2QYOUzl4",
+      "status": "PASS",
+      "packet_sha256": "f42de802163f56a85c9df373389151acbe5fd1d226df1938b536f3052debb0cb",
+      "embedded_packet_hash": null,
+      "provenance_check": "PASS",
+      "issues": [],
+      "source_chunks": [
+        "vXb2QYOUzl4:0-30",
+        "vXb2QYOUzl4:140-177",
+        "vXb2QYOUzl4:31-60",
+        "vXb2QYOUzl4:98-139"
+      ],
+      "transcript_type": "official",
+      "selective_scope_explicit": true,
+      "formal_knowledge_update": "NOT_YET"
+    },
+    {
+      "path": "data\\processing\\channel_evidence_packets_v1\\xCGidAeyS4M--cnn_rnn_inductive_bias.md",
+      "video_id": "xCGidAeyS4M",
+      "status": "PASS",
+      "packet_sha256": "b10fb348f8f156712751813f31c7b4ea31bfa17722ff146c054c86691f09723d",
+      "embedded_packet_hash": null,
+      "provenance_check": "PASS",
+      "issues": [],
+      "source_chunks": [
+        "xCGidAeyS4M:139-152",
+        "xCGidAeyS4M:2-19",
+        "xCGidAeyS4M:644-661",
+        "xCGidAeyS4M:96-116"
+      ],
+      "transcript_type": "official",
+      "selective_scope_explicit": true,
+      "formal_knowledge_update": "NOT_YET"
+    },
+    {
+      "path": "data\\processing\\channel_evidence_packets_v1\\yKKNr-QKz2Q--optimization_training.md",
+      "video_id": "yKKNr-QKz2Q",
+      "status": "PASS",
+      "packet_sha256": "e10eed27d222862c120caae58081220e77867a70ad77bdb8896acde80b4af032",
+      "embedded_packet_hash": null,
+      "provenance_check": "PASS",
+      "issues": [],
+      "source_chunks": [
+        "yKKNr-QKz2Q:1-24",
+        "yKKNr-QKz2Q:25-48",
+        "yKKNr-QKz2Q:531-554",
+        "yKKNr-QKz2Q:973-985"
+      ],
+      "transcript_type": "official",
+      "selective_scope_explicit": true,
+      "formal_knowledge_update": "NOT_YET"
+    },
+    {
+      "path": "data\\processing\\channel_evidence_packets_v1\\z95ZYgPgXOY--reinforcement_learning.md",
+      "video_id": "z95ZYgPgXOY",
+      "status": "PASS",
+      "packet_sha256": "27938afb4f255767c749abf0d3067cd555b4a4077c649008280dd53439a8c811",
+      "embedded_packet_hash": null,
+      "provenance_check": "PASS",
+      "issues": [],
+      "source_chunks": [
+        "z95ZYgPgXOY:2-16",
+        "z95ZYgPgXOY:29-47",
+        "z95ZYgPgXOY:469-478"
+      ],
+      "transcript_type": "official",
+      "selective_scope_explicit": true,
+      "formal_knowledge_update": "NOT_YET"
+    }
+  ],
+  "summary": {
+    "packets_checked": 33,
+    "packets_passed": 33,
+    "packets_review_required": 0,
+    "packets_failed": 0,
+    "all_are_selective_reviews": true
+  }
+}

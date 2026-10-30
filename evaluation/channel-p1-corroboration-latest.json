@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "candidate_file": "knowledge\\channel_p1_candidates.v1.json",
+  "minimum_videos": 2,
+  "status": "CANDIDATE_REVIEW_REQUIRED",
+  "formal_knowledge_update": "NOT_YET",
+  "scope": "Counts independent video IDs in candidate source refs; it does not establish semantic truth or full-video coverage.",
+  "candidates": [
+    {
+      "candidate_id": "HYL-P1-SEQ-001",
+      "domain": "architecture-and-representation",
+      "candidate_review_status": "CANDIDATE_REVIEW_REQUIRED",
+      "corroboration_status": "MULTI_SOURCE",
+      "unique_video_count": 4,
+      "unique_video_ids": [
+        "Ll-wk8x3G_g",
+        "N6aRv06iv2g",
+        "gmsMY5kc-zw",
+        "vXb2QYOUzl4"
+      ],
+      "source_ref_count": 4,
+      "transcript_types": [
+        "official"
+      ],
+      "packet_ids": [
+        "EVP-CHANNEL-Ll-wk8x3G_g-sequence_attention_transformer-V1",
+        "EVP-CHANNEL-N6aRv06iv2g-sequence_attention_transformer-V1",
+        "EVP-CHANNEL-gmsMY5kc-zw-sequence_attention_transformer-V1",
+        "EVP-CHANNEL-vXb2QYOUzl4-sequence_attention_transformer-V1"
+      ],
+      "issues": [],
+      "disposition": "KEEP_CANDIDATE_WITH_MULTI_SOURCE_SUPPORT"
+    },
+    {
+      "candidate_id": "HYL-P1-INDUCTIVE-001",
+      "domain": "architecture-and-inductive-bias",
+      "candidate_review_status": "CANDIDATE_REVIEW_REQUIRED",
+      "corroboration_status": "MULTI_SOURCE",
+      "unique_video_count": 4,
+      "unique_video_ids": [
+        "OP5HcXJg2Aw",
+        "gjsdVi90yQo",
+        "lluMBz5AoOg",
+        "xCGidAeyS4M"
+      ],
+      "source_ref_count": 4,
+      "transcript_types": [
+        "official"
+      ],
+      "packet_ids": [
+        "EVP-CHANNEL-OP5HcXJg2Aw-cnn_rnn_inductive_bias-V1",
+        "EVP-CHANNEL-gjsdVi90yQo-cnn_rnn_inductive_bias-V1",
+        "EVP-CHANNEL-lluMBz5AoOg-cnn_rnn_inductive_bias-V1",
+        "EVP-CHANNEL-xCGidAeyS4M-cnn_rnn_inductive_bias-V1"
+      ],
+      "issues": [],
+      "disposition": "KEEP_CANDIDATE_WITH_MULTI_SOURCE_SUPPORT"
+    },
+    {
+      "candidate_id": "HYL-P1-REPR-001",
+      "domain": "representation-and-transfer",
+      "candidate_review_status": "CANDIDATE_REVIEW_REQUIRED",
+      "corroboration_status": "MULTI_SOURCE",
+      "unique_video_count": 4,
+      "unique_video_ids": [
+        "3oHlf8-J3Nc",
+        "JZvEzb5PV3U",
+        "MpsVE60iRLM",
+        "e422eloJ0W4"
+      ],
+      "source_ref_count": 4,
+      "transcript_types": [
+        "official"
+      ],
+      "packet_ids": [
+        "EVP-CHANNEL-3oHlf8-J3Nc-representation_pretraining-V1",
+        "EVP-CHANNEL-JZvEzb5PV3U-representation_pretraining-V1",
+        "EVP-CHANNEL-MpsVE60iRLM-representation_pretraining-V1",
+        "EVP-CHANNEL-e422eloJ0W4-representation_pretraining-V1"
+      ],
+      "issues": [],
+      "disposition": "KEEP_CANDIDATE_WITH_MULTI_SOURCE_SUPPORT"
+    },
+    {
+      "candidate_id": "HYL-P1-OPT-001",
+      "domain": "training-diagnosis",
+      "candidate_review_status": "CANDIDATE_REVIEW_REQUIRED",
+      "corroboration_status": "MULTI_SOURCE",
+      "unique_video_count": 4,
+      "unique_video_ids": [
+        "1UqCjFQiiy0",
+        "BABPWOkSbLE",
+        "e03YKGHXnL8",
+        "yKKNr-QKz2Q"
+      ],
+      "source_ref_count": 4,
+      "transcript_types": [
+        "official"
+      ],
+      "packet_ids": [
+        "EVP-CHANNEL-1UqCjFQiiy0-optimization_training-V1",
+        "EVP-CHANNEL-BABPWOkSbLE-optimization_training-V1",
+        "EVP-CHANNEL-e03YKGHXnL8-optimization_training-V1",
+        "EVP-CHANNEL-yKKNr-QKz2Q-optimization_training-V1"
+      ],
+      "issues": [],
+      "disposition": "KEEP_CANDIDATE_WITH_MULTI_SOURCE_SUPPORT"
+    }
+  ],
+  "summary": {
+    "candidates_checked": 4,
+    "multi_source": 4,
+    "single_source": 0,
+    "invalid": 0
+  }
+}

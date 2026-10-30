@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "candidate_file": "knowledge\\channel_p2_candidates.v1.json",
+  "minimum_videos": 2,
+  "status": "CANDIDATE_REVIEW_REQUIRED",
+  "formal_knowledge_update": "NOT_YET",
+  "scope": "Counts independent video IDs in candidate source refs; it does not establish semantic truth or full-video coverage.",
+  "candidates": [
+    {
+      "candidate_id": "HYL-P2-GEN-001",
+      "domain": "generative-modeling",
+      "candidate_review_status": "CANDIDATE_REVIEW_REQUIRED",
+      "corroboration_status": "MULTI_SOURCE",
+      "unique_video_count": 4,
+      "unique_video_ids": [
+        "DMA4MrNieWo",
+        "DQNNMiAP5lw",
+        "JbfcAaBT66U",
+        "OYN_GvAqv-A"
+      ],
+      "source_ref_count": 4,
+      "transcript_types": [
+        "official"
+      ],
+      "packet_ids": [
+        "EVP-CHANNEL-DMA4MrNieWo-generative_models-V1",
+        "EVP-CHANNEL-DQNNMiAP5lw-generative_models-V1",
+        "EVP-CHANNEL-JbfcAaBT66U-generative_models-V1",
+        "EVP-CHANNEL-OYN_GvAqv-A-generative_models-V1"
+      ],
+      "issues": [],
+      "disposition": "KEEP_CANDIDATE_WITH_MULTI_SOURCE_SUPPORT"
+    },
+    {
+      "candidate_id": "HYL-P2-RL-001",
+      "domain": "reinforcement-learning",
+      "candidate_review_status": "CANDIDATE_REVIEW_REQUIRED",
+      "corroboration_status": "MULTI_SOURCE",
+      "unique_video_count": 3,
+      "unique_video_ids": [
+        "j82QLgfhFiY",
+        "tnPVcec22cg",
+        "z95ZYgPgXOY"
+      ],
+      "source_ref_count": 3,
+      "transcript_types": [
+        "official"
+      ],
+      "packet_ids": [
+        "EVP-CHANNEL-j82QLgfhFiY-reinforcement_learning-V1",
+        "EVP-CHANNEL-tnPVcec22cg-reinforcement_learning-V1",
+        "EVP-CHANNEL-z95ZYgPgXOY-reinforcement_learning-V1"
+      ],
+      "issues": [],
+      "disposition": "KEEP_CANDIDATE_WITH_MULTI_SOURCE_SUPPORT"
+    },
+    {
+      "candidate_id": "HYL-P2-AGENT-001",
+      "domain": "llm-agent-systems",
+      "candidate_review_status": "CANDIDATE_REVIEW_REQUIRED",
+      "corroboration_status": "MULTI_SOURCE",
+      "unique_video_count": 4,
+      "unique_video_ids": [
+        "M2Yg1kwPpts",
+        "VqB8zMujdjM",
+        "bJZTJ7MjYqg",
+        "urwDLyNa9FU"
+      ],
+      "source_ref_count": 4,
+      "transcript_types": [
+        "official"
+      ],
+      "packet_ids": [
+        "EVP-CHANNEL-M2Yg1kwPpts-llm_agent-V1",
+        "EVP-CHANNEL-VqB8zMujdjM-llm_agent-V1",
+        "EVP-CHANNEL-bJZTJ7MjYqg-llm_agent-V1",
+        "EVP-CHANNEL-urwDLyNa9FU-llm_agent-V1"
+      ],
+      "issues": [],
+      "disposition": "KEEP_CANDIDATE_WITH_MULTI_SOURCE_SUPPORT"
+    },
+    {
+      "candidate_id": "HYL-P2-SPEECH-001",
+      "domain": "speech-and-multimodal-systems",
+      "candidate_review_status": "CANDIDATE_REVIEW_REQUIRED",
+      "corroboration_status": "MULTI_SOURCE",
+      "unique_video_count": 4,
+      "unique_video_ids": [
+        "AihBniegMKg",
+        "CbIPjrOj2Tc",
+        "CgQ3lUOpXgc",
+        "MpsVE60iRLM"
+      ],
+      "source_ref_count": 4,
+      "transcript_types": [
+        "official"
+      ],
+      "packet_ids": [
+        "EVP-CHANNEL-AihBniegMKg-speech_multimodal-V1",
+        "EVP-CHANNEL-CbIPjrOj2Tc-speech_multimodal-V1",
+        "EVP-CHANNEL-CgQ3lUOpXgc-speech_multimodal-V1",
+        "EVP-CHANNEL-MpsVE60iRLM-speech_multimodal-V1"
+      ],
+      "issues": [],
+      "disposition": "KEEP_CANDIDATE_WITH_MULTI_SOURCE_SUPPORT"
+    }
+  ],
+  "summary": {
+    "candidates_checked": 4,
+    "multi_source": 4,
+    "single_source": 0,
+    "invalid": 0
+  }
+}

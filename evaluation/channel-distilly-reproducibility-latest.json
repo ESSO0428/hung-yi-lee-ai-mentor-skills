@@ -1,0 +1,101 @@
+{
+  "schema_version": "distilly-reproducibility.v1",
+  "status": "PASS",
+  "sources_root": "C:\\Users\\Andy6\\Documents\\CodexProjects\\Distilly-SKILL\\distillation",
+  "tool": "distilly/tools/research/merge_research.py",
+  "tool_path": "C:\\Users\\Andy6\\.agents\\skills\\distilly\\tools\\research\\merge_research.py",
+  "tool_sha256": "56fa761afb30c04c559dc11d0827e5b9b525eaa45e9ed8265c4ebe34a51b6dbd",
+  "families": {
+    "channel_sequence_attention_transformer": {
+      "status": "PASS",
+      "returncode": 0,
+      "summary_sha256": "3bb0615bba2cfc5b85d639c63db75e91646e31d75bed29c80f07c73edf0bd776",
+      "canonical_summary_sha256": "3bb0615bba2cfc5b85d639c63db75e91646e31d75bed29c80f07c73edf0bd776",
+      "same_summary": true,
+      "canonical_sources_modified": false,
+      "raw_file_count": 1,
+      "stderr": "<isolated-family>\\knowledge\\research\\merged\\summary.md\n"
+    },
+    "channel_cnn_rnn_inductive_bias": {
+      "status": "PASS",
+      "returncode": 0,
+      "summary_sha256": "8c39289c8bbfc9a55dbe9cfa22a85063d87734b985d1224e3882976fd699bbbe",
+      "canonical_summary_sha256": "8c39289c8bbfc9a55dbe9cfa22a85063d87734b985d1224e3882976fd699bbbe",
+      "same_summary": true,
+      "canonical_sources_modified": false,
+      "raw_file_count": 1,
+      "stderr": "<isolated-family>\\knowledge\\research\\merged\\summary.md\n"
+    },
+    "channel_representation_pretraining": {
+      "status": "PASS",
+      "returncode": 0,
+      "summary_sha256": "7ad30b0e15153900783e9760618d11508410e0187b9ee6ce71c487603f714726",
+      "canonical_summary_sha256": "7ad30b0e15153900783e9760618d11508410e0187b9ee6ce71c487603f714726",
+      "same_summary": true,
+      "canonical_sources_modified": false,
+      "raw_file_count": 1,
+      "stderr": "<isolated-family>\\knowledge\\research\\merged\\summary.md\n"
+    },
+    "channel_optimization_training": {
+      "status": "PASS",
+      "returncode": 0,
+      "summary_sha256": "2d15ac55a85eb9ab1eaa978ee9050d399f8eff8bfc1b1a3d4ac7c9cf70b1abac",
+      "canonical_summary_sha256": "2d15ac55a85eb9ab1eaa978ee9050d399f8eff8bfc1b1a3d4ac7c9cf70b1abac",
+      "same_summary": true,
+      "canonical_sources_modified": false,
+      "raw_file_count": 1,
+      "stderr": "<isolated-family>\\knowledge\\research\\merged\\summary.md\n"
+    },
+    "channel_generative_models": {
+      "status": "PASS",
+      "returncode": 0,
+      "summary_sha256": "adb225ccd126a4d4e51e19fc1777b16ca015958db763ae1057e788a8c89ae917",
+      "canonical_summary_sha256": "adb225ccd126a4d4e51e19fc1777b16ca015958db763ae1057e788a8c89ae917",
+      "same_summary": true,
+      "canonical_sources_modified": false,
+      "raw_file_count": 1,
+      "stderr": "<isolated-family>\\knowledge\\research\\merged\\summary.md\n"
+    },
+    "channel_reinforcement_learning": {
+      "status": "PASS",
+      "returncode": 0,
+      "summary_sha256": "5d6417f653fbd1a72e3a786a1165a961e6186fd6c8601ccd23070eb17cdeebd7",
+      "canonical_summary_sha256": "5d6417f653fbd1a72e3a786a1165a961e6186fd6c8601ccd23070eb17cdeebd7",
+      "same_summary": true,
+      "canonical_sources_modified": false,
+      "raw_file_count": 1,
+      "stderr": "<isolated-family>\\knowledge\\research\\merged\\summary.md\n"
+    },
+    "channel_llm_agent": {
+      "status": "PASS",
+      "returncode": 0,
+      "summary_sha256": "ef184ae7dbc5853a5040db75d343d8373c56f371b8e9f8c30edc367c93b2e533",
+      "canonical_summary_sha256": "ef184ae7dbc5853a5040db75d343d8373c56f371b8e9f8c30edc367c93b2e533",
+      "same_summary": true,
+      "canonical_sources_modified": false,
+      "raw_file_count": 1,
+      "stderr": "<isolated-family>\\knowledge\\research\\merged\\summary.md\n"
+    },
+    "channel_speech_multimodal": {
+      "status": "PASS",
+      "returncode": 0,
+      "summary_sha256": "9808d6b4ff08b5fc45992a6c75eab28b2b26589e3177f00fa898714b226476d0",
+      "canonical_summary_sha256": "9808d6b4ff08b5fc45992a6c75eab28b2b26589e3177f00fa898714b226476d0",
+      "same_summary": true,
+      "canonical_sources_modified": false,
+      "raw_file_count": 1,
+      "stderr": "<isolated-family>\\knowledge\\research\\merged\\summary.md\n"
+    },
+    "channel_p3_archive_peripheral_lessons": {
+      "status": "PASS",
+      "returncode": 0,
+      "summary_sha256": "b5b68f867720d7dae8a06a95e0efaf1925aa852cbc11e9a345eb1fab7aba5892",
+      "canonical_summary_sha256": "b5b68f867720d7dae8a06a95e0efaf1925aa852cbc11e9a345eb1fab7aba5892",
+      "same_summary": true,
+      "canonical_sources_modified": false,
+      "raw_file_count": 1,
+      "stderr": "<isolated-family>\\knowledge\\research\\merged\\summary.md\n"
+    }
+  },
+  "canonical_sources_modified": false
+}

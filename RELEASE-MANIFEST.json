@@ -1,0 +1,521 @@
+{
+  "schema_version": "hung-yi-mentor-release-manifest.v1",
+  "source_project": "C:\\Users\\Andy6\\Documents\\CodexProjects\\Distilly-SKILL",
+  "bundle_policy": {
+    "includes": [
+      "formal P0 knowledge",
+      "P1/P2 candidate knowledge and P3 archive boundary",
+      "selected evidence packets and Distilly dossiers",
+      "final acceptance and provenance audits"
+    ],
+    "excludes": [
+      "downloaded media",
+      "full ASR/source-chunk corpus",
+      "local models/checkpoints",
+      "optional course-material crawl and rendered frames",
+      ".venv"
+    ]
+  },
+  "files": {
+    ".gitignore": {
+      "sha256": "ec4275098ab5a4d9e7cd8e19cbbc31ef8c9c5a1976c9536a82e2e95f5c515698",
+      "bytes": 201
+    },
+    "README.md": {
+      "sha256": "a57ab9aeff3929577d00e97bd79af40d061eebaa2d8ddce715315f5a01b37b82",
+      "bytes": 2580
+    },
+    "SKILL.md": {
+      "sha256": "4ef9047840203534dd4d00807ba53f4bc64d51c7379f8d2d99e3fd850bbd169b",
+      "bytes": 1237
+    },
+    "pyproject.toml": {
+      "sha256": "c9324fa859ffc2459d20b6edcc235a2af5fcb474ae38035f408cd5d8d135c272",
+      "bytes": 425
+    },
+    "uv.lock": {
+      "sha256": "387901e83458d39c1c481ac690131f68aed139e5f5596ca05ad083283803ea8b",
+      "bytes": 278836
+    },
+    "data/processing/channel_evidence_packets_v1/1UqCjFQiiy0--optimization_training.md": {
+      "sha256": "5d15c0ae90e2cba741722f24ad0eda4c3717acb91859c4c989b954afe4994af9",
+      "bytes": 3965
+    },
+    "data/processing/channel_evidence_packets_v1/3oHlf8-J3Nc--representation_pretraining.md": {
+      "sha256": "48094cced633fc349d5e5a94c1c92d5270b2326fab9f7383b88e338035de0e31",
+      "bytes": 4454
+    },
+    "data/processing/channel_evidence_packets_v1/88WzdTuQMyM--p3_archive_peripheral_lessons.md": {
+      "sha256": "43ed2030f425c6cb8b613775229f3504d395f1298d48ec4aa7778dffa99b5c28",
+      "bytes": 5604
+    },
+    "data/processing/channel_evidence_packets_v1/AihBniegMKg--speech_multimodal.md": {
+      "sha256": "34717513c003cf1e6c8cdd0a9693d253997014895168b5e3d5073773b3e39a34",
+      "bytes": 5245
+    },
+    "data/processing/channel_evidence_packets_v1/BABPWOkSbLE--optimization_training.md": {
+      "sha256": "2dea63f19470ec5045c362a83e874554b454c4e7461addcf2a3f4a3234fa57d6",
+      "bytes": 3514
+    },
+    "data/processing/channel_evidence_packets_v1/CbIPjrOj2Tc--speech_multimodal.md": {
+      "sha256": "b3e1184e3c32943e99564e88178f298726ae0ac92cc0fa957f12321175e1111c",
+      "bytes": 5116
+    },
+    "data/processing/channel_evidence_packets_v1/CgQ3lUOpXgc--speech_multimodal.md": {
+      "sha256": "3e283b70d2f994b863348172c25d53f7c3d2943ad008b40048c9c2ccca969ca2",
+      "bytes": 4011
+    },
+    "data/processing/channel_evidence_packets_v1/DMA4MrNieWo--generative_models.md": {
+      "sha256": "07a6850994d356fc450b8b6f0954b7d039bbcd6329541d232a1bd2a27053a395",
+      "bytes": 4524
+    },
+    "data/processing/channel_evidence_packets_v1/DQNNMiAP5lw--generative_models.md": {
+      "sha256": "631b54c8ce8942643640a2565b457029ce06f1c847d12494e50760f12a22a865",
+      "bytes": 4913
+    },
+    "data/processing/channel_evidence_packets_v1/JZvEzb5PV3U--representation_pretraining.md": {
+      "sha256": "810ed8b507650a7cf0dfd64583afbdb2ed05f500999dc2b67ea5d6c4480bf627",
+      "bytes": 3870
+    },
+    "data/processing/channel_evidence_packets_v1/JbfcAaBT66U--generative_models.md": {
+      "sha256": "cd4c9f57d662b2a42e52c18466907196e7bfc89fe410bdd768bd28e66af2d7d2",
+      "bytes": 5304
+    },
+    "data/processing/channel_evidence_packets_v1/Ll-wk8x3G_g--sequence_attention_transformer.md": {
+      "sha256": "e277a78ca222e1cd1c6a840c1d0d11c53b90aa0488bcbaeffcbb637cd51d259e",
+      "bytes": 5500
+    },
+    "data/processing/channel_evidence_packets_v1/M2Yg1kwPpts--llm_agent.md": {
+      "sha256": "e2bc7c4e866592589e675acc8a316106150f82630be588c03481ad713cd63832",
+      "bytes": 5752
+    },
+    "data/processing/channel_evidence_packets_v1/MpsVE60iRLM--representation_pretraining.md": {
+      "sha256": "4396891e417ac0779bb2724090e58419e1dd9d935e5764a0d306669b16980aa7",
+      "bytes": 3685
+    },
+    "data/processing/channel_evidence_packets_v1/MpsVE60iRLM--speech_multimodal.md": {
+      "sha256": "f064cf80b0aa4b18bd8959b294cff90b6858335dbedc198019801202df65675e",
+      "bytes": 5028
+    },
+    "data/processing/channel_evidence_packets_v1/N6aRv06iv2g--sequence_attention_transformer.md": {
+      "sha256": "ff3aaec7f3f231d2d81225d4238d93004025144e3a433a7577f88529df3682c6",
+      "bytes": 3593
+    },
+    "data/processing/channel_evidence_packets_v1/OP5HcXJg2Aw--cnn_rnn_inductive_bias.md": {
+      "sha256": "cd420a783dadb2b44957f7a7a80ca7dc0ea262a36cfa9289bc0ca7a10e4df9b1",
+      "bytes": 4778
+    },
+    "data/processing/channel_evidence_packets_v1/OYN_GvAqv-A--generative_models.md": {
+      "sha256": "63ed7e0b9f1e608154acf042e5747806d1354be8eb5c084d42867414cba5aaca",
+      "bytes": 5274
+    },
+    "data/processing/channel_evidence_packets_v1/VqB8zMujdjM--llm_agent.md": {
+      "sha256": "83e67a8be1a1f2ac4e55435fe62a56956225552707c1b56bdd924264313f292e",
+      "bytes": 5958
+    },
+    "data/processing/channel_evidence_packets_v1/VuQUF1VVX40--p3_archive_peripheral_lessons.md": {
+      "sha256": "50a6d73641baee6b99015124b6b0189590421023c8b18761bc2d49d18ac8c6f6",
+      "bytes": 5430
+    },
+    "data/processing/channel_evidence_packets_v1/bJZTJ7MjYqg--llm_agent.md": {
+      "sha256": "20eed637ea1f063ca7246adb31fe19bc8a392ae1fe1291f92697e5b470ed88a4",
+      "bytes": 6336
+    },
+    "data/processing/channel_evidence_packets_v1/e03YKGHXnL8--optimization_training.md": {
+      "sha256": "c158a5311ac9e0f15a1842f2f25acf56f5ac64fd406618636223aefc68e8951d",
+      "bytes": 4869
+    },
+    "data/processing/channel_evidence_packets_v1/e422eloJ0W4--representation_pretraining.md": {
+      "sha256": "a95b1212d74a11aa78f842948e6b675a605fb6ad0ba40d36a39e6fb8d650b093",
+      "bytes": 3668
+    },
+    "data/processing/channel_evidence_packets_v1/gjsdVi90yQo--cnn_rnn_inductive_bias.md": {
+      "sha256": "e2ca99cfbe769d9d24530e9f6bf1522b9936233a3314bc07ab8a12b090558730",
+      "bytes": 3718
+    },
+    "data/processing/channel_evidence_packets_v1/gmsMY5kc-zw--sequence_attention_transformer.md": {
+      "sha256": "a6093de45c1f0dcbca3f9d17ed9876ce49dd748fb9c64d18d74fc2e7e12ca64f",
+      "bytes": 3660
+    },
+    "data/processing/channel_evidence_packets_v1/j82QLgfhFiY--reinforcement_learning.md": {
+      "sha256": "d6ebc1760fb4675f80e1893b57a878ed09ddb21dbdd93e6238aaf4fea5d7dec7",
+      "bytes": 3946
+    },
+    "data/processing/channel_evidence_packets_v1/lluMBz5AoOg--cnn_rnn_inductive_bias.md": {
+      "sha256": "0a4c55f08accbb06d05304ac48ba11d219105ad3db2ae663d03b81c4d1c38305",
+      "bytes": 4840
+    },
+    "data/processing/channel_evidence_packets_v1/tnPVcec22cg--reinforcement_learning.md": {
+      "sha256": "151e427ebc942ee141551c9ec18e0ada44767443e2ca7d08d8d7e8d2ae8607c9",
+      "bytes": 3384
+    },
+    "data/processing/channel_evidence_packets_v1/urwDLyNa9FU--llm_agent.md": {
+      "sha256": "7fda0a6f6091ee56d1232106d8e747d6672a0279e68661b02a0244b807d3ac75",
+      "bytes": 5689
+    },
+    "data/processing/channel_evidence_packets_v1/vXb2QYOUzl4--sequence_attention_transformer.md": {
+      "sha256": "f42de802163f56a85c9df373389151acbe5fd1d226df1938b536f3052debb0cb",
+      "bytes": 5972
+    },
+    "data/processing/channel_evidence_packets_v1/xCGidAeyS4M--cnn_rnn_inductive_bias.md": {
+      "sha256": "b10fb348f8f156712751813f31c7b4ea31bfa17722ff146c054c86691f09723d",
+      "bytes": 5290
+    },
+    "data/processing/channel_evidence_packets_v1/yKKNr-QKz2Q--optimization_training.md": {
+      "sha256": "e10eed27d222862c120caae58081220e77867a70ad77bdb8896acde80b4af032",
+      "bytes": 5309
+    },
+    "data/processing/channel_evidence_packets_v1/z95ZYgPgXOY--reinforcement_learning.md": {
+      "sha256": "27938afb4f255767c749abf0d3067cd555b4a4077c649008280dd53439a8c811",
+      "bytes": 4283
+    },
+    "distillation/channel_cnn_rnn_inductive_bias/knowledge/research/merged/summary.md": {
+      "sha256": "8c39289c8bbfc9a55dbe9cfa22a85063d87734b985d1224e3882976fd699bbbe",
+      "bytes": 1723
+    },
+    "distillation/channel_cnn_rnn_inductive_bias/knowledge/research/raw/01_cnn_rnn_inductive_bias.md": {
+      "sha256": "7e8f302cacc63ad2adabc4b063528192b954b37789c3b16147e94594ae114614",
+      "bytes": 14279
+    },
+    "distillation/channel_generative_models/knowledge/research/merged/summary.md": {
+      "sha256": "adb225ccd126a4d4e51e19fc1777b16ca015958db763ae1057e788a8c89ae917",
+      "bytes": 1810
+    },
+    "distillation/channel_generative_models/knowledge/research/raw/01_generative_models.md": {
+      "sha256": "8f9e79feb8a7d7e8bbe90525ea13ebe6e9e0c29575cefa3a4810c8e8ad5a63fa",
+      "bytes": 15630
+    },
+    "distillation/channel_llm_agent/knowledge/research/merged/summary.md": {
+      "sha256": "ef184ae7dbc5853a5040db75d343d8373c56f371b8e9f8c30edc367c93b2e533",
+      "bytes": 1890
+    },
+    "distillation/channel_llm_agent/knowledge/research/raw/01_llm_agent.md": {
+      "sha256": "121d673895e5a66c1ed9983080cca70661144c0a7ea31d034af8d828c17b5aed",
+      "bytes": 19386
+    },
+    "distillation/channel_optimization_training/knowledge/research/merged/summary.md": {
+      "sha256": "2d15ac55a85eb9ab1eaa978ee9050d399f8eff8bfc1b1a3d4ac7c9cf70b1abac",
+      "bytes": 1287
+    },
+    "distillation/channel_optimization_training/knowledge/research/raw/01_optimization_training.md": {
+      "sha256": "dea7ed312eed1894770e49652687492450e731c2ec3f01f914d438d48c7fdb55",
+      "bytes": 13305
+    },
+    "distillation/channel_p3_archive_peripheral_lessons/knowledge/research/merged/summary.md": {
+      "sha256": "b5b68f867720d7dae8a06a95e0efaf1925aa852cbc11e9a345eb1fab7aba5892",
+      "bytes": 1909
+    },
+    "distillation/channel_p3_archive_peripheral_lessons/knowledge/research/raw/01_p3_archive_peripheral_lessons.md": {
+      "sha256": "31bdc458169349fa89a0ca6d14712bd626e2d95d4706609bf077c29b1a96144b",
+      "bytes": 9120
+    },
+    "distillation/channel_reinforcement_learning/knowledge/research/merged/summary.md": {
+      "sha256": "5d6417f653fbd1a72e3a786a1165a961e6186fd6c8601ccd23070eb17cdeebd7",
+      "bytes": 1132
+    },
+    "distillation/channel_reinforcement_learning/knowledge/research/raw/01_reinforcement_learning.md": {
+      "sha256": "9e3d0267d2582fd8d64b3efe5cfded804145bce0496e6d4ca92e29012ae50550",
+      "bytes": 8805
+    },
+    "distillation/channel_representation_pretraining/knowledge/research/merged/summary.md": {
+      "sha256": "7ad30b0e15153900783e9760618d11508410e0187b9ee6ce71c487603f714726",
+      "bytes": 1744
+    },
+    "distillation/channel_representation_pretraining/knowledge/research/raw/01_representation_pretraining.md": {
+      "sha256": "08960d91a19dec58b2d8fa4ac0b5f8cdf2be3aa569d998fa5f15cd5cfaf08cb4",
+      "bytes": 11346
+    },
+    "distillation/channel_sequence_attention_transformer/knowledge/research/merged/summary.md": {
+      "sha256": "3bb0615bba2cfc5b85d639c63db75e91646e31d75bed29c80f07c73edf0bd776",
+      "bytes": 1733
+    },
+    "distillation/channel_sequence_attention_transformer/knowledge/research/raw/01_sequence_attention_transformer.md": {
+      "sha256": "a9d80e00745e4e7e5da73a84b0883662453852a19a74b1f1ae8fa05ef18d769b",
+      "bytes": 14290
+    },
+    "distillation/channel_speech_multimodal/knowledge/research/merged/summary.md": {
+      "sha256": "9808d6b4ff08b5fc45992a6c75eab28b2b26589e3177f00fa898714b226476d0",
+      "bytes": 1801
+    },
+    "distillation/channel_speech_multimodal/knowledge/research/raw/01_speech_multimodal.md": {
+      "sha256": "093e8e14400067be4746b291e30890688f5513f2d2801056edaf84c0e6f6bd3e",
+      "bytes": 15196
+    },
+    "distillation/p0_mvp/knowledge/research/merged/summary.md": {
+      "sha256": "19030656d7446173c176d03b4fbea5261c7cbd8448a5cf1f80f309d60f118ff5",
+      "bytes": 2420
+    },
+    "distillation/p0_mvp/knowledge/research/raw/01_training_capacity_optimization.md": {
+      "sha256": "29386c5e131e6890028b97a8132835be54172bcf63c19aa0373053eeae93c663",
+      "bytes": 1649
+    },
+    "distillation/p0_mvp/knowledge/research/raw/02_generalization_and_data.md": {
+      "sha256": "b4c7d9ce8d4a746bfd41a5cf38823c402caf858e2f7b9fe54757f67ffd1ee022",
+      "bytes": 1689
+    },
+    "distillation/p0_mvp/knowledge/research/raw/03_evaluation_selection.md": {
+      "sha256": "b47784f22724c8d432e3f2bb191e60bd557e57bad212e32ff73c1a94916abf80",
+      "bytes": 1471
+    },
+    "distillation/p0_mvp/knowledge/research/raw/04_loss_and_objective.md": {
+      "sha256": "73f7842a87d68e698409e68508c9d25a3a116b9177caaad6adf34743dd63fcf7",
+      "bytes": 1273
+    },
+    "distillation/p0_mvp/knowledge/research/raw/05_cross_course_capacity.md": {
+      "sha256": "61a513f424b2ea1fde2e9ae231a26f473dc90d49ba6e054a1516b346b0435790",
+      "bytes": 1375
+    },
+    "distillation/p0_mvp/knowledge/research/raw/06_synthesis_boundaries.md": {
+      "sha256": "f5b229081fbe1dba32c50bc91ce594a7f7c361491964c475ac6648ff9dc772fb",
+      "bytes": 1743
+    },
+    "distillation/p0_mvp/knowledge/research/raw/07_generalization_indicator.md": {
+      "sha256": "63a5986cc7b6c599168842474dcab538aabc1a35614fcd21cd243ab22017ea24",
+      "bytes": 1635
+    },
+    "distillation/p0_mvp/knowledge/research/raw/08_method_role_decomposition.md": {
+      "sha256": "baa5cc5d82c462e6cb82f97f785849678016d6be589a39d1f033fc80d6f0c1a0",
+      "bytes": 2189
+    },
+    "evaluation/channel-distillation-acceptance-latest.json": {
+      "sha256": "cc45fe32e08d41aaa48d6f6472d2619daa1f1c5de712dce7171e5739990be686",
+      "bytes": 33750
+    },
+    "evaluation/channel-distilly-reproducibility-latest.json": {
+      "sha256": "8b7f23193f43c6d30beb1fecc1c314aa81ecb8c40c41aac8cb8b1fc98c8da96a",
+      "bytes": 4746
+    },
+    "evaluation/channel-evidence-packet-audit-latest.json": {
+      "sha256": "e5a117005e755c0706752c45951381070215dcf4b15c8405f7972b44581eaafb",
+      "bytes": 20806
+    },
+    "evaluation/channel-p1-corroboration-latest.json": {
+      "sha256": "b9f03fa12b50f4ab91b284f5cfcd0b879b89abeaf1c6f69ec1612fef599e3834",
+      "bytes": 3865
+    },
+    "evaluation/channel-p1-provenance-latest.json": {
+      "sha256": "08176c17dc1f072dbe2dc030498161bebce723c137692e4b10b13236b67cfd88",
+      "bytes": 803
+    },
+    "evaluation/channel-p2-corroboration-latest.json": {
+      "sha256": "2bfa802678a5298f809b2cb4cc8a9a7164883e387631bf24ac5b70968ad0c55e",
+      "bytes": 3620
+    },
+    "evaluation/channel-p2-provenance-latest.json": {
+      "sha256": "653f378426dee66b26ca3d3686935ca63a0b95140aab784ba9c5db11b34e6594",
+      "bytes": 800
+    },
+    "knowledge/channel-candidate-templates.v1.json": {
+      "sha256": "c58d8fab56e33a9fe6de686caba95be50e4298cfb9824bf0250949f33c70bfeb",
+      "bytes": 6130
+    },
+    "knowledge/channel-concept-set-curation.v1.json": {
+      "sha256": "fd905f9dc210f76313c293266519436a0250c752727bec11fd5099d5b184f3a9",
+      "bytes": 9609
+    },
+    "knowledge/channel-distillation-closure.v1.json": {
+      "sha256": "fe1065364bef217e77b4c7a7f27399d06235fbdd65109f9a6b42439af6b203df",
+      "bytes": 32850
+    },
+    "knowledge/channel-mentor-knowledge-index.v1.json": {
+      "sha256": "d9cf1de63ae2255fa2b1fd20317ccef3fad9a07dad5723240934dd3b3260e15a",
+      "bytes": 1930
+    },
+    "knowledge/channel-source-selection-reviewed-exceptions.v1.json": {
+      "sha256": "a991c8e35265279013712265372cc2956eff476a6d3d4baa5892827bcf45808d",
+      "bytes": 4357
+    },
+    "knowledge/channel-source-selection-rules.v1.json": {
+      "sha256": "39753ba006125f030efe2ea5c7e160b1fe7cc947f4a87182fd0775bba883300e",
+      "bytes": 4976
+    },
+    "knowledge/channel-source-selection.v1.json": {
+      "sha256": "1a7079931339c74da77312271e831f31be340700299644a6ba078a1d52286c5e",
+      "bytes": 4766283
+    },
+    "knowledge/channel_p1_candidates.v1.json": {
+      "sha256": "98f158d1c1b3651f53eb5a21a5f6d29fbbc88d5309d7ce714162b62f8bf339d3",
+      "bytes": 20986
+    },
+    "knowledge/channel_p2_candidates.v1.json": {
+      "sha256": "c54eb0ba2996ae633790ec2484962ca094714a9247f2c901c03a6003ca64747d",
+      "bytes": 19829
+    },
+    "knowledge/channel_p3_archive.v1.json": {
+      "sha256": "65f1a748345486def9f9d541c1a80cdb1bae3606b82d821f198191b28262086b",
+      "bytes": 1565
+    },
+    "knowledge/normalized_principles.json": {
+      "sha256": "c84da082d4460b3935d22934a99e676c5aed2918d6ac4495d90bc734944c9132",
+      "bytes": 21523
+    },
+    "research/distilly/CROSS-DOSSIER-REVIEW.md": {
+      "sha256": "6a6b4b2a9f2b0f0db0784030337babdb240f344942fc54a659718da398fcaa4c",
+      "bytes": 3475
+    },
+    "research/distilly/INTAKE.md": {
+      "sha256": "9e31feb582ea374fbd700582bd6973daeba6f3c3e871f64c8be9098e564fc8d6",
+      "bytes": 2015
+    },
+    "research/distilly/P0-SOURCE-GROUNDED-DOSSIER.md": {
+      "sha256": "058a4ff2c25ac8323aec6d9cf0e147e5be2a645888b8fa5c440d9cf0df726e97",
+      "bytes": 6701
+    },
+    "research/distilly/P1-SOURCE-GROUNDED-DOSSIER.md": {
+      "sha256": "216925811a76998da8d462ed2864a9524c4c6cd4dd256b5ce9270822eb8d7d1e",
+      "bytes": 3497
+    },
+    "research/distilly/P2-SOURCE-GROUNDED-DOSSIER.md": {
+      "sha256": "b6c0fca39c7d95e4bb1c42b3619f93dce2ca1bdf89db0c8c79df92db8d4f8175",
+      "bytes": 3567
+    },
+    "research/distilly/P3-SOURCE-GROUNDED-DOSSIER.md": {
+      "sha256": "c284d2c407810411511ef38dbf6a4ff7604d867f211d79322637deaa25b35d43",
+      "bytes": 3852
+    },
+    "research/distilly/PROFILE-AUDIT.md": {
+      "sha256": "3573de390562a8007499b6c95d86ea2b2707f2373f6909e49247eb1e1e65fe07",
+      "bytes": 2285
+    },
+    "research/distilly/PROFILE-DRAFT.md": {
+      "sha256": "7d6fee2a32b82960917ddea5248b7f008e4de1cd0d47ff556bb080945a0c4a18",
+      "bytes": 5873
+    },
+    "research/distilly/README.md": {
+      "sha256": "dc1287a97538bfd86741783148711c0e9188c118fd92b80f61ffaf0200ecf327",
+      "bytes": 1406
+    },
+    "skills/hung-yi-ml-research-advisor/README.md": {
+      "sha256": "9e9a2917d46715756d3cb7217d1dd3a678a2845bcf8cfc7dc3f20318a4047746",
+      "bytes": 8643
+    },
+    "skills/hung-yi-ml-research-advisor/SKILL.md": {
+      "sha256": "ea51b8b57b9d09f39d4b0140b9731092b3869294580acb9bc39ecb955abf212d",
+      "bytes": 12086
+    },
+    "skills/hung-yi-ml-research-advisor/bootstrap.py": {
+      "sha256": "8cd15545843adb8e20d5ac7924ce788dba2082745e3714d2becece6e05a5a595",
+      "bytes": 5575
+    },
+    "skills/hung-yi-ml-research-advisor/skill_smoke.py": {
+      "sha256": "4e2a22a77efe8398e77ae1280e961608a8778b585cee84b59f9312f835a0b6b2",
+      "bytes": 30785
+    },
+    "skills/hung-yi-ml-research-advisor/modules/data-diagnosis.md": {
+      "sha256": "b55ff40adc15b7a5f10e72303c13948ee7d9797e760b43307314b4a6144cace1",
+      "bytes": 1089
+    },
+    "skills/hung-yi-ml-research-advisor/modules/evaluation.md": {
+      "sha256": "d17b37f71d3d0037a0f4c4b2ec936bdf5f66b110a60cad09cedf7d8ab3423c5b",
+      "bytes": 1282
+    },
+    "skills/hung-yi-ml-research-advisor/modules/experiment-design.md": {
+      "sha256": "b75e8965818cc75166962d8ec174b984716d6b348387ae5ec5ba2b3120044302",
+      "bytes": 1346
+    },
+    "skills/hung-yi-ml-research-advisor/modules/generalization.md": {
+      "sha256": "e94a6ea7f93093b9626080527a6b6eb2c19e189e74c61afce38166a23395cc4f",
+      "bytes": 1133
+    },
+    "skills/hung-yi-ml-research-advisor/modules/index.md": {
+      "sha256": "18a8441ce8bc25fb87e1fa38310da7ad31cac7df505d3beda405f6a87ca9387c",
+      "bytes": 1722
+    },
+    "skills/hung-yi-ml-research-advisor/modules/loss-design.md": {
+      "sha256": "be169e6767bcaa443347697c1cf96dc6d3d8f64a53aa3d741b1ca5742e919c1d",
+      "bytes": 711
+    },
+    "skills/hung-yi-ml-research-advisor/modules/model-capacity.md": {
+      "sha256": "8e15699e41394ed193472c1d5ad849a21b47dd1ec0e3af24d45faad3a887c8f2",
+      "bytes": 1271
+    },
+    "skills/hung-yi-ml-research-advisor/modules/optimization.md": {
+      "sha256": "578acdf537cd721d0a89fdc97ae8d26e942d99774b1530e9baf854074644aabd",
+      "bytes": 705
+    },
+    "skills/hung-yi-ml-research-advisor/modules/training-diagnosis.md": {
+      "sha256": "4825c3f395aa9a86ef4722ab947ac1600c2d924eac1678ef649acddaf4b48d47",
+      "bytes": 1160
+    },
+    "skills/hung-yi-ml-research-advisor/references/channel-candidate-context.json": {
+      "sha256": "f1fa8bb356efc4ad95771108afa423701e6f7c7b0068caa764c9fc0f11ab07df",
+      "bytes": 874
+    },
+    "skills/hung-yi-ml-research-advisor/references/diagnostic-routing.md": {
+      "sha256": "a883c1d5a3d20e5368a799aa620cbae76ec55661e3b4f90e2f19a0ac8e92af24",
+      "bytes": 2636
+    },
+    "skills/hung-yi-ml-research-advisor/references/distilly-p0-context.json": {
+      "sha256": "cd3d0ebf66886ae7caf18a7bd762a7a538b5e74761f382a45c08b836a9520e5d",
+      "bytes": 1004
+    },
+    "skills/hung-yi-ml-research-advisor/references/ffp-benchmark.md": {
+      "sha256": "2afb89ffd6d7ccfb0045b48f77de18de3322b8f9c85a0beb38190a18a5f32dff",
+      "bytes": 1793
+    },
+    "skills/hung-yi-ml-research-advisor/references/provenance-policy.md": {
+      "sha256": "108a40e1005ea2df248b5b38c3f32e96d13c01f5826d100810d7a4124ac64373",
+      "bytes": 1247
+    },
+    "skills/hung-yi-ml-research-advisor/references/response-schema.md": {
+      "sha256": "b0177c8ee62ba20773cbbd6214b60e0c6fc601bb4da1fe961585fc5458afec12",
+      "bytes": 1103
+    },
+    "skills/hung-yi-ml-research-advisor/references/statistical-diagnostics.md": {
+      "sha256": "12956805ef39bd9a9b3dbdd2a73fe5ee7cc6922f63405aeed2dc5978b51fa035",
+      "bytes": 2066
+    },
+    "skills/hung-yi-ml-research-advisor/references/tensor-diagnostics.md": {
+      "sha256": "0f295d8057f34efc88d417a79ecc1f046205150c0c30e4c92643cb2af91dbf1b",
+      "bytes": 1066
+    },
+    "skills/hung-yi-ml-research-advisor/tools/advanced_recipe_tools.py": {
+      "sha256": "83a071dc153cc485a51a8e49f527ad4d5ca8f67fa085615358e19f4e1ab61cca",
+      "bytes": 27824
+    },
+    "skills/hung-yi-ml-research-advisor/tools/advisor_provenance_audit.py": {
+      "sha256": "3ad80ae2294e553446fb8c6cf4c463bf2c1b7bfb3124e5372d846d73f12f8d33",
+      "bytes": 7577
+    },
+    "skills/hung-yi-ml-research-advisor/tools/capability_probe.py": {
+      "sha256": "3a8ecda079d53a54d8d7cde9135c7f792e783c8049a4cc80f85127b9d44d8923",
+      "bytes": 15737
+    },
+    "skills/hung-yi-ml-research-advisor/tools/dataset_split_audit.py": {
+      "sha256": "612767d58ae6feae060acac69ff134e734dfe0ad199c30259d503b454ae26e66",
+      "bytes": 8242
+    },
+    "skills/hung-yi-ml-research-advisor/tools/ffp_evaluation.py": {
+      "sha256": "5bb628add9fc189f67bfc93baa8bcaf2476ee050ace191e3320a4499263812af",
+      "bytes": 19725
+    },
+    "skills/hung-yi-ml-research-advisor/tools/mentor_response_gate.py": {
+      "sha256": "8d87989af627c5a714153aca0bf88bd30ee7da86b2fc6ab15c8c5b2cb069f95f",
+      "bytes": 3796
+    },
+    "skills/hung-yi-ml-research-advisor/tools/model_evaluation.py": {
+      "sha256": "9ca02a24d09aab5c309e063e1ebec041afb8580116a7b73f9fb08a8c4303790c",
+      "bytes": 26213
+    },
+    "skills/hung-yi-ml-research-advisor/tools/recipe_tools.py": {
+      "sha256": "cac7a014cc26e33fa6195eea870ca13cddf985cf61526dec0555e7af56f21770",
+      "bytes": 15812
+    },
+    "skills/hung-yi-ml-research-advisor/tools/response_validator.py": {
+      "sha256": "eadd12ccb78fb1d94a4ee02fdec3184cb463fe415879d3a756e6b7f8503aa45c",
+      "bytes": 9408
+    },
+    "skills/hung-yi-ml-research-advisor/tools/search_course_material_chunks.py": {
+      "sha256": "bae09d4e34692b3f13bda6e1e94b63c68f7664bbfffa69faa5a42f51d1564da1",
+      "bytes": 2299
+    },
+    "skills/hung-yi-ml-research-advisor/tools/torch_diagnostics.py": {
+      "sha256": "0bf4ed5c98609823cb1bbc733ae74cbbcf49cfe9c8d61a01d8d7058005993670",
+      "bytes": 5799
+    },
+    "skills/hung-yi-ml-research-advisor/tools/visual_evidence_lookup.py": {
+      "sha256": "5d6c84c423dad72a209783eb04f90e63768d98987edd189c99f507cd1d1d2f98",
+      "bytes": 11248
+    }
+  }
+}

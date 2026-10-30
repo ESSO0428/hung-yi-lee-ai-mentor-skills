@@ -1,0 +1,63 @@
+{
+  "schema_version": "hung-yi-channel-candidate-templates.v1",
+  "status": "CANDIDATE_TEMPLATES_ONLY",
+  "scope": "Cross-source interpretations generated only after the selector, evidence packets and Distilly dossier are complete. These are not formal mentor rules.",
+  "candidates": {
+    "sequence_attention_transformer": {
+      "id": "HYL-P1-SEQ-001",
+      "domain": "architecture-and-representation",
+      "principle": "序列任務的架構選擇應把可見上下文範圍、token 順序訊號與推論期記憶成本視為可驗證的設計變數，而不是只比較模型名稱。",
+      "decision_rule": "先固定資料、訓練預算與評估指標，建立局部上下文或弱位置訊號基線；再比較 attention 範圍、position method 與 KV/cache 策略，並按序列長度與延遲分層報告。",
+      "uncertainty": "來源說明架構機制與取捨，不構成任何 position method、Transformer variant 或 FlashAttention 在所有任務上的普遍優越性。"
+    },
+    "cnn_rnn_inductive_bias": {
+      "id": "HYL-P1-INDUCTIVE-001",
+      "domain": "architecture-and-inductive-bias",
+      "principle": "CNN 的 locality／parameter sharing 與 RNN 的 state／order sensitivity 是可被任務資料結構驗證的 inductive bias；應以資料幾何與部署限制選擇，而非把任一架構當成通用預設。",
+      "decision_rule": "先明確寫出局部性、平移結構、序列順序與長距依賴假設；用參數量、receptive field、sequence length 和 error slices 對照 CNN/RNN 或競爭基線。",
+      "uncertainty": "來源不提供一套跨資料集的 CNN/RNN 勝負排名；架構比較仍需要固定資料處理、容量與訓練預算。"
+    },
+    "representation_pretraining": {
+      "id": "HYL-P1-REPR-001",
+      "domain": "representation-and-transfer",
+      "principle": "預訓練／自監督表徵的價值要在下游遷移條件下驗證：區分 pretext task、資料分布、frozen versus fine-tuned 使用方式與實際下游任務。",
+      "decision_rule": "至少比較從零訓練、frozen representation 與 fine-tuning；固定下游資料切分，分開報告資料量、domain shift、任務類型與每一種 adaptation 的結果。",
+      "uncertainty": "來源支持 representation、autoencoder 與 speech self-supervision 的設計思路，不保證任一 pretraining recipe 對所有模態或低資料任務都會轉移成功。"
+    },
+    "optimization_training": {
+      "id": "HYL-P1-OPT-001",
+      "domain": "training-diagnosis",
+      "principle": "訓練問題應先用 learning curve、learning rate、gradient／loss 行為與 normalization 條件辨別，而非先改大模型或一次改多個 optimizer 設定。",
+      "decision_rule": "保持資料與架構固定，先記錄 loss、gradient norm、learning-rate schedule 和 train/validation gap；一次只變更一個 optimizer、schedule、batch 或 normalization 因子，將結果連回可區分的失敗假設。",
+      "uncertainty": "這是研究診斷的實驗排序建議，不代表任何 optimizer、batch normalization 或 learning rate schedule 的通用最優設定。"
+    },
+    "generative_models": {
+      "id": "HYL-P2-GEN-001",
+      "domain": "generative-modeling",
+      "principle": "生成模型 recipe 的比較必須把目標條件、生成品質、可控性、推論成本與訓練穩定性拆開；GAN、VAE、flow 與 diffusion 不能只用單一視覺示例決策。",
+      "decision_rule": "先定義資料模態與 conditional requirement，再建立可重現基線；同時報告生成品質、diversity／failure cases、成本和人為挑選規則，並對照相同資料與 evaluation protocol。",
+      "uncertainty": "來源提供方法與機制導覽；沒有建立跨資料集的單一品質排名，也不足以取代專案特定 safety、copyright 或 deployment evaluation。"
+    },
+    "reinforcement_learning": {
+      "id": "HYL-P2-RL-001",
+      "domain": "reinforcement-learning",
+      "principle": "RL 演算法選擇必須先固定 state、action、reward、horizon 與資料收集條件，再比較 policy-gradient、actor-critic、PPO 或 value/Q-learning 變體的穩定性與樣本效率。",
+      "decision_rule": "在相同 environment seed 與 interaction budget 下，記錄 return distribution、constraint violations、exploration behavior 和 variance；將每次 algorithm change 對應到 action-space 或 credit-assignment 假設。",
+      "uncertainty": "課程片段涵蓋多個 RL 方法與關係，並未提供所有 environment 的 best algorithm 或安全部署保證。"
+    },
+    "llm_agent": {
+      "id": "HYL-P2-AGENT-001",
+      "domain": "llm-agent-systems",
+      "principle": "LLM agent 是有 state、context、tools、planning 與 evaluation 的系統；問題應先被拆成可觀察的 failure mode，而非只調 prompt 或加入更多工具。",
+      "decision_rule": "先定義任務成功、tool-call correctness、state/context retention、cost/latency 與 safety 指標；建立不使用工具或縮短 context 的對照，針對最小可重現失敗設計一個辨別性實驗。",
+      "uncertainty": "來源支持 agent component 與 workflow 的研究式分析；並未證明任何框架、tool policy 或 context-engineering recipe 在所有工作流皆最佳。"
+    },
+    "speech_multimodal": {
+      "id": "HYL-P2-SPEECH-001",
+      "domain": "speech-and-multimodal-systems",
+      "principle": "語音／多模態系統要先釐清每個 modality 的資訊路徑與 cascade boundary，再比較 ASR→LLM→TTS、speech-to-speech 或 representation-transfer recipe 的錯誤傳播與成本。",
+      "decision_rule": "對每個 modality 分別記錄 input quality、transcription/recognition error、semantic task score、prosody/voice quality 和 latency；用 matched examples 比較 cascade 與 end-to-end 設計，並切分出聲音、文字與跨模態失敗。",
+      "uncertainty": "來源包含 speech self-supervision、speech-language systems 與生成應用；不構成對端到端或 cascade 的普遍性能結論。"
+    }
+  }
+}

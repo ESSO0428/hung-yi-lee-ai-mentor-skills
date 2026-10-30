@@ -1,0 +1,115 @@
+{
+  "schema_version": "hung-yi-channel-selector-reviewed-exceptions.v1",
+  "scope": "Bounded review of only selector-raised core or metadata-boundary exceptions; no media retry, ASR retry, AGY retry, or blanket frame extraction.",
+  "decisions": [
+    {
+      "decision_id": "SEL-EXC-001",
+      "video_id": "3oHlf8-J3Nc",
+      "semantic_disposition": "CROSS_CUTTING",
+      "selection_concept_ids": [
+        "representation_pretraining",
+        "generative_models"
+      ],
+      "reviewed_chunk_ids": [
+        "3oHlf8-J3Nc:35-70",
+        "3oHlf8-J3Nc:71-105",
+        "3oHlf8-J3Nc:106-143"
+      ],
+      "rationale": "Auto-encoder 的核心講解同時直接支撐表徵／預訓練與生成式重建；BERT/GPT 與 CNN 的提及為背景或實作例，不作為獨立 LLM/CNN dossier 的選源理由。"
+    },
+    {
+      "decision_id": "SEL-EXC-002",
+      "video_id": "BABPWOkSbLE",
+      "semantic_disposition": "P1",
+      "selection_concept_ids": [
+        "optimization_training"
+      ],
+      "reviewed_chunk_ids": [
+        "BABPWOkSbLE:0-33",
+        "BABPWOkSbLE:214-253"
+      ],
+      "rationale": "內容直接解釋 Batch Normalization 與可訓練性；雖與舊 metadata 的 P0 routing 不同，但並非已正式化 P0 source，故保留為 P1 training-paradigm 來源。"
+    },
+    {
+      "decision_id": "SEL-EXC-003",
+      "video_id": "MpsVE60iRLM",
+      "semantic_disposition": "CROSS_CUTTING",
+      "selection_concept_ids": [
+        "representation_pretraining",
+        "speech_multimodal"
+      ],
+      "reviewed_chunk_ids": [
+        "MpsVE60iRLM:0-29",
+        "MpsVE60iRLM:100-135",
+        "MpsVE60iRLM:136-164"
+      ],
+      "rationale": "此片的論證本身就是把自監督預訓練遷移到多個語音任務；兩個概念群皆由重複的逐字稿證據支撐。"
+    },
+    {
+      "decision_id": "SEL-EXC-004",
+      "video_id": "N6aRv06iv2g",
+      "semantic_disposition": "P1",
+      "selection_concept_ids": [
+        "sequence_attention_transformer"
+      ],
+      "reviewed_chunk_ids": [
+        "N6aRv06iv2g:251-295",
+        "N6aRv06iv2g:296-335"
+      ],
+      "rationale": "片段主論點是 Transformer Decoder、masked multi-head attention 與 sequence generation；autoregressive 與語音辨識只是例子，不另把整片升為生成／語音概念群核心來源。"
+    },
+    {
+      "decision_id": "SEL-EXC-005",
+      "video_id": "YJoegm7kiUM",
+      "semantic_disposition": "P2",
+      "selection_concept_ids": [
+        "llm_agent"
+      ],
+      "reviewed_chunk_ids": [
+        "YJoegm7kiUM:0-29",
+        "YJoegm7kiUM:66-102",
+        "YJoegm7kiUM:142-172"
+      ],
+      "rationale": "內容系統性描述 LLM 的 pre-training、SFT、RLHF 學習歷程；一般 optimization／representation 詞彙是同一 LLM recipe 的組成，而不是獨立 P1 source-set 的主題。"
+    },
+    {
+      "decision_id": "SEL-EXC-006",
+      "video_id": "n9TlOhRjYoc",
+      "semantic_disposition": "P1",
+      "selection_concept_ids": [
+        "sequence_attention_transformer"
+      ],
+      "reviewed_chunk_ids": [
+        "n9TlOhRjYoc:0-40",
+        "n9TlOhRjYoc:465-504"
+      ],
+      "rationale": "主題是 Transformer／Seq2Seq 架構；語音辨識只是 sequence application，不能因一個應用例子改列為 speech dossier 的核心來源。"
+    },
+    {
+      "decision_id": "SEL-EXC-007",
+      "video_id": "yKKNr-QKz2Q",
+      "semantic_disposition": "P1",
+      "selection_concept_ids": [
+        "optimization_training"
+      ],
+      "reviewed_chunk_ids": [
+        "yKKNr-QKz2Q:531-554",
+        "yKKNr-QKz2Q:973-985"
+      ],
+      "rationale": "逐字稿直接涵蓋 gradient descent、single-example updates 與 local-minimum diagnosis；即使舊 metadata 不是 P1，也應依這些明確 anchor 列為 P1。"
+    },
+    {
+      "decision_id": "SEL-EXC-008",
+      "video_id": "JZvEzb5PV3U",
+      "semantic_disposition": "P1",
+      "selection_concept_ids": [
+        "representation_pretraining"
+      ],
+      "reviewed_chunk_ids": [
+        "JZvEzb5PV3U:37-76",
+        "JZvEzb5PV3U:240-282"
+      ],
+      "rationale": "Auto-encoder 下集的選定內容直接談 encoder embedding、syntax/semantics representation 與 latent representation；voice-conversion 是應用例，不能使整片轉成 speech/multimodal 的核心來源。"
+    }
+  ]
+}

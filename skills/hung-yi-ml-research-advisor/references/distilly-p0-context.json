@@ -1,0 +1,35 @@
+{
+  "schema_version": "hung-yi-distilly-p0-context.v1",
+  "classification": "SUPPLEMENTAL_RESEARCH_CONTEXT_NOT_FORMAL",
+  "formal_knowledge_path": "knowledge/normalized_principles.json",
+  "formal_principle_ids": [
+    "MLRA-P0-001",
+    "MLRA-P0-002",
+    "MLRA-P0-003",
+    "MLRA-P0-004",
+    "MLRA-P0-005",
+    "MLRA-P0-006",
+    "MLRA-P0-007",
+    "MLRA-P0-008",
+    "MLRA-P0-009",
+    "MLRA-P0-010",
+    "MLRA-P0-011",
+    "MLRA-P0-012",
+    "MLRA-P0-013",
+    "MLRA-P0-014",
+    "MLRA-P0-015"
+  ],
+  "candidate_families_not_formal": ["P1", "P2", "P3"],
+  "materials": [
+    {
+      "id": "p0_dossier",
+      "repo_relative_path": "research/distilly/P0-SOURCE-GROUNDED-DOSSIER.md",
+      "purpose": "source coverage, tensions, and disclosed gaps behind formal P0"
+    },
+    {
+      "id": "p0_merged_summary",
+      "repo_relative_path": "distillation/p0_mvp/knowledge/research/merged/summary.md",
+      "purpose": "reproducible local Distilly merger summary for the P0 research inputs"
+    }
+  ]
+}

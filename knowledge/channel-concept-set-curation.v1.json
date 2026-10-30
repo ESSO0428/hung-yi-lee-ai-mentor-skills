@@ -1,0 +1,235 @@
+{
+  "schema_version": "hung-yi-channel-concept-set-curation.v1",
+  "scope": "Bounded review of the selector's 36 initially selected source links. Each decision is grounded in existing canonical semantic-review anchors; no download, ASR, AGY, or blanket visual extraction was run.",
+  "concept_sets": [
+    {
+      "decision_id": "SET-001",
+      "concept_id": "sequence_attention_transformer",
+      "rationale": "保留直接講解 positional information、self-attention、Transformer decoder 與 Q/K/V mechanics 的來源；FlashAttention 來源提供推論期系統限制的互補觀點。",
+      "sources": [
+        {
+          "video_id": "Ll-wk8x3G_g",
+          "source_role": "PRIMARY",
+          "anchor_chunk_ids": ["Ll-wk8x3G_g:0-30", "Ll-wk8x3G_g:31-75", "Ll-wk8x3G_g:76-111", "Ll-wk8x3G_g:112-158"]
+        },
+        {
+          "video_id": "vXb2QYOUzl4",
+          "source_role": "PRIMARY",
+          "anchor_chunk_ids": ["vXb2QYOUzl4:0-30", "vXb2QYOUzl4:31-60", "vXb2QYOUzl4:98-139", "vXb2QYOUzl4:140-177"]
+        },
+        {
+          "video_id": "N6aRv06iv2g",
+          "source_role": "CORROBORATING",
+          "anchor_chunk_ids": ["N6aRv06iv2g:251-295", "N6aRv06iv2g:296-335"]
+        },
+        {
+          "video_id": "gmsMY5kc-zw",
+          "source_role": "CORROBORATING",
+          "anchor_chunk_ids": ["gmsMY5kc-zw:70-103", "gmsMY5kc-zw:104-142"]
+        }
+      ]
+    },
+    {
+      "decision_id": "SET-002",
+      "concept_id": "cnn_rnn_inductive_bias",
+      "rationale": "以 CNN 的 locality／parameter-sharing prior 和 RNN state／order sensitivity 為核心；排除只做 CNN feature visualization 的可解釋性影片。",
+      "sources": [
+        {
+          "video_id": "lluMBz5AoOg",
+          "source_role": "PRIMARY",
+          "anchor_chunk_ids": ["lluMBz5AoOg:1-18", "lluMBz5AoOg:19-24", "lluMBz5AoOg:25-41", "lluMBz5AoOg:42-63"]
+        },
+        {
+          "video_id": "xCGidAeyS4M",
+          "source_role": "PRIMARY",
+          "anchor_chunk_ids": ["xCGidAeyS4M:2-19", "xCGidAeyS4M:96-116", "xCGidAeyS4M:139-152", "xCGidAeyS4M:644-661"]
+        },
+        {
+          "video_id": "gjsdVi90yQo",
+          "source_role": "CORROBORATING",
+          "anchor_chunk_ids": ["gjsdVi90yQo:32-66", "gjsdVi90yQo:67-109"]
+        },
+        {
+          "video_id": "OP5HcXJg2Aw",
+          "source_role": "CORROBORATING",
+          "anchor_chunk_ids": ["OP5HcXJg2Aw:0-28", "OP5HcXJg2Aw:674-712", "OP5HcXJg2Aw:1372-1399"]
+        }
+      ]
+    },
+    {
+      "decision_id": "SET-003",
+      "concept_id": "representation_pretraining",
+      "rationale": "選擇直接處理 self-supervised pretraining、embedding／representation 與跨任務語音預訓練的來源，不把 positional-embedding 或 domain-adaptation 旁帶提及當成主來源。",
+      "sources": [
+        {
+          "video_id": "3oHlf8-J3Nc",
+          "source_role": "PRIMARY",
+          "anchor_chunk_ids": ["3oHlf8-J3Nc:0-34", "3oHlf8-J3Nc:35-70", "3oHlf8-J3Nc:433-467"]
+        },
+        {
+          "video_id": "e422eloJ0W4",
+          "source_role": "PRIMARY",
+          "anchor_chunk_ids": ["e422eloJ0W4:0-34", "e422eloJ0W4:35-69"]
+        },
+        {
+          "video_id": "MpsVE60iRLM",
+          "source_role": "CORROBORATING",
+          "anchor_chunk_ids": ["MpsVE60iRLM:0-29", "MpsVE60iRLM:66-99"]
+        },
+        {
+          "video_id": "JZvEzb5PV3U",
+          "source_role": "CORROBORATING",
+          "anchor_chunk_ids": ["JZvEzb5PV3U:37-76", "JZvEzb5PV3U:240-282"]
+        }
+      ]
+    },
+    {
+      "decision_id": "SET-004",
+      "concept_id": "optimization_training",
+      "rationale": "以 learning-rate、gradient/SGD、optimizer schedule 與 normalization 對 trainability 的診斷為共同核心；排除歷史逸聞。",
+      "sources": [
+        {
+          "video_id": "1UqCjFQiiy0",
+          "source_role": "PRIMARY",
+          "anchor_chunk_ids": ["1UqCjFQiiy0:0-6", "1UqCjFQiiy0:7-30", "1UqCjFQiiy0:59-65", "1UqCjFQiiy0:102-106"]
+        },
+        {
+          "video_id": "yKKNr-QKz2Q",
+          "source_role": "PRIMARY",
+          "anchor_chunk_ids": ["yKKNr-QKz2Q:1-24", "yKKNr-QKz2Q:25-48", "yKKNr-QKz2Q:531-554", "yKKNr-QKz2Q:973-985"]
+        },
+        {
+          "video_id": "e03YKGHXnL8",
+          "source_role": "CORROBORATING",
+          "anchor_chunk_ids": ["e03YKGHXnL8:1-23", "e03YKGHXnL8:24-41", "e03YKGHXnL8:42-60"]
+        },
+        {
+          "video_id": "BABPWOkSbLE",
+          "source_role": "CORROBORATING",
+          "anchor_chunk_ids": ["BABPWOkSbLE:0-33", "BABPWOkSbLE:176-213"]
+        }
+      ]
+    },
+    {
+      "decision_id": "SET-005",
+      "concept_id": "generative_models",
+      "rationale": "涵蓋 VAE／Flow／Diffusion／GAN 的概覽、GAN 基礎理論及影像生成實作脈絡；保持為需要後續正規化 gate 的 candidate evidence。",
+      "sources": [
+        {
+          "video_id": "OYN_GvAqv-A",
+          "source_role": "PRIMARY",
+          "anchor_chunk_ids": ["OYN_GvAqv-A:0-26", "OYN_GvAqv-A:64-99", "OYN_GvAqv-A:437-461", "OYN_GvAqv-A:852-858"]
+        },
+        {
+          "video_id": "DQNNMiAP5lw",
+          "source_role": "PRIMARY",
+          "anchor_chunk_ids": ["DQNNMiAP5lw:0-4", "DQNNMiAP5lw:7-29", "DQNNMiAP5lw:30-52", "DQNNMiAP5lw:1361-1369"]
+        },
+        {
+          "video_id": "DMA4MrNieWo",
+          "source_role": "CORROBORATING",
+          "anchor_chunk_ids": ["DMA4MrNieWo:0-7", "DMA4MrNieWo:8-14", "DMA4MrNieWo:36-57", "DMA4MrNieWo:1098-1115"]
+        },
+        {
+          "video_id": "JbfcAaBT66U",
+          "source_role": "CORROBORATING",
+          "anchor_chunk_ids": ["JbfcAaBT66U:0-24", "JbfcAaBT66U:25-53", "JbfcAaBT66U:54-86", "JbfcAaBT66U:449-461"]
+        }
+      ]
+    },
+    {
+      "decision_id": "SET-006",
+      "concept_id": "reinforcement_learning",
+      "rationale": "以 verified-media 的 continuous-action Q-learning、policy gradient 與 actor-critic 的方法關係為可交叉核對的集合；不使用媒體未驗證的 PPO 來源。",
+      "sources": [
+        {
+          "video_id": "tnPVcec22cg",
+          "source_role": "PRIMARY",
+          "anchor_chunk_ids": ["tnPVcec22cg:0-2", "tnPVcec22cg:3-28", "tnPVcec22cg:203-209"]
+        },
+        {
+          "video_id": "z95ZYgPgXOY",
+          "source_role": "PRIMARY",
+          "anchor_chunk_ids": ["z95ZYgPgXOY:2-16", "z95ZYgPgXOY:29-47", "z95ZYgPgXOY:469-478"]
+        },
+        {
+          "video_id": "j82QLgfhFiY",
+          "source_role": "CORROBORATING",
+          "anchor_chunk_ids": ["j82QLgfhFiY:0-26", "j82QLgfhFiY:329-360", "j82QLgfhFiY:689-700"]
+        }
+      ]
+    },
+    {
+      "decision_id": "SET-007",
+      "concept_id": "llm_agent",
+      "rationale": "以 agent architecture、tool use、context engineering 與研究工作流為互補來源；不把它們直接提升為正式 mentor rule。",
+      "sources": [
+        {
+          "video_id": "M2Yg1kwPpts",
+          "source_role": "PRIMARY",
+          "anchor_chunk_ids": ["M2Yg1kwPpts:0-11", "M2Yg1kwPpts:46-85", "M2Yg1kwPpts:86-125", "M2Yg1kwPpts:1322-1348"]
+        },
+        {
+          "video_id": "VqB8zMujdjM",
+          "source_role": "PRIMARY",
+          "anchor_chunk_ids": ["VqB8zMujdjM:0-49", "VqB8zMujdjM:50-96", "VqB8zMujdjM:97-141", "VqB8zMujdjM:390-436"]
+        },
+        {
+          "video_id": "bJZTJ7MjYqg",
+          "source_role": "CORROBORATING",
+          "anchor_chunk_ids": ["bJZTJ7MjYqg:0-25", "bJZTJ7MjYqg:26-53", "bJZTJ7MjYqg:287-316", "bJZTJ7MjYqg:507-538"]
+        },
+        {
+          "video_id": "urwDLyNa9FU",
+          "source_role": "CORROBORATING",
+          "anchor_chunk_ids": ["urwDLyNa9FU:0-39", "urwDLyNa9FU:85-124", "urwDLyNa9FU:125-162", "urwDLyNa9FU:1524-1569"]
+        }
+      ]
+    },
+    {
+      "decision_id": "SET-008",
+      "concept_id": "speech_multimodal",
+      "rationale": "選擇直接比較 speech-to-speech / speech-LLM cascade、跨模態音訊生成，以及 speech self-supervised transfer 的來源；排除只是 ASR application 或 audio adversarial attack 的旁支。",
+      "sources": [
+        {
+          "video_id": "CbIPjrOj2Tc",
+          "source_role": "PRIMARY",
+          "anchor_chunk_ids": ["CbIPjrOj2Tc:125-171", "CbIPjrOj2Tc:172-217", "CbIPjrOj2Tc:218-254"]
+        },
+        {
+          "video_id": "AihBniegMKg",
+          "source_role": "PRIMARY",
+          "anchor_chunk_ids": ["AihBniegMKg:22-45", "AihBniegMKg:46-68", "AihBniegMKg:69-92"]
+        },
+        {
+          "video_id": "MpsVE60iRLM",
+          "source_role": "CORROBORATING",
+          "anchor_chunk_ids": ["MpsVE60iRLM:100-135", "MpsVE60iRLM:136-164", "MpsVE60iRLM:165-200"]
+        },
+        {
+          "video_id": "CgQ3lUOpXgc",
+          "source_role": "CORROBORATING",
+          "anchor_chunk_ids": ["CgQ3lUOpXgc:86-106", "CgQ3lUOpXgc:107-131"]
+        }
+      ]
+    },
+    {
+      "decision_id": "SET-009",
+      "concept_id": "p3_archive_peripheral_lessons",
+      "archive_only": true,
+      "rationale": "此集合只保存課程／作業 logistics 的 provenance，作為 coverage archive；不產生 mentor knowledge，也不與 P1/P2 的實質課程來源混合。",
+      "sources": [
+        {
+          "video_id": "88WzdTuQMyM",
+          "source_role": "PRIMARY",
+          "anchor_chunk_ids": ["88WzdTuQMyM:0-25", "88WzdTuQMyM:74-99", "88WzdTuQMyM:215-245", "88WzdTuQMyM:542-560"]
+        },
+        {
+          "video_id": "VuQUF1VVX40",
+          "source_role": "CORROBORATING",
+          "anchor_chunk_ids": ["VuQUF1VVX40:122-152", "VuQUF1VVX40:153-193", "VuQUF1VVX40:379-417"]
+        }
+      ]
+    }
+  ]
+}

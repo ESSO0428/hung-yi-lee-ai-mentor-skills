@@ -1,0 +1,45 @@
+{
+  "schema_version": "hung-yi-channel-mentor-knowledge-index.v1",
+  "status": "FORMAL_P0_PLUS_CANDIDATE_P1_P2",
+  "scope": "Runtime lookup index for the mentor skill; no video acquisition or source selection behavior.",
+  "formal_knowledge": {
+    "path": "knowledge/normalized_principles.json",
+    "status": "NORMALIZED_P0_MVP"
+  },
+  "candidate_knowledge": [
+    {
+      "tier": "P1",
+      "path": "knowledge/channel_p1_candidates.v1.json",
+      "sha256": "98f158d1c1b3651f53eb5a21a5f6d29fbbc88d5309d7ce714162b62f8bf339d3",
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "principle_count": 4
+    },
+    {
+      "tier": "P2",
+      "path": "knowledge/channel_p2_candidates.v1.json",
+      "sha256": "c54eb0ba2996ae633790ec2484962ca094714a9247f2c901c03a6003ca64747d",
+      "status": "CANDIDATE_REVIEW_REQUIRED",
+      "principle_count": 4
+    }
+  ],
+  "archive_knowledge": {
+    "path": "knowledge/channel_p3_archive.v1.json",
+    "sha256": "65f1a748345486def9f9d541c1a80cdb1bae3606b82d821f198191b28262086b",
+    "status": "ARCHIVE_ONLY_NOT_MENTOR_KNOWLEDGE"
+  },
+  "selector": {
+    "path": "knowledge/channel-source-selection.v1.json",
+    "sha256": "1a7079931339c74da77312271e831f31be340700299644a6ba078a1d52286c5e",
+    "status": "FROZEN_SELECTOR_V1_AVAILABLE_DATA_COMPLETE"
+  },
+  "closure": {
+    "path": "knowledge/channel-distillation-closure.v1.json",
+    "sha256": "fe1065364bef217e77b4c7a7f27399d06235fbdd65109f9a6b42439af6b203df",
+    "status": "DISTILLY_AUDITED_AVAILABLE_DATA_COMPLETE"
+  },
+  "use_policy": {
+    "formal_only": "Formal P0 principles may be stated as source-grounded rules within their scopes.",
+    "candidate_only": "P1/P2 entries may guide hypotheses and discriminating experiments only when explicitly labelled CANDIDATE_REVIEW_REQUIRED.",
+    "archive_only": "P3 archive records coverage and must not be used as a mentor recipe rule."
+  }
+}

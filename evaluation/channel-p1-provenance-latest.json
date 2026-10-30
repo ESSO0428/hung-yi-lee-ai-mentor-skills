@@ -1,0 +1,35 @@
+{
+  "scope": "Deterministic random sample; validates manifest, chunk, and timestamp chain, not semantic interpretation.",
+  "sample_seed": 20261030,
+  "summary": {
+    "sampled_principles": 4,
+    "passed": 4,
+    "failed": 0
+  },
+  "items": [
+    {
+      "principle_id": "HYL-P1-OPT-001",
+      "status": "PASS",
+      "failed_checks": [],
+      "source_count": 4
+    },
+    {
+      "principle_id": "HYL-P1-REPR-001",
+      "status": "PASS",
+      "failed_checks": [],
+      "source_count": 4
+    },
+    {
+      "principle_id": "HYL-P1-SEQ-001",
+      "status": "PASS",
+      "failed_checks": [],
+      "source_count": 4
+    },
+    {
+      "principle_id": "HYL-P1-INDUCTIVE-001",
+      "status": "PASS",
+      "failed_checks": [],
+      "source_count": 4
+    }
+  ]
+}

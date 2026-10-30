@@ -1,0 +1,406 @@
+{
+  "schema_version": "hung-yi-channel-candidates.v1",
+  "status": "CANDIDATE_REVIEW_REQUIRED",
+  "scope": "Channel selector P1 cross-source candidates; not formal mentor knowledge.",
+  "selector_ledger": "knowledge/channel-source-selection.v1.json",
+  "evidence_packets": [
+    "data/processing/channel_evidence_packets_v1/1UqCjFQiiy0--optimization_training.md",
+    "data/processing/channel_evidence_packets_v1/3oHlf8-J3Nc--representation_pretraining.md",
+    "data/processing/channel_evidence_packets_v1/BABPWOkSbLE--optimization_training.md",
+    "data/processing/channel_evidence_packets_v1/JZvEzb5PV3U--representation_pretraining.md",
+    "data/processing/channel_evidence_packets_v1/Ll-wk8x3G_g--sequence_attention_transformer.md",
+    "data/processing/channel_evidence_packets_v1/MpsVE60iRLM--representation_pretraining.md",
+    "data/processing/channel_evidence_packets_v1/N6aRv06iv2g--sequence_attention_transformer.md",
+    "data/processing/channel_evidence_packets_v1/OP5HcXJg2Aw--cnn_rnn_inductive_bias.md",
+    "data/processing/channel_evidence_packets_v1/e03YKGHXnL8--optimization_training.md",
+    "data/processing/channel_evidence_packets_v1/e422eloJ0W4--representation_pretraining.md",
+    "data/processing/channel_evidence_packets_v1/gjsdVi90yQo--cnn_rnn_inductive_bias.md",
+    "data/processing/channel_evidence_packets_v1/gmsMY5kc-zw--sequence_attention_transformer.md",
+    "data/processing/channel_evidence_packets_v1/lluMBz5AoOg--cnn_rnn_inductive_bias.md",
+    "data/processing/channel_evidence_packets_v1/vXb2QYOUzl4--sequence_attention_transformer.md",
+    "data/processing/channel_evidence_packets_v1/xCGidAeyS4M--cnn_rnn_inductive_bias.md",
+    "data/processing/channel_evidence_packets_v1/yKKNr-QKz2Q--optimization_training.md"
+  ],
+  "principles": [
+    {
+      "id": "HYL-P1-SEQ-001",
+      "domain": "architecture-and-representation",
+      "principle": "序列任務的架構選擇應把可見上下文範圍、token 順序訊號與推論期記憶成本視為可驗證的設計變數，而不是只比較模型名稱。",
+      "decision_rule": "先固定資料、訓練預算與評估指標，建立局部上下文或弱位置訊號基線；再比較 attention 範圍、position method 與 KV/cache 策略，並按序列長度與延遲分層報告。",
+      "evidence_level": "CROSS_SOURCE_INFERENCE",
+      "uncertainty": "來源說明架構機制與取捨，不構成任何 position method、Transformer variant 或 FlashAttention 在所有任務上的普遍優越性。",
+      "review_status": "CANDIDATE_REVIEW_REQUIRED",
+      "formal_knowledge_update": "NOT_YET",
+      "sources": [
+        {
+          "video_id": "Ll-wk8x3G_g",
+          "title": "如何讓 Transformer 知道輸入 Token 的順序？Absolute、Relative、RoPE、到沒有 Positional Embedding",
+          "url": "https://www.youtube.com/watch?v=Ll-wk8x3G_g",
+          "timestamp_start": 0.0,
+          "timestamp_end": 89.72200000000001,
+          "transcript_type": "official",
+          "source_chunk": "Ll-wk8x3G_g:0-30",
+          "evidence_packet": "EVP-CHANNEL-Ll-wk8x3G_g-sequence_attention_transformer-V1"
+        },
+        {
+          "video_id": "vXb2QYOUzl4",
+          "title": "加快語言模型生成速度 (1/2)：Flash Attention",
+          "url": "https://www.youtube.com/watch?v=vXb2QYOUzl4",
+          "timestamp_start": 0.233,
+          "timestamp_end": 86.319,
+          "transcript_type": "official",
+          "source_chunk": "vXb2QYOUzl4:0-30",
+          "evidence_packet": "EVP-CHANNEL-vXb2QYOUzl4-sequence_attention_transformer-V1"
+        },
+        {
+          "video_id": "N6aRv06iv2g",
+          "title": "【機器學習2021】Transformer (下)",
+          "url": "https://www.youtube.com/watch?v=N6aRv06iv2g",
+          "timestamp_start": 530.89,
+          "timestamp_end": 619.61,
+          "transcript_type": "official",
+          "source_chunk": "N6aRv06iv2g:251-295",
+          "evidence_packet": "EVP-CHANNEL-N6aRv06iv2g-sequence_attention_transformer-V1"
+        },
+        {
+          "video_id": "gmsMY5kc-zw",
+          "title": "【機器學習2021】自注意力機制 (Self-attention) (下)",
+          "url": "https://www.youtube.com/watch?v=gmsMY5kc-zw",
+          "timestamp_start": 208.07999999999998,
+          "timestamp_end": 297.49,
+          "transcript_type": "official",
+          "source_chunk": "gmsMY5kc-zw:70-103",
+          "evidence_packet": "EVP-CHANNEL-gmsMY5kc-zw-sequence_attention_transformer-V1"
+        }
+      ],
+      "provenance": [
+        {
+          "video_id": "Ll-wk8x3G_g",
+          "title": "如何讓 Transformer 知道輸入 Token 的順序？Absolute、Relative、RoPE、到沒有 Positional Embedding",
+          "url": "https://www.youtube.com/watch?v=Ll-wk8x3G_g",
+          "timestamp_start": 0.0,
+          "timestamp_end": 89.72200000000001,
+          "transcript_type": "official",
+          "source_chunk": "Ll-wk8x3G_g:0-30",
+          "evidence_packet": "EVP-CHANNEL-Ll-wk8x3G_g-sequence_attention_transformer-V1"
+        },
+        {
+          "video_id": "vXb2QYOUzl4",
+          "title": "加快語言模型生成速度 (1/2)：Flash Attention",
+          "url": "https://www.youtube.com/watch?v=vXb2QYOUzl4",
+          "timestamp_start": 0.233,
+          "timestamp_end": 86.319,
+          "transcript_type": "official",
+          "source_chunk": "vXb2QYOUzl4:0-30",
+          "evidence_packet": "EVP-CHANNEL-vXb2QYOUzl4-sequence_attention_transformer-V1"
+        },
+        {
+          "video_id": "N6aRv06iv2g",
+          "title": "【機器學習2021】Transformer (下)",
+          "url": "https://www.youtube.com/watch?v=N6aRv06iv2g",
+          "timestamp_start": 530.89,
+          "timestamp_end": 619.61,
+          "transcript_type": "official",
+          "source_chunk": "N6aRv06iv2g:251-295",
+          "evidence_packet": "EVP-CHANNEL-N6aRv06iv2g-sequence_attention_transformer-V1"
+        },
+        {
+          "video_id": "gmsMY5kc-zw",
+          "title": "【機器學習2021】自注意力機制 (Self-attention) (下)",
+          "url": "https://www.youtube.com/watch?v=gmsMY5kc-zw",
+          "timestamp_start": 208.07999999999998,
+          "timestamp_end": 297.49,
+          "transcript_type": "official",
+          "source_chunk": "gmsMY5kc-zw:70-103",
+          "evidence_packet": "EVP-CHANNEL-gmsMY5kc-zw-sequence_attention_transformer-V1"
+        }
+      ],
+      "dossier": "distillation/channel_sequence_attention_transformer/knowledge/research/merged/summary.md"
+    },
+    {
+      "id": "HYL-P1-INDUCTIVE-001",
+      "domain": "architecture-and-inductive-bias",
+      "principle": "CNN 的 locality／parameter sharing 與 RNN 的 state／order sensitivity 是可被任務資料結構驗證的 inductive bias；應以資料幾何與部署限制選擇，而非把任一架構當成通用預設。",
+      "decision_rule": "先明確寫出局部性、平移結構、序列順序與長距依賴假設；用參數量、receptive field、sequence length 和 error slices 對照 CNN/RNN 或競爭基線。",
+      "evidence_level": "CROSS_SOURCE_INFERENCE",
+      "uncertainty": "來源不提供一套跨資料集的 CNN/RNN 勝負排名；架構比較仍需要固定資料處理、容量與訓練預算。",
+      "review_status": "CANDIDATE_REVIEW_REQUIRED",
+      "formal_knowledge_update": "NOT_YET",
+      "sources": [
+        {
+          "video_id": "lluMBz5AoOg",
+          "title": "[TA 補充課] Transformer and its variant (由助教紀伯翰同學講授)",
+          "url": "https://www.youtube.com/watch?v=lluMBz5AoOg",
+          "timestamp_start": 266.7,
+          "timestamp_end": 355.832,
+          "transcript_type": "official",
+          "source_chunk": "lluMBz5AoOg:1-18",
+          "evidence_packet": "EVP-CHANNEL-lluMBz5AoOg-cnn_rnn_inductive_bias-V1"
+        },
+        {
+          "video_id": "xCGidAeyS4M",
+          "title": "ML Lecture 21-1: Recurrent Neural Network (Part I)",
+          "url": "https://www.youtube.com/watch?v=xCGidAeyS4M",
+          "timestamp_start": 11.11,
+          "timestamp_end": 97.89,
+          "transcript_type": "official",
+          "source_chunk": "xCGidAeyS4M:2-19",
+          "evidence_packet": "EVP-CHANNEL-xCGidAeyS4M-cnn_rnn_inductive_bias-V1"
+        },
+        {
+          "video_id": "gjsdVi90yQo",
+          "title": "【生成式AI時代下的機器學習(2025)】第四講：Transformer 的時代要結束了嗎？介紹 Transformer 的競爭者們",
+          "url": "https://www.youtube.com/watch?v=gjsdVi90yQo",
+          "timestamp_start": 90.0,
+          "timestamp_end": 179.84,
+          "transcript_type": "official",
+          "source_chunk": "gjsdVi90yQo:32-66",
+          "evidence_packet": "EVP-CHANNEL-gjsdVi90yQo-cnn_rnn_inductive_bias-V1"
+        },
+        {
+          "video_id": "OP5HcXJg2Aw",
+          "title": "【機器學習2021】卷積神經網路 (Convolutional Neural Networks, CNN)",
+          "url": "https://www.youtube.com/watch?v=OP5HcXJg2Aw",
+          "timestamp_start": 0.2,
+          "timestamp_end": 88.4,
+          "transcript_type": "official",
+          "source_chunk": "OP5HcXJg2Aw:0-28",
+          "evidence_packet": "EVP-CHANNEL-OP5HcXJg2Aw-cnn_rnn_inductive_bias-V1"
+        }
+      ],
+      "provenance": [
+        {
+          "video_id": "lluMBz5AoOg",
+          "title": "[TA 補充課] Transformer and its variant (由助教紀伯翰同學講授)",
+          "url": "https://www.youtube.com/watch?v=lluMBz5AoOg",
+          "timestamp_start": 266.7,
+          "timestamp_end": 355.832,
+          "transcript_type": "official",
+          "source_chunk": "lluMBz5AoOg:1-18",
+          "evidence_packet": "EVP-CHANNEL-lluMBz5AoOg-cnn_rnn_inductive_bias-V1"
+        },
+        {
+          "video_id": "xCGidAeyS4M",
+          "title": "ML Lecture 21-1: Recurrent Neural Network (Part I)",
+          "url": "https://www.youtube.com/watch?v=xCGidAeyS4M",
+          "timestamp_start": 11.11,
+          "timestamp_end": 97.89,
+          "transcript_type": "official",
+          "source_chunk": "xCGidAeyS4M:2-19",
+          "evidence_packet": "EVP-CHANNEL-xCGidAeyS4M-cnn_rnn_inductive_bias-V1"
+        },
+        {
+          "video_id": "gjsdVi90yQo",
+          "title": "【生成式AI時代下的機器學習(2025)】第四講：Transformer 的時代要結束了嗎？介紹 Transformer 的競爭者們",
+          "url": "https://www.youtube.com/watch?v=gjsdVi90yQo",
+          "timestamp_start": 90.0,
+          "timestamp_end": 179.84,
+          "transcript_type": "official",
+          "source_chunk": "gjsdVi90yQo:32-66",
+          "evidence_packet": "EVP-CHANNEL-gjsdVi90yQo-cnn_rnn_inductive_bias-V1"
+        },
+        {
+          "video_id": "OP5HcXJg2Aw",
+          "title": "【機器學習2021】卷積神經網路 (Convolutional Neural Networks, CNN)",
+          "url": "https://www.youtube.com/watch?v=OP5HcXJg2Aw",
+          "timestamp_start": 0.2,
+          "timestamp_end": 88.4,
+          "transcript_type": "official",
+          "source_chunk": "OP5HcXJg2Aw:0-28",
+          "evidence_packet": "EVP-CHANNEL-OP5HcXJg2Aw-cnn_rnn_inductive_bias-V1"
+        }
+      ],
+      "dossier": "distillation/channel_cnn_rnn_inductive_bias/knowledge/research/merged/summary.md"
+    },
+    {
+      "id": "HYL-P1-REPR-001",
+      "domain": "representation-and-transfer",
+      "principle": "預訓練／自監督表徵的價值要在下游遷移條件下驗證：區分 pretext task、資料分布、frozen versus fine-tuned 使用方式與實際下游任務。",
+      "decision_rule": "至少比較從零訓練、frozen representation 與 fine-tuning；固定下游資料切分，分開報告資料量、domain shift、任務類型與每一種 adaptation 的結果。",
+      "evidence_level": "CROSS_SOURCE_INFERENCE",
+      "uncertainty": "來源支持 representation、autoencoder 與 speech self-supervision 的設計思路，不保證任一 pretraining recipe 對所有模態或低資料任務都會轉移成功。",
+      "review_status": "CANDIDATE_REVIEW_REQUIRED",
+      "formal_knowledge_update": "NOT_YET",
+      "sources": [
+        {
+          "video_id": "3oHlf8-J3Nc",
+          "title": "【機器學習2021】自編碼器 (Auto-encoder) (上) – 基本概念",
+          "url": "https://www.youtube.com/watch?v=3oHlf8-J3Nc",
+          "timestamp_start": 2.83,
+          "timestamp_end": 90.9,
+          "transcript_type": "official",
+          "source_chunk": "3oHlf8-J3Nc:0-34",
+          "evidence_packet": "EVP-CHANNEL-3oHlf8-J3Nc-representation_pretraining-V1"
+        },
+        {
+          "video_id": "e422eloJ0W4",
+          "title": "【機器學習2021】自督導式學習 (Self-supervised Learning) (一) – 芝麻街與進擊的巨人",
+          "url": "https://www.youtube.com/watch?v=e422eloJ0W4",
+          "timestamp_start": 2.31,
+          "timestamp_end": 91.12,
+          "transcript_type": "official",
+          "source_chunk": "e422eloJ0W4:0-34",
+          "evidence_packet": "EVP-CHANNEL-e422eloJ0W4-representation_pretraining-V1"
+        },
+        {
+          "video_id": "MpsVE60iRLM",
+          "title": "SUPERB: 語音上的自督導式學習模型居然十項全能？",
+          "url": "https://www.youtube.com/watch?v=MpsVE60iRLM",
+          "timestamp_start": 1.72,
+          "timestamp_end": 90.9,
+          "transcript_type": "official",
+          "source_chunk": "MpsVE60iRLM:0-29",
+          "evidence_packet": "EVP-CHANNEL-MpsVE60iRLM-representation_pretraining-V1"
+        },
+        {
+          "video_id": "JZvEzb5PV3U",
+          "title": "【機器學習2021】自編碼器 (Auto-encoder) (下) – 領結變聲器與更多應用",
+          "url": "https://www.youtube.com/watch?v=JZvEzb5PV3U",
+          "timestamp_start": 89.95,
+          "timestamp_end": 179.41,
+          "transcript_type": "official",
+          "source_chunk": "JZvEzb5PV3U:37-76",
+          "evidence_packet": "EVP-CHANNEL-JZvEzb5PV3U-representation_pretraining-V1"
+        }
+      ],
+      "provenance": [
+        {
+          "video_id": "3oHlf8-J3Nc",
+          "title": "【機器學習2021】自編碼器 (Auto-encoder) (上) – 基本概念",
+          "url": "https://www.youtube.com/watch?v=3oHlf8-J3Nc",
+          "timestamp_start": 2.83,
+          "timestamp_end": 90.9,
+          "transcript_type": "official",
+          "source_chunk": "3oHlf8-J3Nc:0-34",
+          "evidence_packet": "EVP-CHANNEL-3oHlf8-J3Nc-representation_pretraining-V1"
+        },
+        {
+          "video_id": "e422eloJ0W4",
+          "title": "【機器學習2021】自督導式學習 (Self-supervised Learning) (一) – 芝麻街與進擊的巨人",
+          "url": "https://www.youtube.com/watch?v=e422eloJ0W4",
+          "timestamp_start": 2.31,
+          "timestamp_end": 91.12,
+          "transcript_type": "official",
+          "source_chunk": "e422eloJ0W4:0-34",
+          "evidence_packet": "EVP-CHANNEL-e422eloJ0W4-representation_pretraining-V1"
+        },
+        {
+          "video_id": "MpsVE60iRLM",
+          "title": "SUPERB: 語音上的自督導式學習模型居然十項全能？",
+          "url": "https://www.youtube.com/watch?v=MpsVE60iRLM",
+          "timestamp_start": 1.72,
+          "timestamp_end": 90.9,
+          "transcript_type": "official",
+          "source_chunk": "MpsVE60iRLM:0-29",
+          "evidence_packet": "EVP-CHANNEL-MpsVE60iRLM-representation_pretraining-V1"
+        },
+        {
+          "video_id": "JZvEzb5PV3U",
+          "title": "【機器學習2021】自編碼器 (Auto-encoder) (下) – 領結變聲器與更多應用",
+          "url": "https://www.youtube.com/watch?v=JZvEzb5PV3U",
+          "timestamp_start": 89.95,
+          "timestamp_end": 179.41,
+          "transcript_type": "official",
+          "source_chunk": "JZvEzb5PV3U:37-76",
+          "evidence_packet": "EVP-CHANNEL-JZvEzb5PV3U-representation_pretraining-V1"
+        }
+      ],
+      "dossier": "distillation/channel_representation_pretraining/knowledge/research/merged/summary.md"
+    },
+    {
+      "id": "HYL-P1-OPT-001",
+      "domain": "training-diagnosis",
+      "principle": "訓練問題應先用 learning curve、learning rate、gradient／loss 行為與 normalization 條件辨別，而非先改大模型或一次改多個 optimizer 設定。",
+      "decision_rule": "保持資料與架構固定，先記錄 loss、gradient norm、learning-rate schedule 和 train/validation gap；一次只變更一個 optimizer、schedule、batch 或 normalization 因子，將結果連回可區分的失敗假設。",
+      "evidence_level": "CROSS_SOURCE_INFERENCE",
+      "uncertainty": "這是研究診斷的實驗排序建議，不代表任何 optimizer、batch normalization 或 learning rate schedule 的通用最優設定。",
+      "review_status": "CANDIDATE_REVIEW_REQUIRED",
+      "formal_knowledge_update": "NOT_YET",
+      "sources": [
+        {
+          "video_id": "1UqCjFQiiy0",
+          "title": "ML Lecture 1: Regression - Demo",
+          "url": "https://www.youtube.com/watch?v=1UqCjFQiiy0",
+          "timestamp_start": 0.0,
+          "timestamp_end": 20.865,
+          "transcript_type": "official",
+          "source_chunk": "1UqCjFQiiy0:0-6",
+          "evidence_packet": "EVP-CHANNEL-1UqCjFQiiy0-optimization_training-V1"
+        },
+        {
+          "video_id": "yKKNr-QKz2Q",
+          "title": "ML Lecture 3-1: Gradient Descent",
+          "url": "https://www.youtube.com/watch?v=yKKNr-QKz2Q",
+          "timestamp_start": 20.82,
+          "timestamp_end": 109.32,
+          "transcript_type": "official",
+          "source_chunk": "yKKNr-QKz2Q:1-24",
+          "evidence_packet": "EVP-CHANNEL-yKKNr-QKz2Q-optimization_training-V1"
+        },
+        {
+          "video_id": "e03YKGHXnL8",
+          "title": "[TA 補充課] Optimization for Deep Learning (2/2) (由助教簡仲明同學講授)",
+          "url": "https://www.youtube.com/watch?v=e03YKGHXnL8",
+          "timestamp_start": 27.242,
+          "timestamp_end": 115.568,
+          "transcript_type": "official",
+          "source_chunk": "e03YKGHXnL8:1-23",
+          "evidence_packet": "EVP-CHANNEL-e03YKGHXnL8-optimization_training-V1"
+        },
+        {
+          "video_id": "BABPWOkSbLE",
+          "title": "【機器學習2021】類神經網路訓練不起來怎麼辦 (五)： 批次標準化 (Batch Normalization) 簡介",
+          "url": "https://www.youtube.com/watch?v=BABPWOkSbLE",
+          "timestamp_start": 70.55,
+          "timestamp_end": 159.45,
+          "transcript_type": "official",
+          "source_chunk": "BABPWOkSbLE:0-33",
+          "evidence_packet": "EVP-CHANNEL-BABPWOkSbLE-optimization_training-V1"
+        }
+      ],
+      "provenance": [
+        {
+          "video_id": "1UqCjFQiiy0",
+          "title": "ML Lecture 1: Regression - Demo",
+          "url": "https://www.youtube.com/watch?v=1UqCjFQiiy0",
+          "timestamp_start": 0.0,
+          "timestamp_end": 20.865,
+          "transcript_type": "official",
+          "source_chunk": "1UqCjFQiiy0:0-6",
+          "evidence_packet": "EVP-CHANNEL-1UqCjFQiiy0-optimization_training-V1"
+        },
+        {
+          "video_id": "yKKNr-QKz2Q",
+          "title": "ML Lecture 3-1: Gradient Descent",
+          "url": "https://www.youtube.com/watch?v=yKKNr-QKz2Q",
+          "timestamp_start": 20.82,
+          "timestamp_end": 109.32,
+          "transcript_type": "official",
+          "source_chunk": "yKKNr-QKz2Q:1-24",
+          "evidence_packet": "EVP-CHANNEL-yKKNr-QKz2Q-optimization_training-V1"
+        },
+        {
+          "video_id": "e03YKGHXnL8",
+          "title": "[TA 補充課] Optimization for Deep Learning (2/2) (由助教簡仲明同學講授)",
+          "url": "https://www.youtube.com/watch?v=e03YKGHXnL8",
+          "timestamp_start": 27.242,
+          "timestamp_end": 115.568,
+          "transcript_type": "official",
+          "source_chunk": "e03YKGHXnL8:1-23",
+          "evidence_packet": "EVP-CHANNEL-e03YKGHXnL8-optimization_training-V1"
+        },
+        {
+          "video_id": "BABPWOkSbLE",
+          "title": "【機器學習2021】類神經網路訓練不起來怎麼辦 (五)： 批次標準化 (Batch Normalization) 簡介",
+          "url": "https://www.youtube.com/watch?v=BABPWOkSbLE",
+          "timestamp_start": 70.55,
+          "timestamp_end": 159.45,
+          "transcript_type": "official",
+          "source_chunk": "BABPWOkSbLE:0-33",
+          "evidence_packet": "EVP-CHANNEL-BABPWOkSbLE-optimization_training-V1"
+        }
+      ],
+      "dossier": "distillation/channel_optimization_training/knowledge/research/merged/summary.md"
+    }
+  ]
+}

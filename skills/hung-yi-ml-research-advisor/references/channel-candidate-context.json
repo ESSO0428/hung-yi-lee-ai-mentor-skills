@@ -1,0 +1,11 @@
+{
+  "schema_version": "hung-yi-mentor-channel-candidate-context.v1",
+  "knowledge_index": "../../knowledge/channel-mentor-knowledge-index.v1.json",
+  "purpose": "Route verified channel-derived P1/P2 candidate knowledge without giving the mentor any video acquisition, selector, ASR, AGY, or Distilly ownership.",
+  "use_policy": {
+    "formal_p0": "Use only scoped formal rules from normalized_principles.json with their provenance.",
+    "p1_p2_candidates": "Use only when a candidate directly helps formulate hypotheses or a discriminating experiment; label it CANDIDATE_REVIEW_REQUIRED and cite its candidate ID plus source provenance.",
+    "p3_archive": "Never use archive/logistics coverage as a recipe rule or teacher-attributed ML conclusion.",
+    "missing_or_drifted_index": "Report the candidate layer unavailable instead of inventing a fallback citation."
+  }
+}

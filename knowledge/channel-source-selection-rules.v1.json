@@ -1,0 +1,108 @@
+{
+  "schema_version": "hung-yi-channel-source-selection-rules.v1",
+  "rule_set_id": "hung-yi-channel-selector-2026-10-29",
+  "policy": {
+    "semantic_evidence_required": true,
+    "metadata_is_routing_only": true,
+    "maximum_primary_sources_per_concept": 2,
+    "maximum_corroborating_sources_per_concept": 2,
+    "minimum_selected_sources_per_concept": 2,
+    "formal_p0_is_reused_not_reexpanded": true
+  },
+  "concepts": [
+    {
+      "id": "sequence_attention_transformer",
+      "tier": "P1",
+      "label": "Transformer／attention／sequence representation",
+      "patterns": [
+        "\\btransformer\\b", "self[- ]attention", "multi[- ]head", "positional (?:encoding|embedding)",
+        "encoder[- ]decoder", "sequence[- ]to[- ]sequence", "\\bseq2seq\\b", "attention mechanism",
+        "自注意力", "多頭注意力", "位置編碼", "位置嵌入", "編碼器[-－]?解碼器", "序列到序列", "注意力機制"
+      ]
+    },
+    {
+      "id": "cnn_rnn_inductive_bias",
+      "tier": "P1",
+      "label": "CNN／RNN／inductive bias",
+      "patterns": [
+        "\\bcnn\\b", "convolution(?:al)?", "receptive field", "inductive bias", "\\brnn\\b",
+        "recurrent neural", "\\blstm\\b", "\\bgru\\b", "卷積(?:神經網路)?", "感受野", "歸納偏置", "遞迴神經", "長短期記憶"
+      ]
+    },
+    {
+      "id": "representation_pretraining",
+      "tier": "P1",
+      "label": "representation／pretraining／transfer",
+      "patterns": [
+        "representation learning", "feature (?:representation|extract(?:ion)?)", "\\bembedding(?:s)?\\b",
+        "self[- ]supervised", "pre[- ]training", "transfer learning", "contrastive learning",
+        "表徵學習", "特徵(?:表徵|擷取)", "嵌入(?:向量)?", "自我監督", "預訓練", "遷移學習", "對比學習"
+      ]
+    },
+    {
+      "id": "optimization_training",
+      "tier": "P1",
+      "label": "optimization／training paradigm",
+      "patterns": [
+        "learning rate", "gradient descent", "batch norm(?:alization)?", "weight decay", "regulari[sz]ation",
+        "initiali[sz]ation", "training dynamics", "optimizer", "learning[- ]rate schedule",
+        "學習率", "梯度下降", "批次正規化", "權重衰減", "正則化", "初始化", "最佳化器", "訓練動態"
+      ]
+    },
+    {
+      "id": "generative_models",
+      "tier": "P2",
+      "label": "generative modeling",
+      "patterns": [
+        "generative adversarial", "\\bgan\\b", "variational autoencoder", "\\bvae\\b", "diffusion model",
+        "flow matching", "normalizing flow", "autoregressive(?: model)?", "generative model",
+        "生成對抗", "變分自編碼", "擴散模型", "流匹配", "正規化流", "自迴歸", "生成模型"
+      ]
+    },
+    {
+      "id": "reinforcement_learning",
+      "tier": "P2",
+      "label": "reinforcement learning",
+      "patterns": [
+        "reinforcement learning", "policy gradient", "actor[- ]critic", "q[- ]learning", "markov decision",
+        "\\bmdp\\b", "exploration", "reward function", "強化學習", "策略梯度", "演員[-－]?評論家", "q 學習", "馬可夫決策", "探索(?:策略)?", "獎勵函數"
+      ]
+    },
+    {
+      "id": "llm_agent",
+      "tier": "P2",
+      "label": "LLM／agent",
+      "patterns": [
+        "large language model", "\\bllm(?:s)?\\b", "\\bgpt[- ]?[0-9a-z]*\\b", "chatgpt", "prompt(?:ing| engineering)?",
+        "context engineering", "retrieval[- ]augmented", "\\brag\\b", "tool use", "function calling", "agentic", "\\bagent\\b",
+        "大型語言模型", "提示(?:工程)?", "上下文工程", "檢索增強", "工具使用", "函式呼叫", "代理人", "智能體"
+      ]
+    },
+    {
+      "id": "speech_multimodal",
+      "tier": "P2",
+      "label": "speech／multimodal",
+      "patterns": [
+        "automatic speech recognition", "\\basr\\b", "text[- ]to[- ]speech", "\\btts\\b", "voice conversion", "speaker (?:recognition|verification)",
+        "speech (?:recognition|synthesis|translation)", "audio[- ]visual", "multimodal", "vision[- ]language", "image[- ]text",
+        "語音辨識", "語音合成", "語音轉換", "說話人(?:辨識|驗證)", "多模態", "視覺語言", "圖文"
+      ]
+    },
+    {
+      "id": "p3_archive_peripheral_lessons",
+      "tier": "P3",
+      "label": "P3 archive／peripheral lessons",
+      "patterns": [
+        "\\bhomework\\b", "assignment", "course (?:introduction|logistics|overview)", "tutorial", "office hours",
+        "career", "news", "demo(?:nstration)?", "competition rules", "作業", "課程(?:介紹|說明|公告)", "教學", "職涯", "新聞", "展示", "競賽規則"
+      ]
+    }
+  ],
+  "exclude_math_only": {
+    "minimum_distinct_patterns": 2,
+    "patterns": [
+      "linear algebra", "determinant", "eigen(?:value|vector)", "row[- ]reduction", "vector space", "matrix inverse",
+      "線性代數", "行列式", "特徵值", "特徵向量", "列簡化", "向量空間", "反矩陣"
+    ]
+  }
+}

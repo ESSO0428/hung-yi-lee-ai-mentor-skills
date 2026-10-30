@@ -1,0 +1,438 @@
+{
+  "schema_version": 1,
+  "status": "NORMALIZED_P0_MVP",
+  "scope": "Formal P0 source-linked rules; not a transcript substitute.",
+  "principles": [
+    {
+      "id": "MLRA-P0-001",
+      "source_candidate_id": "P0-001",
+      "domain": "training-diagnosis",
+      "domain_label": "訓練診斷",
+      "claim": "測試或榜單表現不滿意時，先檢查訓練資料上的損失，確認模型是否已學到訓練資料。",
+      "decision_rule": "先分辨訓練集也失敗，還是訓練集良好但測試集失敗，再選下一個實驗。",
+      "limitations": "課程以作業與 Kaggle 為例；換成其他任務時仍須確認訓練與部署指標可比。",
+      "evidence_class": "DIRECT_COURSE_EVIDENCE",
+      "skill_use": "DIRECT_RULE",
+      "disclosure": "此規則由課程來源直接支持；仍須檢查當前專案的適用條件。",
+      "provenance": [
+        {
+          "video_id": "WeHM2xpYQpw",
+          "title": "【機器學習2021】機器學習任務攻略",
+          "url": "https://www.youtube.com/watch?v=WeHM2xpYQpw",
+          "timestamp_start": 247.85,
+          "timestamp_end": 336.09,
+          "transcript_type": "official",
+          "source_chunk": "WeHM2xpYQpw:86-120"
+        }
+      ]
+    },
+    {
+      "id": "MLRA-P0-002",
+      "source_candidate_id": "P0-002",
+      "domain": "training-diagnosis",
+      "domain_label": "訓練診斷",
+      "claim": "高訓練損失至少有模型彈性不足與最佳化未成功兩種不同可能，不能只憑一個數值判定要加大模型。",
+      "decision_rule": "把 capacity 與 optimization 當作競爭假設，蒐集能區分兩者的訓練證據。",
+      "limitations": "此處是診斷起點，不表示只有這兩種原因；資料與標籤問題也可能存在。",
+      "evidence_class": "DIRECT_COURSE_EVIDENCE",
+      "skill_use": "DIRECT_RULE",
+      "disclosure": "此規則由課程來源直接支持；仍須檢查當前專案的適用條件。",
+      "provenance": [
+        {
+          "video_id": "WeHM2xpYQpw",
+          "title": "【機器學習2021】機器學習任務攻略",
+          "url": "https://www.youtube.com/watch?v=WeHM2xpYQpw",
+          "timestamp_start": 425.92,
+          "timestamp_end": 515.03,
+          "transcript_type": "official",
+          "source_chunk": "WeHM2xpYQpw:166-210"
+        }
+      ]
+    },
+    {
+      "id": "MLRA-P0-003",
+      "source_candidate_id": "P0-003",
+      "domain": "model-capacity",
+      "domain_label": "模型容量",
+      "claim": "若模型可表示的函數集合不包含低損失解，單靠改進求解器無法彌補表示能力不足。",
+      "decision_rule": "在有證據支持模型偏差時，考慮增加相關特徵或模型彈性。",
+      "limitations": "模型偏差須先有診斷證據；不能從測試分數低直接推定。",
+      "evidence_class": "DIRECT_COURSE_EVIDENCE",
+      "skill_use": "DIRECT_RULE",
+      "disclosure": "此規則由課程來源直接支持；仍須檢查當前專案的適用條件。",
+      "provenance": [
+        {
+          "video_id": "WeHM2xpYQpw",
+          "title": "【機器學習2021】機器學習任務攻略",
+          "url": "https://www.youtube.com/watch?v=WeHM2xpYQpw",
+          "timestamp_start": 336.31,
+          "timestamp_end": 425.92,
+          "transcript_type": "official",
+          "source_chunk": "WeHM2xpYQpw:121-165"
+        },
+        {
+          "video_id": "D_S6y0Jm6dQ",
+          "title": "ML Lecture 2: Where does the error come from?",
+          "url": "https://www.youtube.com/watch?v=D_S6y0Jm6dQ",
+          "timestamp_start": 1589.18,
+          "timestamp_end": 1675.34,
+          "transcript_type": "official",
+          "source_chunk": "D_S6y0Jm6dQ:503-527"
+        }
+      ]
+    },
+    {
+      "id": "MLRA-P0-004",
+      "source_candidate_id": "P0-004",
+      "domain": "optimization",
+      "domain_label": "最佳化",
+      "claim": "若較深且函數集合包含較淺模型的網路，在訓練集上反而有較高損失，該例的問題更可能是最佳化，而不是過擬合。",
+      "decision_rule": "用簡單／淺層基線比較訓練損失；若更有彈性的模型無法達到基線，再查最佳化流程。",
+      "limitations": "包含關係是講者在殘差網路例子中的前提；其他架構未必可直接套用。",
+      "evidence_class": "DIRECT_COURSE_EVIDENCE",
+      "skill_use": "DIRECT_RULE",
+      "disclosure": "此規則由課程來源直接支持；仍須檢查當前專案的適用條件。",
+      "provenance": [
+        {
+          "video_id": "WeHM2xpYQpw",
+          "title": "【機器學習2021】機器學習任務攻略",
+          "url": "https://www.youtube.com/watch?v=WeHM2xpYQpw",
+          "timestamp_start": 783.47,
+          "timestamp_end": 872.83,
+          "transcript_type": "official",
+          "source_chunk": "WeHM2xpYQpw:335-375"
+        }
+      ]
+    },
+    {
+      "id": "MLRA-P0-005",
+      "source_candidate_id": "P0-005",
+      "domain": "generalization",
+      "domain_label": "泛化",
+      "claim": "低訓練損失可以與高測試損失同時存在；記住訓練樣本不等於對未見樣本泛化。",
+      "decision_rule": "訓練已好而驗證／測試差時，轉查泛化與資料條件，不要把它和訓練失敗混成同一問題。",
+      "limitations": "需確認評估分割沒有洩漏，且訓練／測試目標相同。",
+      "evidence_class": "DIRECT_COURSE_EVIDENCE",
+      "skill_use": "DIRECT_RULE",
+      "disclosure": "此規則由課程來源直接支持；仍須檢查當前專案的適用條件。",
+      "provenance": [
+        {
+          "video_id": "WeHM2xpYQpw",
+          "title": "【機器學習2021】機器學習任務攻略",
+          "url": "https://www.youtube.com/watch?v=WeHM2xpYQpw",
+          "timestamp_start": 1045.93,
+          "timestamp_end": 1133.25,
+          "transcript_type": "official",
+          "source_chunk": "WeHM2xpYQpw:454-493"
+        }
+      ]
+    },
+    {
+      "id": "MLRA-P0-006",
+      "source_candidate_id": "P0-006",
+      "domain": "data-diagnosis",
+      "domain_label": "資料診斷",
+      "claim": "資料擴增必須尊重任務與資料的語意；任意變換可能產生錯誤標籤關係。",
+      "decision_rule": "提出 augmentation 前，先說明變換後為何仍保留正確標籤及其適用資料範圍。",
+      "limitations": "影片討論的是特定作業情境；不同模態可接受的變換不同。",
+      "evidence_class": "DIRECT_COURSE_EVIDENCE",
+      "skill_use": "DIRECT_RULE",
+      "disclosure": "此規則由課程來源直接支持；仍須檢查當前專案的適用條件。",
+      "provenance": [
+        {
+          "video_id": "WeHM2xpYQpw",
+          "title": "【機器學習2021】機器學習任務攻略",
+          "url": "https://www.youtube.com/watch?v=WeHM2xpYQpw",
+          "timestamp_start": 1311.32,
+          "timestamp_end": 1399.28,
+          "transcript_type": "official",
+          "source_chunk": "WeHM2xpYQpw:571-608"
+        },
+        {
+          "video_id": "WeHM2xpYQpw",
+          "title": "【機器學習2021】機器學習任務攻略",
+          "url": "https://www.youtube.com/watch?v=WeHM2xpYQpw",
+          "timestamp_start": 1399.4,
+          "timestamp_end": 1489.32,
+          "transcript_type": "official",
+          "source_chunk": "WeHM2xpYQpw:609-647"
+        }
+      ]
+    },
+    {
+      "id": "MLRA-P0-007",
+      "source_candidate_id": "P0-007",
+      "domain": "model-capacity",
+      "domain_label": "模型容量",
+      "claim": "限制模型彈性可減少過擬合，但限制過強也會造成欠擬合；不能把簡化模型當成通用修方。",
+      "decision_rule": "調整容量或正則化時，同時檢查訓練與驗證表現，尋找兩者的平衡。",
+      "limitations": "課程圖像示意不是所有模型的單調定律；須用目標資料實測。",
+      "evidence_class": "DIRECT_COURSE_EVIDENCE",
+      "skill_use": "DIRECT_RULE",
+      "disclosure": "此規則由課程來源直接支持；仍須檢查當前專案的適用條件。",
+      "provenance": [
+        {
+          "video_id": "WeHM2xpYQpw",
+          "title": "【機器學習2021】機器學習任務攻略",
+          "url": "https://www.youtube.com/watch?v=WeHM2xpYQpw",
+          "timestamp_start": 1666.96,
+          "timestamp_end": 1755.92,
+          "transcript_type": "official",
+          "source_chunk": "WeHM2xpYQpw:730-765"
+        },
+        {
+          "video_id": "D_S6y0Jm6dQ",
+          "title": "ML Lecture 2: Where does the error come from?",
+          "url": "https://www.youtube.com/watch?v=D_S6y0Jm6dQ",
+          "timestamp_start": 1937.94,
+          "timestamp_end": 2025.3,
+          "transcript_type": "official",
+          "source_chunk": "D_S6y0Jm6dQ:609-630"
+        }
+      ]
+    },
+    {
+      "id": "MLRA-P0-008",
+      "source_candidate_id": "P0-008",
+      "domain": "evaluation",
+      "domain_label": "評估設計",
+      "claim": "用公開測試或榜單分數反覆挑模型，會對那個公開分割形成選擇偏差，不能保證在私有或部署分佈上同樣好。",
+      "decision_rule": "把模型選擇留給驗證集，保留獨立的最終評估；追蹤公開榜單被看過與調整過的次數。",
+      "limitations": "『追蹤次數』是本專案的操作化表述；講者重點是避免用公開測試結果反覆選模。",
+      "evidence_class": "DIRECT_COURSE_EVIDENCE",
+      "skill_use": "DIRECT_RULE",
+      "disclosure": "此規則由課程來源直接支持；仍須檢查當前專案的適用條件。",
+      "provenance": [
+        {
+          "video_id": "WeHM2xpYQpw",
+          "title": "【機器學習2021】機器學習任務攻略",
+          "url": "https://www.youtube.com/watch?v=WeHM2xpYQpw",
+          "timestamp_start": 1935.26,
+          "timestamp_end": 2024.87,
+          "transcript_type": "official",
+          "source_chunk": "WeHM2xpYQpw:842-885"
+        },
+        {
+          "video_id": "WeHM2xpYQpw",
+          "title": "【機器學習2021】機器學習任務攻略",
+          "url": "https://www.youtube.com/watch?v=WeHM2xpYQpw",
+          "timestamp_start": 2468.53,
+          "timestamp_end": 2556.87,
+          "transcript_type": "official",
+          "source_chunk": "WeHM2xpYQpw:1096-1133"
+        }
+      ]
+    },
+    {
+      "id": "MLRA-P0-009",
+      "source_candidate_id": "P0-009",
+      "domain": "evaluation",
+      "domain_label": "評估設計",
+      "claim": "訓練集用於參數學習、驗證集用於比較候選模型，最終測試集不應代替驗證集參與選模。",
+      "decision_rule": "在實驗紀錄中分清每個 split 的角色，選模時先比較驗證結果。",
+      "limitations": "影片以 Kaggle 的 public/private split 說明；其他專案須另定符合部署目標的評估分割。",
+      "evidence_class": "DIRECT_COURSE_EVIDENCE",
+      "skill_use": "DIRECT_RULE",
+      "disclosure": "此規則由課程來源直接支持；仍須檢查當前專案的適用條件。",
+      "provenance": [
+        {
+          "video_id": "WeHM2xpYQpw",
+          "title": "【機器學習2021】機器學習任務攻略",
+          "url": "https://www.youtube.com/watch?v=WeHM2xpYQpw",
+          "timestamp_start": 2468.53,
+          "timestamp_end": 2556.87,
+          "transcript_type": "official",
+          "source_chunk": "WeHM2xpYQpw:1096-1133"
+        }
+      ]
+    },
+    {
+      "id": "MLRA-P0-010",
+      "source_candidate_id": "P0-010",
+      "domain": "evaluation",
+      "domain_label": "評估設計",
+      "claim": "若單次訓練／驗證切分可能偶然偏斜，可用交叉驗證比較候選模型，再在全部訓練資料上重訓選定模型。",
+      "decision_rule": "當資料量與分割變異使單一驗證分數不穩時，考慮 N-fold cross-validation，並保留獨立測試。",
+      "limitations": "交叉驗證計算成本較高，也不自動解決時間或群組洩漏；須按資料生成方式設計 folds。",
+      "evidence_class": "DIRECT_COURSE_EVIDENCE",
+      "skill_use": "DIRECT_RULE",
+      "disclosure": "此規則由課程來源直接支持；仍須檢查當前專案的適用條件。",
+      "provenance": [
+        {
+          "video_id": "WeHM2xpYQpw",
+          "title": "【機器學習2021】機器學習任務攻略",
+          "url": "https://www.youtube.com/watch?v=WeHM2xpYQpw",
+          "timestamp_start": 2653.73,
+          "timestamp_end": 2743.1,
+          "transcript_type": "official",
+          "source_chunk": "WeHM2xpYQpw:1180-1222"
+        },
+        {
+          "video_id": "WeHM2xpYQpw",
+          "title": "【機器學習2021】機器學習任務攻略",
+          "url": "https://www.youtube.com/watch?v=WeHM2xpYQpw",
+          "timestamp_start": 2743.34,
+          "timestamp_end": 2831.59,
+          "transcript_type": "official",
+          "source_chunk": "WeHM2xpYQpw:1223-1255"
+        }
+      ]
+    },
+    {
+      "id": "MLRA-P0-011",
+      "source_candidate_id": "P0-011",
+      "domain": "data-diagnosis",
+      "domain_label": "資料診斷",
+      "claim": "訓練與測試資料分佈不匹配時，單純增加同一訓練分佈的資料未必改善目標表現。",
+      "decision_rule": "先查資料取得與切分機制，確認目標分佈；再決定需要新資料、重加權或其他適應方法。",
+      "limitations": "重加權是可能後續方向，非此字幕片段直接教導；應視為待驗證的選項。",
+      "evidence_class": "DIRECT_COURSE_EVIDENCE",
+      "skill_use": "DIRECT_RULE",
+      "disclosure": "此規則由課程來源直接支持；仍須檢查當前專案的適用條件。",
+      "provenance": [
+        {
+          "video_id": "WeHM2xpYQpw",
+          "title": "【機器學習2021】機器學習任務攻略",
+          "url": "https://www.youtube.com/watch?v=WeHM2xpYQpw",
+          "timestamp_start": 2919.08,
+          "timestamp_end": 3007.49,
+          "transcript_type": "official",
+          "source_chunk": "WeHM2xpYQpw:1287-1325"
+        }
+      ]
+    },
+    {
+      "id": "MLRA-P0-012",
+      "source_candidate_id": "P0-012",
+      "domain": "loss-design",
+      "domain_label": "目標與損失設計",
+      "claim": "分類的損失函數會改變最佳化地形；在課程例子中，MSE 的高損失區域梯度很小，而 cross-entropy 仍提供可用斜率。",
+      "decision_rule": "分類訓練停滯時，檢查輸出啟用函數與損失是否匹配，再診斷梯度，不要只增加模型層數。",
+      "limitations": "這是講者展示的 softmax 分類設定，不代表任何情境下 MSE 都不可用。",
+      "evidence_class": "DIRECT_COURSE_EVIDENCE",
+      "skill_use": "DIRECT_RULE",
+      "disclosure": "此規則由課程來源直接支持；仍須檢查當前專案的適用條件。",
+      "provenance": [
+        {
+          "video_id": "O2VkP8dJ5FE",
+          "title": "【機器學習2021】類神經網路訓練不起來怎麼辦 (四)：損失函數 (Loss) 也可能有影響",
+          "url": "https://www.youtube.com/watch?v=O2VkP8dJ5FE",
+          "timestamp_start": 1068.31,
+          "timestamp_end": 1156.61,
+          "transcript_type": "official",
+          "source_chunk": "O2VkP8dJ5FE:437-474"
+        }
+      ]
+    },
+    {
+      "id": "MLRA-P0-013",
+      "source_candidate_id": "P0-013",
+      "domain": "experiment-design",
+      "domain_label": "實驗設計",
+      "claim": "比較小型、現有與較大型模型的受控訓練／驗證結果，可以比直接擴大架構更清楚地區分容量與最佳化假設。",
+      "decision_rule": "在算力允許且其餘條件可固定時，先做 small/current/large capacity ablation；依訓練與驗證走勢更新瓶頸判斷。",
+      "limitations": "三組受控消融是本專案根據課程的模型比較示例提出的研究設計，並非李宏毅老師的逐字指示。",
+      "evidence_class": "PROJECT_INFERENCE",
+      "skill_use": "CONDITIONAL_SUGGESTION",
+      "disclosure": "這是根據課程例子形成的專案推論，不是課程原話；回答時必須明示其推論性。",
+      "provenance": [
+        {
+          "video_id": "WeHM2xpYQpw",
+          "title": "【機器學習2021】機器學習任務攻略",
+          "url": "https://www.youtube.com/watch?v=WeHM2xpYQpw",
+          "timestamp_start": 605.66,
+          "timestamp_end": 695.16,
+          "transcript_type": "official",
+          "source_chunk": "WeHM2xpYQpw:251-291"
+        },
+        {
+          "video_id": "D_S6y0Jm6dQ",
+          "title": "ML Lecture 2: Where does the error come from?",
+          "url": "https://www.youtube.com/watch?v=D_S6y0Jm6dQ",
+          "timestamp_start": 1500.58,
+          "timestamp_end": 1589.18,
+          "transcript_type": "official",
+          "source_chunk": "D_S6y0Jm6dQ:479-502"
+        }
+      ]
+    },
+    {
+      "id": "MLRA-P0-014",
+      "source_candidate_id": "P0-014",
+      "domain": "generalization",
+      "domain_label": "泛化",
+      "claim": "在模型與目標資料的證據支持某個可量測指標與泛化能力有關時，可以把該指標納入訓練目標作為正則化項。",
+      "decision_rule": "先在目標設定檢驗候選指標是否與泛化表現有穩定關聯；只有在關聯成立且代價可接受時，才以受控實驗把它納入 objective function。",
+      "limitations": "課程以參數 norm、sharpness 與 sensitivity 作為可能指標來說明，沒有保證任一 proxy 對所有架構、資料分佈或部署目標都有效。",
+      "evidence_class": "DIRECT_COURSE_EVIDENCE",
+      "skill_use": "DIRECT_RULE",
+      "disclosure": "此規則由課程來源直接支持；仍須檢查當前專案的適用條件。",
+      "provenance": [
+        {
+          "video_id": "pivB5jEBOQw",
+          "title": "Deep Learning Theory 3-2: Indicator of Generalization",
+          "url": "https://www.youtube.com/watch?v=pivB5jEBOQw",
+          "timestamp_start": 89.66,
+          "timestamp_end": 178.54,
+          "transcript_type": "official",
+          "source_chunk": "pivB5jEBOQw:30-63"
+        },
+        {
+          "video_id": "pivB5jEBOQw",
+          "title": "Deep Learning Theory 3-2: Indicator of Generalization",
+          "url": "https://www.youtube.com/watch?v=pivB5jEBOQw",
+          "timestamp_start": 178.54,
+          "timestamp_end": 266.02,
+          "transcript_type": "official",
+          "source_chunk": "pivB5jEBOQw:64-88"
+        }
+      ]
+    },
+    {
+      "id": "MLRA-P0-015",
+      "source_candidate_id": "P0-015",
+      "domain": "experiment-design",
+      "domain_label": "實驗設計",
+      "claim": "評估一個新 ML 技術前，先辨識它改變的是候選函式集合、評量函式好壞的標準，還是找出最佳函式的程序；在其中一層有作用，不代表能取代其餘層。",
+      "decision_rule": "把提案映射到三層，分別寫下它預期改變的可觀察量與仍未被處理的層；若無法定位，先釐清機制與失敗模式，再決定實驗。",
+      "limitations": "這是課程的問題拆解框架，不是把每一種 ML 方法嚴格限定在唯一一層；同一方法可能跨層作用。術語與框架已用本機投影片影格核對，但逐字稿為需複核的 ASR。",
+      "evidence_class": "DIRECT_COURSE_EVIDENCE",
+      "skill_use": "DIRECT_RULE",
+      "disclosure": "此規則由課程來源直接支持；仍須檢查當前專案的適用條件。",
+      "provenance": [
+        {
+          "video_id": "phQK8xZpgoU",
+          "title": "【生成式AI】快速了解機器學習基本原理 (1/2) (已經略懂機器學習的同學可以跳過這段)",
+          "url": "https://www.youtube.com/watch?v=phQK8xZpgoU",
+          "timestamp_start": 1260.0,
+          "timestamp_end": 1349.98,
+          "transcript_type": "ASR",
+          "source_chunk": "phQK8xZpgoU:458-491"
+        },
+        {
+          "video_id": "phQK8xZpgoU",
+          "title": "【生成式AI】快速了解機器學習基本原理 (1/2) (已經略懂機器學習的同學可以跳過這段)",
+          "url": "https://www.youtube.com/watch?v=phQK8xZpgoU",
+          "timestamp_start": 1350.0,
+          "timestamp_end": 1424.98,
+          "transcript_type": "ASR",
+          "source_chunk": "phQK8xZpgoU:492-525"
+        },
+        {
+          "video_id": "XLyPFnephpY",
+          "title": "【生成式AI】快速了解機器學習基本原理 (2/2) (已經略懂機器學習的同學可以跳過這段)",
+          "url": "https://www.youtube.com/watch?v=XLyPFnephpY",
+          "timestamp_start": 900.0,
+          "timestamp_end": 912.74,
+          "transcript_type": "ASR",
+          "source_chunk": "XLyPFnephpY:360-363"
+        }
+      ]
+    }
+  ],
+  "distillation": {
+    "tool": "Distilly merge_research.py",
+    "summary_path": "distillation\\p0_mvp\\knowledge\\research\\merged\\summary.md",
+    "role": "The source-linked research synthesis was reviewed before normalization; source-level provenance remains in each principle."
+  }
+}
