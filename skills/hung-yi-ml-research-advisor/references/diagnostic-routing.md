@@ -1,40 +1,17 @@
-# Diagnostic routing
+# 診斷 profile 與安裝
 
-The mentor starts with the smallest profile that can answer the current
-question. A profile is a capability boundary, not a claim that every
-dependency must be installed for every invocation.
+profile 依「要鑑別的假設需要什麼測量」選，不是啟動必備。
 
-| Evidence or question | Profile | Capability | Install / run |
-| --- | --- | --- | --- |
-| source-linked reasoning, response shape, course lookup, provenance, or FFP bookkeeping | `core` | standard-library routing plus the core tools | `uv run python ...` |
-| metrics, training curves, bootstrap intervals, ablations, slices, calibration, grouped errors, or prediction tables | `analysis` | NumPy, Pandas, Matplotlib, and analysis tools | `uv sync --extra analysis` |
-| parameter, gradient, activation, or tensor-health question | `torch` | read-only PyTorch diagnostics | `uv sync --extra torch` |
-| one run deliberately exercises every branch or CI needs the complete surface | `all` | all analysis and Torch capabilities | `uv sync --extra all` |
+| 證據或問題 | profile | 內容 | 安裝 |
+|---|---|---|---|
+| 只有分流、triage、課程教材搜尋、recipe_tools | core | stdlib | 無（`uv run`） |
+| 曲線、bootstrap、消融、分組錯誤、calibration、預測表 | `analysis` | numpy、pandas、matplotlib | `uv sync --extra analysis` |
+| 參數、gradient、activation | `torch` | torch 唯讀診斷 | `uv sync --extra torch` |
+| 同一次要跑全部 | `all` | 以上全部 | `uv sync --extra all` |
 
-Use this decision procedure:
+流程：
+1. 先用 `tools/triage.py` 或 skeleton.md 分流，找出能鑑別假設的最小測量。
+2. 只選含該測量的 profile。缺依賴時回報 `INPUT_MISSING` 加上表中的安裝命令（在 collection 根目錄執行），不用口算取代；只有 metrics 表時不裝 torch。
+3. 新證據需要別的 profile 才再載入。記錄 profile、輸入檔 hash、輸出路徑。
 
-1. Begin with observations, hypotheses, and provenance in the core loop.
-2. Name the smallest measurement that would discriminate the competing
-   hypotheses.
-3. Select only the profile containing that measurement.
-4. If the profile is unavailable, return `INPUT_MISSING` with the exact
-   profile command; do not substitute an unverified verbal guess.
-5. Load another profile only when new evidence makes it necessary. Record the
-   profile, tool version, input hashes, and output path in the evidence packet.
-
-`all` is useful for the isolated smoke test and release/CI verification. It is
-not the default production startup requirement. The mentor can be fully useful
-with core-only evidence, and an analysis-only question should not install or
-invoke Torch.
-
-The following are the narrow entry points:
-
-```powershell
-uv run python hung-yi-lee-ai-mentor-skills/skills/hung-yi-ml-research-advisor/tools/advanced_recipe_tools.py summarize-metrics --input metrics.csv --metric val_loss --objective min
-uv run python hung-yi-lee-ai-mentor-skills/skills/hung-yi-ml-research-advisor/tools/model_evaluation.py regression --input predictions.csv --target target --prediction prediction
-uv run python hung-yi-lee-ai-mentor-skills/skills/hung-yi-ml-research-advisor/tools/dataset_split_audit.py --input split.csv --id-column sample_id --split-column split
-uv run python hung-yi-lee-ai-mentor-skills/skills/hung-yi-ml-research-advisor/tools/torch_diagnostics.py --input model.pt --format json
-```
-
-See the profile-specific references before choosing flags. A tool report is
-descriptive evidence, not an automatic intervention or causal conclusion.
+`uv run --project <collection 根目錄> python <skill>/tools/advanced_recipe_tools.py dependencies --json` 會列出目前缺什麼。各工具的旗標見 statistical-diagnostics.md 與 tensor-diagnostics.md。

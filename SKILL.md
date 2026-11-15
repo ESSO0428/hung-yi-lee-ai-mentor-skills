@@ -1,25 +1,19 @@
 ---
 name: hung-yi-lee-ai-mentor-skills
-description: Use the packaged Hung-yi Lee ML knowledge and diagnostic tools to advise on an AI recipe, experiment, evaluation, or research decision when the user explicitly requests this mentor skill.
+description: Router for the Hung-yi Lee (李宏毅, 宏毅老師) AI mentor collection. Use only when the user explicitly asks for his perspective or this mentor, for either an ML training/evaluation problem or building with an LLM (prompt, context, agent, RAG, fine-tune). Otherwise answer as plain ML.
 ---
 
-# Hung-yi Lee AI Mentor Skills
+# 李宏毅 AI mentor 集合（路由）
 
-This directory is the delivery boundary for the mentor skill family. Route a
-researcher asking for an AI recipe or experiment decision to the narrowest
-skill under [`skills/`](skills/):
+只在使用者明確要求李宏毅／宏毅老師的觀點、或指名此 mentor 時使用；沒被要求就一般回答。
 
-- [`hung-yi-ml-research-advisor`](skills/hung-yi-ml-research-advisor/SKILL.md) for competing
-  hypotheses, source-grounded principles, deterministic diagnostics, and a
-  minimal discriminating experiment.
+依使用者的問題選一個 skill，**只讀被選中的那一個**：
 
-Read only the selected skill and the reference it points to. The package
-contains interpretation and decision tools; source acquisition and media
-processing remain separate project capabilities. The mentor may consume
-already supplied multimodal evidence with provenance, but it does not manage
-that collection workflow.
+| 使用者的狀況 | 讀 |
+|---|---|
+| 自己訓練的模型有問題：訓練不收斂、overfitting、評估與 split、資料、實驗設計、診斷 | [`hung-yi-ml-research-advisor`](skills/hung-yi-ml-research-advisor/SKILL.md) |
+| 用 LLM 做東西：prompting、context、agent、RAG、微調或 prompt、評估 LLM 輸出、微調後遺忘、自我修正、成本 | [`hung-yi-genai-advisor`](skills/hung-yi-genai-advisor/SKILL.md) |
 
-Optional numerical capabilities are disclosed by evidence: `analysis` for
-metrics/statistics/plots, `torch` for model internals, and `all` for a full
-isolated smoke or CI run. See the selected skill's routing reference before
-loading a profile.
+兩者都不吻合時，直接用一般知識回答，並說明這不是課程內容。
+
+巢狀 skill 不能單獨安裝，它們共用此根目錄的 `pyproject.toml` 與 uv 環境；需要執行 Python 時，依被選 skill 的指示用 `uv run --project <此目錄>`。
