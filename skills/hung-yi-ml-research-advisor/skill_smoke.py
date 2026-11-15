@@ -55,153 +55,6 @@ def _torch_runtime_smoke(skill_root: Path) -> dict[str, Any]:
     }
 
 
-def _response_validator_smoke(isolated: Path, temp: str | Path) -> dict[str, Any]:
-    """Exercise the advisor response contract in the isolated copy."""
-    response_path = Path(temp) / "advisor-response.json"
-    response_path.write_text(
-        json.dumps(
-            {
-                "observations": [{"text": "validation loss is flat", "evidence_ids": ["m1"]}],
-                "unknowns": ["split stability"],
-                "hypotheses": [
-                    {
-                        "id": "capacity",
-                        "claim": "capacity may be limiting",
-                        "supporting_evidence": ["m1"],
-                        "weakening_evidence": ["UNKNOWN"],
-                        "discriminating_experiment": "run an ablation",
-                    },
-                    {
-                        "id": "data",
-                        "claim": "data may be limiting",
-                        "supporting_evidence": ["UNKNOWN"],
-                        "weakening_evidence": ["m1"],
-                        "discriminating_experiment": "audit the split",
-                    },
-                ],
-                "principles": [{"id": "MLRA-P0-001", "evidence_class": "DIRECT", "source_refs": ["m1"]}],
-                "experiment": {
-                    "fixed_conditions": "same split",
-                    "primary_variable": "capacity",
-                    "prediction": "validation improves",
-                    "falsifier": "no improvement",
-                    "cost_or_risk": "three runs",
-                },
-                "recommendation": {
-                    "next_action": "run the ablation",
-                    "confidence": 0.6,
-                    "reasoning_mode": "SOURCE_GROUNDED",
-                    "belief_update": "update after validation result",
-                },
-                "provenance": [{"evidence_id": "m1", "source": "metrics.csv", "locator": "row=1"}],
-            },
-            ensure_ascii=False,
-        ),
-        encoding="utf-8",
-    )
-    result = subprocess.run(
-        [
-            sys.executable,
-            str(isolated / "tools" / "response_validator.py"),
-            "--input",
-            str(response_path),
-            "--json",
-        ],
-        capture_output=True,
-        text=True,
-        check=False,
-    )
-    payload: dict[str, Any] = {}
-    if result.returncode == 0:
-        try:
-            payload = json.loads(result.stdout)
-        except json.JSONDecodeError:
-            payload = {}
-    return {
-        "status": "PASS"
-        if result.returncode == 0 and payload.get("status") == "PASS"
-        else "FAIL",
-        "schema_version": payload.get("schema_version"),
-        "errors": payload.get("errors", []),
-        "returncode": result.returncode,
-        "stderr": result.stderr[-500:],
-        "response_path": str(response_path),
-    }
-
-
-def _advisor_provenance_smoke(isolated: Path, response_runtime: dict[str, Any], knowledge: Path | None) -> dict[str, Any]:
-    """Exercise the response-to-normalized-knowledge provenance gate."""
-    if knowledge is None:
-        return {"status": "SKIPPED_INPUT", "reason": "normalized knowledge was not supplied"}
-    result = subprocess.run(
-        [
-            sys.executable,
-            str(isolated / "tools" / "advisor_provenance_audit.py"),
-            "--response",
-            response_runtime["response_path"],
-            "--knowledge",
-            str(knowledge),
-            "--json",
-        ],
-        capture_output=True,
-        text=True,
-        check=False,
-    )
-    payload: dict[str, Any] = {}
-    if result.returncode == 0:
-        try:
-            payload = json.loads(result.stdout)
-        except json.JSONDecodeError:
-            payload = {}
-    return {
-        "status": "PASS"
-        if result.returncode == 0 and payload.get("status") == "PASS"
-        else "FAIL",
-        "schema_version": payload.get("schema_version"),
-        "errors": payload.get("errors", []),
-        "returncode": result.returncode,
-        "principles_checked": payload.get("principles_checked"),
-        "stderr": result.stderr[-500:],
-    }
-
-
-def _mentor_response_gate_smoke(isolated: Path, response_runtime: dict[str, Any], knowledge: Path | None) -> dict[str, Any]:
-    """Exercise the one-command response contract plus provenance gate."""
-    if knowledge is None:
-        return {"status": "SKIPPED_INPUT", "reason": "normalized knowledge was not supplied"}
-    result = subprocess.run(
-        [
-            sys.executable,
-            str(isolated / "tools" / "mentor_response_gate.py"),
-            "--response",
-            response_runtime["response_path"],
-            "--knowledge",
-            str(knowledge),
-            "--json",
-        ],
-        capture_output=True,
-        text=True,
-        check=False,
-    )
-    payload: dict[str, Any] = {}
-    if result.returncode == 0:
-        try:
-            payload = json.loads(result.stdout)
-        except json.JSONDecodeError:
-            payload = {}
-    return {
-        "status": "PASS"
-        if result.returncode == 0 and payload.get("status") == "PASS"
-        else "FAIL",
-        "schema_version": payload.get("schema_version"),
-        "errors": payload.get("errors", []),
-        "returncode": result.returncode,
-        "response_validation": payload.get("response_validation", {}).get("status"),
-        "provenance_audit": payload.get("provenance_audit", {}).get("status"),
-        "stderr": result.stderr[-500:],
-    }
-
-
 def _source_files(root: Path) -> list[str]:
     return sorted(
         str(path.relative_to(root))
@@ -222,19 +75,14 @@ def _source_fingerprint(root: Path) -> str:
     return digest.hexdigest()
 
 
-def run_smoke(skill_root: Path, knowledge: Path | None = None) -> dict[str, Any]:
+def run_smoke(skill_root: Path) -> dict[str, Any]:
     source_skill = skill_root.resolve()
-    source_knowledge = knowledge.resolve() if knowledge else None
     with tempfile.TemporaryDirectory(prefix="mlra-skill-smoke-") as temp:
         isolated = Path(temp) / "skill"
         shutil.copytree(source_skill, isolated, ignore=_ignore_local_runtime)
-        isolated_knowledge: Path | None = None
-        if source_knowledge is not None:
-            isolated_knowledge = Path(temp) / "normalized_principles.json"
-            shutil.copy2(source_knowledge, isolated_knowledge)
 
         before_skill = _source_files(isolated)
-        result = bootstrap(isolated, isolated_knowledge)
+        result = bootstrap(isolated)
         recipe_input = Path(temp) / "recipe-metrics.csv"
         recipe_input.write_text(
             "run_id,step,split,metric,value\nsmoke,1,validation,loss,1.0\nsmoke,2,validation,loss,0.5\n",
@@ -466,87 +314,6 @@ def run_smoke(skill_root: Path, knowledge: Path | None = None) -> dict[str, Any]
             and ranking_payload.get("metrics", {}).get("recall_at_k") == 1.0
             and len(ranking_payload.get("groups", [])) == 2
         )
-        ffp_artifact = Path(temp) / "ffp-metrics.csv"
-        ffp_artifact.write_text("MRR_F,MRR_M\n0.6489,0.6994\n", encoding="utf-8")
-        ffp_input = Path(temp) / "ffp-input.json"
-        ffp_input.write_text(
-            json.dumps(
-                {
-                    "schema_version": "ffp-evaluation-input.v1",
-                    "project_id": "FFP",
-                    "required_versions": ["FFP", "FFP_simple", "FFP_new_mlp"],
-                    "artifacts": [
-                        {
-                            "artifact_id": "metrics-ffp",
-                            "kind": "metrics",
-                            "version": "FFP",
-                            "path": str(ffp_artifact),
-                            "sha256": hashlib.sha256(ffp_artifact.read_bytes()).hexdigest(),
-                        }
-                    ],
-                    "transitions": [
-                        {
-                            "transition_id": "FFP_to_FFP_simple",
-                            "from_version": "FFP",
-                            "to_version": "FFP_simple",
-                            "observed": {"evidence_ids": ["metrics-ffp"]},
-                            "actual_outcome": {"next_mrr": 0.70},
-                        }
-                    ],
-                },
-                ensure_ascii=False,
-            ),
-            encoding="utf-8",
-        )
-        ffp_audit_result = subprocess.run(
-            [
-                sys.executable,
-                str(isolated / "tools" / "ffp_evaluation.py"),
-                "audit",
-                "--input",
-                str(ffp_input),
-                "--json",
-            ],
-            capture_output=True,
-            text=True,
-            check=False,
-        )
-        ffp_audit_payload: dict[str, Any] = {}
-        if ffp_audit_result.returncode == 0:
-            try:
-                ffp_audit_payload = json.loads(ffp_audit_result.stdout)
-            except json.JSONDecodeError:
-                ffp_audit_payload = {}
-        ffp_blind_result = subprocess.run(
-            [
-                sys.executable,
-                str(isolated / "tools" / "ffp_evaluation.py"),
-                "blind-pack",
-                "--input",
-                str(ffp_input),
-                "--transition-id",
-                "FFP_to_FFP_simple",
-                "--json",
-            ],
-            capture_output=True,
-            text=True,
-            check=False,
-        )
-        ffp_blind_payload: dict[str, Any] = {}
-        if ffp_blind_result.returncode == 0:
-            try:
-                ffp_blind_payload = json.loads(ffp_blind_result.stdout)
-            except json.JSONDecodeError:
-                ffp_blind_payload = {}
-        ffp_ok = (
-            ffp_audit_result.returncode == 0
-            and ffp_audit_payload.get("status") == "INPUT_MISSING"
-            and ffp_audit_payload.get("artifacts", [{}])[0].get("status") == "VERIFIED"
-            and ffp_blind_result.returncode == 0
-            and ffp_blind_payload.get("status") == "READY_FOR_ADVICE"
-            and ffp_blind_payload.get("leakage_check", {}).get("post_transition_outcome_withheld") is True
-            and ffp_blind_payload.get("leakage_check", {}).get("future_fields_removed") == ["actual_outcome"]
-        )
         advanced_result = subprocess.run(
             [
                 sys.executable,
@@ -615,80 +382,35 @@ def run_smoke(skill_root: Path, knowledge: Path | None = None) -> dict[str, Any]
             and comparison_payload.get("paired") is True
             and comparison_payload.get("n_pairs") == 2
         )
-        visual_root = Path(temp) / "visual-evidence"
-        visual_root.mkdir(parents=True, exist_ok=True)
-        visual_frame = visual_root / "frame.jpg"
-        visual_frame.write_bytes(b"mentor-smoke-frame")
-        visual_digest = hashlib.sha256(visual_frame.read_bytes()).hexdigest()
-        visual_manifest = visual_root / "video.json"
-        visual_manifest.write_text(
-            json.dumps(
-                {
-                    "schema_version": "visual-evidence.v1",
-                    "video_id": "smoke-video",
-                    "provenance": {"source_url": "https://www.youtube.com/watch?v=smoke-video"},
-                    "frames": [
-                        {
-                            "request_id": "smoke-request",
-                            "claim_id": "smoke-claim",
-                            "timestamp_seconds": 10.0,
-                            "frame_path": "visual-evidence/frame.jpg",
-                            "frame_sha256": visual_digest,
-                        }
-                    ],
-                },
-                ensure_ascii=False,
-            ),
+        triage_input = Path(temp) / "triage.json"
+        triage_input.write_text(
+            json.dumps({"train": 80, "shallow_baseline_train": 71, "nested": True, "val": 90}),
             encoding="utf-8",
         )
-        visual_index = visual_root / "index.json"
-        visual_index.write_text(
-            json.dumps(
-                {
-                    "schema_version": "visual-evidence-index.v1",
-                    "entries": [
-                        {
-                            "claim_id": "smoke-claim",
-                            "video_id": "smoke-video",
-                            "manifest_path": "visual-evidence/video.json",
-                        }
-                    ],
-                },
-                ensure_ascii=False,
-            ),
-            encoding="utf-8",
-        )
-        visual_result = subprocess.run(
-            [
-                sys.executable,
-                str(isolated / "tools" / "visual_evidence_lookup.py"),
-                "--root",
-                str(Path(temp)),
-                "--index",
-                str(visual_index),
-                "--claim-id",
-                "smoke-claim",
-                "--json",
-            ],
+        triage_result = subprocess.run(
+            [sys.executable, str(isolated / "tools" / "triage.py"), "--input", str(triage_input)],
             capture_output=True,
             text=True,
+            encoding="utf-8",
             check=False,
         )
-        visual_payload: dict[str, Any] = {}
-        if visual_result.returncode == 0:
+        triage_payload: dict[str, Any] = {}
+        if triage_result.returncode == 0:
             try:
-                visual_payload = json.loads(visual_result.stdout)
+                triage_payload = json.loads(triage_result.stdout)
             except json.JSONDecodeError:
-                visual_payload = {}
-        visual_ok = (
-            visual_result.returncode == 0
-            and visual_payload.get("status") == "PASS"
-            and visual_payload.get("match_count") == 1
-            and visual_payload.get("integrity_failures") == 0
+                triage_payload = {}
+        triage_ok = triage_payload.get("classification") == "optimization"
+        refuse_input = Path(temp) / "triage-refuse.json"
+        refuse_input.write_text(json.dumps({"val": 1.0}), encoding="utf-8")
+        refuse_result = subprocess.run(
+            [sys.executable, str(isolated / "tools" / "triage.py"), "--input", str(refuse_input)],
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+            check=False,
         )
-        response_runtime = _response_validator_smoke(isolated, temp)
-        provenance_runtime = _advisor_provenance_smoke(isolated, response_runtime, isolated_knowledge)
-        response_gate_runtime = _mentor_response_gate_smoke(isolated, response_runtime, isolated_knowledge)
+        triage_refuses = refuse_result.returncode == 2
         torch_runtime = _torch_runtime_smoke(isolated)
         after_skill = _source_files(isolated)
         result.update(
@@ -702,19 +424,15 @@ def run_smoke(skill_root: Path, knowledge: Path | None = None) -> dict[str, Any]
                 and multiclass_ok
                 and regression_ok
                 and ranking_ok
-                and ffp_ok
+                and triage_ok
+                and triage_refuses
                 and advanced_ok
                 and comparison_ok
-                and visual_ok
-                and response_runtime["status"] == "PASS"
-                and provenance_runtime["status"] in {"PASS", "SKIPPED_INPUT"}
-                and response_gate_runtime["status"] in {"PASS", "SKIPPED_INPUT"}
                 and torch_runtime["status"] in {"PASS", "SKIPPED_DEPENDENCY"}
                 and recipe_payload.get("summaries", [{}])[0].get("best_value") == 0.5
                 else "FAIL",
                 "isolated_copy": True,
                 "source_skill": str(source_skill),
-                "source_knowledge": str(source_knowledge) if source_knowledge else None,
                 "source_fingerprint": _source_fingerprint(source_skill),
                 "writes_sources": False,
                 "isolated_files_unchanged": before_skill == after_skill,
@@ -731,21 +449,9 @@ def run_smoke(skill_root: Path, knowledge: Path | None = None) -> dict[str, Any]
                 "regression_evaluation_runtime": regression_payload,
                 "ranking_evaluation": "PASS" if ranking_ok else "FAIL",
                 "ranking_evaluation_runtime": ranking_payload,
-                "ffp_evaluation": "PASS" if ffp_ok else "FAIL",
-                "ffp_evaluation_runtime": {
-                    "audit": ffp_audit_payload,
-                    "blind_pack": ffp_blind_payload,
-                    "data_status": ffp_audit_payload.get("status"),
-                },
+                "triage": "PASS" if triage_ok and triage_refuses else "FAIL",
                 "advanced_tool": "PASS" if advanced_ok else "FAIL",
                 "advanced_comparison": "PASS" if comparison_ok else "FAIL",
-                "visual_evidence_lookup": "PASS" if visual_ok else "FAIL",
-                "response_validator": response_runtime["status"],
-                "response_validator_runtime": response_runtime,
-                "advisor_provenance_audit": provenance_runtime["status"],
-                "advisor_provenance_runtime": provenance_runtime,
-                "mentor_response_gate": response_gate_runtime["status"],
-                "mentor_response_gate_runtime": response_gate_runtime,
                 "advanced_capabilities": advanced_payload.get("capabilities", {}),
                 "advanced_profiles": advanced_payload.get("profiles", {}),
                 "torch_runtime": torch_runtime,
@@ -757,11 +463,10 @@ def run_smoke(skill_root: Path, knowledge: Path | None = None) -> dict[str, Any]
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--skill-root", type=Path, default=Path(__file__).parent)
-    parser.add_argument("--knowledge", type=Path)
     parser.add_argument("--output", type=Path, help="write the machine-readable smoke report to this path")
     parser.add_argument("--json", action="store_true")
     args = parser.parse_args()
-    result = run_smoke(args.skill_root, args.knowledge)
+    result = run_smoke(args.skill_root)
     if args.output:
         args.output.parent.mkdir(parents=True, exist_ok=True)
         args.output.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
