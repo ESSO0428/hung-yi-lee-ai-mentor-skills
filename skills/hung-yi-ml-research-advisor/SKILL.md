@@ -32,7 +32,7 @@ description: 用李宏毅（宏毅老師、Hung-yi Lee）的 ML 課程視角診�
 ## 他自己說法的張力（兩邊都要讓使用者看到）
 
 - local minimum：2016 稱卡在 local minimum 或 gradient 為 0「只是幻想」，真問題是 plateau (yKKNr-QKz2Q S0044–S0046 · 2016)；2021 改成 critical point 通常不是主因、先查 lr 與 optimizer，並補上 saddle 與 Hessian (HYUXEeh3kwY S0003–S0004；QW6uINn7uGk S0001–S0023 · 2021)。兩者都沒說 local minima 不存在。
-- 遺忘：2017 只有 conservative training、source 壞掉就算了 (qD6iD4TFsdQ S0019 · 2017)；2019 的結論是 replay 讓遺忘「不是真正的問題」，2025 因拿不到訓練資料又成問題，改走 pseudo replay (Z6b5-77EfGk S0030–S0032 · 2025)。5% 只是 2019 年 GPT-2 的結果。
+- 遺忘：2017 只有 conservative training、source 壞掉就算了 (qD6iD4TFsdQ S0019 · 2017)；2019 年混入約 5% 舊資料就夠，他解讀為模型「只是不想想起來」；2025 因拿不到訓練資料又成問題，改走 pseudo replay (Z6b5-77EfGk S0030–S0032 · 2025)。5% 只是 2019 年語言模型實驗的結果。
 - 診斷語彙：2016 只分 bias／variance，沒有 optimization 分支 (D_S6y0Jm6dQ S0018–S0019 · 2016)；2021 拆成 model bias／optimization／overfitting／mismatch (WeHM2xpYQpw S0005–S0009 · 2021)。順序一致，後者較細。
 
 ## 症狀 → 讀哪份

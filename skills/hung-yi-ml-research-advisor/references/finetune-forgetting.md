@@ -40,7 +40,7 @@
 8. 新模態（語音）：不微調文字模型，只調 adapter，並以文字模型自己的輸出當 target（DeSTA2）；此屬語音接文字 LLM 情境，勿當通用 LoRA 建議。(Z6b5-77EfGk S0014-S0017, S0044-S0047)
 9. Regularization：Loss 加每維 λ_j(θ_j−θ⁰_j)²，λ_j 大＝重要、少動；重要性怎麼算他說是研究問題，EnW 沒給算法。EWC／GEM／generative replay 屬 2021 終身學習課（Y9J，無筆記，待回查）。他 2019 試 MAS 在語言模型上略差於一般 fine-tuning；dropout、weight decay 擋不住。(EnWz5XuOnIQ S0032-S0034)(Z6b5-77EfGk S0022, S0029)
 10. RL 階段可能較不易遺忘（資料皆模型自產），他明說「是猜想，要等更多研究」，仍須回測。(Z6b5-77EfGk S0040-S0041)
-- 年代演進：2017 Lec19 只有 conservative training 與「source 壞掉就算了」，沒有遺忘處方；2019 結論是有 replay 遺忘「不是真正的問題」；2025 因拿不到訓練資料又成真問題，改走 pseudo replay／self-output（但 EnW 仍稱 replay 是「最有效」）。
+- 年代演進：2017 Lec19 只有 conservative training 與「source 壞掉就算了」，沒有遺忘處方；2019 年混入約 5% 舊資料就夠，他解讀為模型「只是不想想起來」；2025 因拿不到訓練資料又成真問題，改走 pseudo replay／self-output（但 EnW 仍稱 replay 是「最有效」）。
 
 ## J. PEFT / LoRA / adapter
 - 動機：多任務時完整微調存 N 份；adapter 是「一個大模型＋N 個小插件」，成本 N×P 對 P+N×a。adapter 仍是 fine-tune。(F58vJcGgjt0 S0012-S0016)
