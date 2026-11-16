@@ -6,7 +6,7 @@ profile 依「要鑑別的假設需要什麼測量」選，不是啟動必備。
 |---|---|---|---|
 | 只有分流、triage、課程教材搜尋、recipe_tools | core | stdlib | 無（`uv run`） |
 | 曲線、bootstrap、消融、分組錯誤、calibration、預測表 | `analysis` | numpy、pandas、matplotlib | `uv sync --extra analysis` |
-| 參數、gradient、activation | `torch` | torch 唯讀診斷 | `uv sync --extra torch` |
+| 參數、gradient、activation | `torch` | torch 唯讀診斷 | CPU `uv sync --extra torch`；NVIDIA GPU `--extra torch-cu126`（舊驅動）或 `--extra torch-cu132`（driver CUDA ≥ 13.2，見 `nvidia-smi`） |
 | 同一次要跑全部 | `all` | 以上全部 | `uv sync --extra all` |
 
 流程：

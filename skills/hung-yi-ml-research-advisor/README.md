@@ -13,7 +13,7 @@ uv run --project . --with pytest python -m pytest tests/test_triage.py -q
 ## 可選 profile
 
 - `uv sync --extra analysis`：numpy、pandas、matplotlib（`advanced_recipe_tools.py`、`model_evaluation.py`）
-- `uv sync --extra torch`：torch（`torch_diagnostics.py`）
+- `uv sync --extra torch`：torch CPU 版（`torch_diagnostics.py`）；NVIDIA GPU 用 `--extra torch-cu126`（舊驅動）或 `--extra torch-cu132`（`nvidia-smi` 的 CUDA ≥ 13.2）
 - `uv sync --extra all`：以上全部
 
 Python 3.11+。`skill_smoke.py` 在隔離副本上跑 bootstrap 與各診斷工具；缺依賴的分支回報 `SKIPPED_DEPENDENCY` 與安裝命令。

@@ -77,7 +77,7 @@ uv run --project "$SKILL_ROOT" python \
 選配環境：
 
 - `--extra analysis`：指標、統計、表格與畫圖。一般診斷用這個就夠了。
-- `--extra torch`：只有要看參數、gradient、activation 這類模型內部資訊時才需要。
+- `--extra torch`：只有要看參數、gradient、activation 這類模型內部資訊時才需要（CPU 版 torch）。NVIDIA GPU 改用 `--extra torch-cu126`（舊驅動）或 `--extra torch-cu132`（`nvidia-smi` 的 CUDA Version ≥ 13.2）。
 - `--extra all`：刻意做完整 smoke test 或 CI 時才用，平常不需要。
 
 建議在 `AGENTS.md` 和 `CLAUDE.md` 各加一條規則：
@@ -98,7 +98,7 @@ uv run --project "$SKILL_ROOT" python \
 ```bash
 uv sync --extra analysis  # 指標、統計、表格與畫圖
 # 只有需要看模型內部時才裝：
-uv sync --extra torch
+uv sync --extra torch  # CPU；NVIDIA GPU 改用 torch-cu126（舊驅動）或 torch-cu132（driver CUDA ≥ 13.2）
 ```
 
 ## 內容範圍與誠實規則

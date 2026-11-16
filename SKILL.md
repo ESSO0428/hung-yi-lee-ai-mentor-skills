@@ -18,4 +18,9 @@ description: Router for the Hung-yi Lee (李宏毅, 宏毅老師) AI mentor coll
 
 兩者都不吻合時，直接用一般知識回答，並說明這不是課程內容。
 
-巢狀 skill 不能單獨安裝，它們共用此根目錄的 `pyproject.toml` 與 uv 環境；需要執行 Python 時，依被選 skill 的指示用 `uv run --project <此目錄>`。
+巢狀 skill 不能單獨安裝，它們共用此根目錄的 `pyproject.toml` 與 uv 環境。
+
+**執行工具**：`<root>` 是含 `pyproject.toml` 的 skill 根目錄（即本目錄）。
+- 有 `uv.lock`，或 `pyproject.toml` 含 `[project]`：`uv run --project <root> python <腳本>`（首次自動建 `.venv`）。
+- 沒有 uv 但有 `<root>/.venv`：直接用 `<root>/.venv/Scripts/python`（Windows）或 `<root>/.venv/bin/python`。
+- 都沒有：照 README 安裝；缺套件就回報安裝指令，不改用其他環境。

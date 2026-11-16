@@ -51,7 +51,13 @@ description: 用李宏毅（宏毅老師、Hung-yi Lee）的 ML 課程視角診�
 
 ## 工具
 
-指令前綴：`uv run --project <collection 根目錄> python <skill 目錄>/tools/`。缺 profile 時回報安裝命令並停在該分支，不改成口算。
+**執行工具**：`<root>` 是含 `pyproject.toml` 的 collection 根目錄。
+- 有 `uv.lock`，或 `pyproject.toml` 含 `[project]`：`uv run --project <root> python <腳本>`（首次自動建 `.venv`）；工具指令前綴為 `uv run --project <root> python <skill 目錄>/tools/`。
+- 沒有 uv 但有 `<root>/.venv`：直接用 `<root>/.venv/Scripts/python`（Windows）或 `<root>/.venv/bin/python`。
+- 都沒有：照 README 安裝；缺套件就回報安裝指令，不改用其他環境。
+- 需要 torch 時第一次先 `uv sync --project <root> --extra torch`；有 NVIDIA GPU 改用 `torch-cu126`（舊驅動）或 `torch-cu132`（`nvidia-smi` 的 CUDA Version ≥ 13.2）。
+
+缺 profile 時回報安裝命令並停在該分支，不改成口算。
 
 | 何時 | 工具 | 一條命令 | profile |
 |---|---|---|---|
@@ -60,7 +66,7 @@ description: 用李宏毅（宏毅老師、Hung-yi Lee）的 ML 課程視角診�
 | 曲線、bootstrap、消融、分組錯誤 | advanced_recipe_tools.py | `advanced_recipe_tools.py training-dynamics --input m.csv --train-metric-key train/loss --validation-metric-key val/loss --json` | `analysis`：`uv sync --extra analysis` |
 | 分類／迴歸／排序評估與 calibration | model_evaluation.py | `model_evaluation.py regression --input p.csv --json` | `analysis` |
 | 懷疑切分洩漏 | dataset_split_audit.py | `dataset_split_audit.py --input split.csv --json` | core |
-| 參數、gradient、activation | torch_diagnostics.py（函式庫） | 見 references/tensor-diagnostics.md | `torch`：`uv sync --extra torch` |
+| 參數、gradient、activation | torch_diagnostics.py（函式庫） | 見 references/tensor-diagnostics.md | `torch`：CPU `uv sync --extra torch`；NVIDIA GPU `--extra torch-cu126`（舊驅動）或 `--extra torch-cu132`（driver CUDA ≥ 13.2，見 `nvidia-smi`） |
 
 旗標細節見 references/statistical-diagnostics.md；profile 選擇見 references/diagnostic-routing.md。此安裝版不含官方投影片／作業搜尋；使用者要投影片或作業原文時直說查不到，不用影片說法頂替。工具輸出是證據，不是結論。
 
