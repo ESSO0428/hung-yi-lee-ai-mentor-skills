@@ -14,6 +14,8 @@ description: Router for the Hung-yi Lee (李宏毅, 宏毅老師) AI mentor coll
 | 自己訓練的模型有問題：訓練不收斂、overfitting、評估與 split、資料、實驗設計、診斷 | [`hung-yi-ml-research-advisor`](skills/hung-yi-ml-research-advisor/SKILL.md) |
 | 用 LLM 做東西：prompting、context、agent、RAG、微調或 prompt、評估 LLM 輸出、微調後遺忘、自我修正、成本 | [`hung-yi-genai-advisor`](skills/hung-yi-genai-advisor/SKILL.md) |
 
+第一次在對話中使用任一 skill 時，用一句話說明這是依公開課程整理的視角，不是本人，也不代表他背書；之後不再重複。
+
 兩者都不吻合時，直接用一般知識回答，並說明這不是課程內容。
 
 巢狀 skill 不能單獨安裝，它們共用此根目錄的 `pyproject.toml` 與 uv 環境；需要執行 Python 時，依被選 skill 的指示用 `uv run --project <此目錄>`。

@@ -9,7 +9,7 @@
 **A2. 看失敗型態選 Bagging 還是 Boosting。**
 - 症狀：train 低、val 高（複雜模型 variance 大，如深樹）→ Bagging / Random Forest，目的只是降 variance。
 - 症狀：train 本身就高（模型太弱 fit 不了）→ Boosting（或加容量），Bagging 沒用。
-- 他的原話：「Bagging 是用在很強的 model，Boosting 是用在弱的 model」。
+- 他的區分（改寫）：Bagging 用在很強的 model，Boosting 用在弱 model。
 - 實驗：深度 5 的樹做 100 棵 RF 仍 fit 不出初音圖形，只是更平滑；同樣深度 5 的樹做 AdaBoost，T=10 輪廓出來、T=20 好很多、T=50 幾乎、T=100 近乎完美。「Bagging 不會讓模型更能 fit data」。
 - 與 bias/variance 一致：bias 大時「collect 更多 data 沒有用」，要改 model；variance 大時加資料、regularization、augmentation 才有效。
 (tH9FH1DH5n0 S0004 S0007 S0014 S0063; D_S6y0Jm6dQ S0018)
