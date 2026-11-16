@@ -70,7 +70,7 @@
 ## 5. loss function 也是 optimization 的旋鈕
 - **分類用 cross-entropy，不要預設 MSE**。兩者最佳解相同，差別在優化難度：MSE 在 loss 大的區域非常平坦（gradient≈0），初始點若落在那裡就走不動；cross-entropy 在同處有斜率。示範是 3 類、y3=-1000 的簡化設定，他給的是例子不是證明。(O2VkP8dJ5FE S0010-S0014)
   - 用 Adam 時「也許還有機會走到」，但起步慢、訓練較難。
-  - 結論：「居然可以改 loss function 來改變 optimization 的難度」，所以 train 不起來時也要把 loss 選擇列入診斷。
+  - 結論（改寫）：loss function 的選擇本身會改變 optimization 難度，所以 train 不起來時也要把 loss 選擇列入診斷。
 - **標籤與輸出層**：類別間沒有遠近關係時用 one-hot，不要編成 1、2、3 去做 regression（等於預設 1 比較靠近 2）。輸出經 softmax 後與 one-hot 比較；softmax 輸入叫 logit。二類時 sigmoid 與 softmax 等價。(O2VkP8dJ5FE S0002-S0008)
 - **PyTorch 陷阱**：CrossEntropyLoss 已內含 softmax，最後一層不要再加，否則變成加兩次 softmax。後果細節他沒講。(O2VkP8dJ5FE S0010-S0011)
 - cross-entropy 與 maximum likelihood 是同一件事。
