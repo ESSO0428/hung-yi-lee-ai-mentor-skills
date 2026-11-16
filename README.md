@@ -1,48 +1,39 @@
 # hung-yi-lee-ai-mentor-skills
 
-This is the standalone collection boundary for the Lee Hung-yi domain mentor.
-The collection has two skills, selected by the root `SKILL.md` router:
+以李宏毅（宏毅老師）公開課程整理出的 AI 導師 skill 集合。根目錄的 `SKILL.md` 負責分流，底下有兩個 skill：
 
-- `hung-yi-ml-research-advisor`: your own model's training or evaluation has a
-  problem. Competing hypotheses, source-grounded principles, optional
-  deterministic diagnostics, and a minimal discriminating experiment.
-- `hung-yi-genai-advisor`: you are building with an LLM (prompting, context and
-  agent design, RAG, fine-tune vs prompt, evaluating LLM outputs, forgetting
-  after fine-tuning, self-correction, cost). Course-backed advice with a source
-  per statement, year labels, and an explicit not-covered list. It has no
-  executable tools yet; ideas are in `skills/hung-yi-genai-advisor/references/tool-ideas.md`.
+- **`hung-yi-ml-research-advisor`**：自己訓練的模型有問題，例如 loss 降不下來、overfitting、val 和 test 對不上、準確率高得不合理。它會照固定流程診斷：先要證據，再分流成 optimization、model bias、overfitting、mismatch 或 shortcut，接著為每個假設設計一個最便宜的鑑別實驗。另附可執行的診斷工具。
+- **`hung-yi-genai-advisor`**：用 LLM 做東西，例如 prompting、context 與 agent 設計、RAG、微調還是寫 prompt、評估 LLM 輸出、微調後的遺忘、自我修正、成本。每條建議附出處和講課年份，課程沒講的會直說。目前沒有可執行工具，構想放在 `skills/hung-yi-genai-advisor/references/tool-ideas.md`。
 
-Both use the mentor only when explicitly requested.
+兩個 skill 都只在使用者明確要求李宏毅的觀點時才啟用，沒有明說時只給一般 ML 回答。它們是依公開課程整理的觀點，不是本人，也不代表他背書。
 
-It is deliberately separate from video acquisition and distillation tooling.
-The bundled knowledge layer is enough for source-grounded mentor use; it does
-not need downloaded videos, ASR assets, or a local media pipeline.
+這個集合只負責回答，不負責下載影片、語音轉文字或蒸餾；那些建置流程放在另一個專案。安裝後不需要任何影片或逐字稿就能使用。
 
-## Install through skills.sh
+## 透過 skills.sh 安裝
 
-Install the **collection root**, not a nested advisor folder by itself. The
-root carries both advisors, uv project, knowledge bundle, evidence packets, and
-provenance reports together.
+請安裝**整個集合**，不要單獨安裝底下的某一個 advisor：
 
 ```bash
 npx skills add ESSO0428/hung-yi-lee-ai-mentor-skills \
   --skill hung-yi-lee-ai-mentor-skills
 ```
 
-The CLI asks which agent and scope to use. Do not add Codex-specific flags to
-the shared installation command.
+CLI 會詢問要裝給哪個 agent、裝在哪個範圍。不要在這條共用指令裡加 Codex 專屬的參數。
 
-Do **not** install `hung-yi-ml-research-advisor` or `hung-yi-genai-advisor`
-alone through skills.sh: they are the collection's nested runtime components and intentionally reads the bundled
-knowledge from the collection root.
+不要用 skills.sh 單獨安裝 `hung-yi-ml-research-advisor` 或 `hung-yi-genai-advisor`。它們依賴集合根目錄的 `pyproject.toml` 與 uv 環境，單獨裝會跑不起來。
 
-## Set up the uv runtime
-
-The install command copies the files but does not create a Python environment.
-Find the installed collection path and set it up once:
+已經裝過舊版的話，用這條更新（全域安裝時加 `-g`）：
 
 ```bash
-# If you selected global scope during installation, add --global after `list`.
+npx skills update hung-yi-lee-ai-mentor-skills -g -y
+```
+
+## 建立 uv 環境
+
+安裝只會複製檔案，不會建立 Python 環境。先找到集合的安裝路徑，再建一次環境：
+
+```bash
+# 安裝時選了全域範圍的話，在 `list` 後面加 --global
 SKILL_ROOT="$(npx skills list --json | node -e '
 let input = "";
 process.stdin.on("data", chunk => input += chunk);
@@ -57,10 +48,10 @@ process.stdin.on("end", () => {
 uv sync --project "$SKILL_ROOT" --extra analysis
 ```
 
-Windows PowerShell:
+Windows PowerShell：
 
 ```powershell
-# If you selected global scope during installation, add --global after `list`.
+# 安裝時選了全域範圍的話，在 `list` 後面加 --global
 $skillsJson = npx skills list --json | Out-String
 $skills = $skillsJson | ConvertFrom-Json
 $skill = @(
@@ -73,11 +64,9 @@ if (-not $SKILL_ROOT) {
 uv sync --project $SKILL_ROOT --extra analysis
 ```
 
-`uv sync` creates or updates `.venv` in the discovered collection directory.
-Normal commands should keep targeting that project explicitly; no shell
-activation is required.
+`uv sync` 會在集合目錄裡建立或更新 `.venv`。之後的指令都用 `uv run --project` 明確指定這個目錄，不需要啟用 shell 環境。
 
-Verify the layout after installation:
+裝好後檢查目錄結構是否完整，看到 `"status": "PASS"` 就沒問題：
 
 ```bash
 uv run --project "$SKILL_ROOT" python \
@@ -85,52 +74,50 @@ uv run --project "$SKILL_ROOT" python \
   --skill-root "$SKILL_ROOT/skills/hung-yi-ml-research-advisor" --json
 ```
 
-Use `--extra torch` only for model/gradient/activation diagnostics, or
-`--extra all` for a deliberate full-surface smoke/CI run.
+選配環境：
 
-Add this one-line rule to both `AGENTS.md` and `CLAUDE.md`:
+- `--extra analysis`：指標、統計、表格與畫圖。一般診斷用這個就夠了。
+- `--extra torch`：只有要看參數、gradient、activation 這類模型內部資訊時才需要。
+- `--extra all`：刻意做完整 smoke test 或 CI 時才用，平常不需要。
+
+建議在 `AGENTS.md` 和 `CLAUDE.md` 各加一條規則：
 
 ```text
-When using a hung-yi-ml-research-advisor tool, invoke it through the installed hung-yi-lee-ai-mentor-skills collection root with uv run --project "<skill path>" ...
+執行 hung-yi-ml-research-advisor 的工具時，一律透過已安裝的 hung-yi-lee-ai-mentor-skills 集合根目錄，用 uv run --project "<集合路徑>" ... 執行。
 ```
 
-## Quick start
+## 快速開始
 
-After installation, explicitly request `hung-yi-lee-ai-mentor-skills` when
-asking an agent to evaluate an ML recipe, experiment, training failure,
-data/evaluation concern, or model change. Supply the relevant metrics, config,
-predictions, split metadata, or model diagnostics. The advisor will name competing
-hypotheses and the cheapest discriminating experiment.
+安裝後，請 agent「用李宏毅老師的角度」看你的問題，並附上相關資料：訓練與驗證曲線、指標、設定檔、預測結果、資料切分方式等。
 
-If working from a source checkout rather than a skills.sh install:
+- 訓練或評估的問題由 `hung-yi-ml-research-advisor` 處理：它會先確認證據，列出互相競爭的假設，再給出最便宜、最能區分這些假設的實驗，以及預期會看到的結果。
+- 用 LLM 做東西的問題由 `hung-yi-genai-advisor` 處理：它會先判斷該改輸入（prompt、context）還是改模型，再依情境給建議。
+
+直接從原始碼使用、沒有透過 skills.sh 安裝的話：
 
 ```bash
-uv sync --extra analysis  # metrics, statistics, tables, and plots
-# or only when model-internals diagnostics are needed:
+uv sync --extra analysis  # 指標、統計、表格與畫圖
+# 只有需要看模型內部時才裝：
 uv sync --extra torch
 ```
 
-## Knowledge boundary
+## 內容範圍與誠實規則
 
-- Lecture-backed statements carry a video id and section; own reasoning is
-  labelled as inference; topics the lectures do not cover are stated as such
-  (`references/not-covered.md`).
-- The distillation evidence (transcripts, evidence packets, candidate
-  knowledge) stays in the Distilly-SKILL build workspace and is not shipped;
-  `evaluation/scenarios/` holds the behavioural evaluation set.
-- The mentor never selects videos, downloads media, runs ASR/AGY, or performs
-  Distilly distillation.
+- 課程有講的內容附影片 ID 與段落；自己的推論會標明是推論；課程沒講的主題會直說，見各 skill 的 `references/not-covered.md`。
+- 依證據強弱調整語氣：多講跨年份 > 單一講課 > 推論 > 課程沒講。
+- 內容來自 58 講課程逐字稿的全文精讀。原始逐字稿、證據與蒸餾中間產物留在建置專案，不隨這個集合發佈。
+- `evaluation/scenarios/` 是行為評估題，共 18 題，用來比較有沒有 skill 時回答的差異。
 
-## Layout
+## 目錄結構
 
 ```text
 hung-yi-lee-ai-mentor-skills/
-├── SKILL.md
+├── SKILL.md                 # 入口：分流到兩個 advisor
 ├── pyproject.toml
 ├── uv.lock
-├── evaluation/scenarios/
+├── evaluation/scenarios/    # 行為評估題
 ├── tests/
-├── dev/
+├── dev/                     # 維護者專用，執行時用不到
 └── skills/
     ├── hung-yi-ml-research-advisor/
     │   ├── SKILL.md
@@ -141,11 +128,4 @@ hung-yi-lee-ai-mentor-skills/
         └── references/
 ```
 
-`dev/` holds maintainer-only checks, including the official course-material
-search, which only works inside a full Distilly-SKILL checkout with its index. It is not part of the
-runtime and is not needed to use either skill.
-
-`hung-yi-ml-research-advisor` owns research reasoning and optional,
-deterministic diagnostics. `analysis` and `torch` are independent optional
-profiles; `all` is for CI or a deliberate full-surface smoke test, not normal
-startup.
+`dev/` 放維護者專用的檢查工具，其中官方課程教材搜尋只在含教材索引的完整建置專案裡能用。使用這兩個 skill 不需要它。
